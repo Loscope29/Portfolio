@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noah Obama Darryl | Data Scientist & ML Engineer Portfolio</title>
+    <meta name="description" content="Portfolio de Noah Obama Darryl (Loscope29) - Data Scientist, Machine Learning Engineer, Expert Marketing Analytics & Solutions IoT.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="brand-logo">
+                <span class="logo-icon"><i class="fa-solid fa-brain"></i></span>
+                <span class="logo-text">Noah<span class="highlight">.Obama</span></span>
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#about" class="nav-link">À propos</a>
+                <a href="#projects" class="nav-link">Projets</a>
+                <a href="#api-tester" class="nav-link api-nav-link"><i class="fa-solid fa-bolt"></i> Testeur API ML</a>
+                <a href="#analytics" class="nav-link">Marketing & R</a>
+                <a href="#skills" class="nav-link">Compétences</a>
+                <a href="#contact" class="nav-link btn-contact">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button id="mobile-toggle" class="mobile-toggle" aria-label="Menu mobile">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-glow"></div>
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="badge-status">
+                    <span class="pulse-dot"></span> Disponible pour opportunités Data & ML
+                </div>
+                <h1 class="hero-title">
+                    Noah Obama Darryl
+                    <span class="hero-subtitle">Data Scientist & Machine Learning Engineer</span>
+                </h1>
+                <p class="hero-description">
+                    Spécialisé en <strong class="text-glow">Machine Learning (MLOps)</strong>, 
+                    <strong class="text-glow">Marketing Analytics</strong>, 
+                    <strong class="text-glow">IoT & Capteurs Connectés</strong>, et 
+                    <strong class="text-glow">Data Visualization R</strong>. Je conçois des modèles prédictifs haute performance et des pipelines de données exploitables.
+                </p>
+
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-rocket"></i> Explorer mes projets</a>
+                    <a href="#api-tester" class="btn btn-secondary"><i class="fa-solid fa-terminal"></i> Tester mon API ML en ligne</a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://github.com/Loscope29" target="_blank" rel="noopener" title="GitHub Profile">
+                        <i class="fa-brands fa-github"></i> <span>GitHub (Loscope29)</span>
+                    </a>
+                    <a href="https://huggingface.co/Loscope29" target="_blank" rel="noopener" title="HuggingFace Profile">
+                        <i class="fa-solid fa-face-smile"></i> <span>Hugging Face</span>
+                    </a>
+                    <a href="https://x6ekhf8atwggcrwfqfr7rw.streamlit.app/" target="_blank" rel="noopener" title="Streamlit App">
+                        <i class="fa-solid fa-chart-line"></i> <span>Streamlit App</span>
+                    </a>
+                    <a href="https://medicalriskapi.onrender.com" target="_blank" rel="noopener" title="ML API Render">
+                        <i class="fa-solid fa-server"></i> <span>API Render</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-card-wrapper">
+                <div class="glass-card profile-preview-card">
+                    <div class="card-header-badge">
+                        <i class="fa-solid fa-code"></i> Live Metrics
+                    </div>
+                    <div class="profile-avatar-container">
+                        <div class="avatar-ring"></div>
+                        <img src="https://avatars.githubusercontent.com/u/190425084?v=4" alt="Noah Obama Darryl Avatar" class="profile-avatar">
+                    </div>
+                    <h3 class="profile-name">@Loscope29</h3>
+                    <p class="profile-bio">Data Science • MLOps • Data Analytics • IoT</p>
+
+                    <div class="hero-stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-number" data-target="20">20+</span>
+                            <span class="stat-label">Repos GitHub</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number" data-target="1">1</span>
+                            <span class="stat-label">API ML en ligne</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number" data-target="1">1</span>
+                            <span class="stat-label">HF AI Space</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number" data-target="2">2+</span>
+                            <span class="stat-label">Projets Analytics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filterable Projects Section -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fa-solid fa-folder-open"></i> Portfolio complet</span>
+                <h2 class="section-title">Mes Projets Majeurs</h2>
+                <p class="section-description">Sélection de projets réels couvrant l'apprentissage automatique, les analytics marketing, l'IoT et les API en production.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">Tous les projets</button>
+                <button class="filter-btn" data-filter="mlops"><i class="fa-solid fa-brain"></i> ML & MLOps</button>
+                <button class="filter-btn" data-filter="marketing"><i class="fa-solid fa-chart-pie"></i> Marketing Analytics</button>
+                <button class="filter-btn" data-filter="r-dataviz"><i class="fa-brands fa-r-project"></i> R & Dataviz</button>
+                <button class="filter-btn" data-filter="iot"><i class="fa-solid fa-microchip"></i> IoT & Capteurs</button>
+                <button class="filter-btn" data-filter="nlp"><i class="fa-solid fa-comments"></i> NLP & Voice</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid" id="projects-grid">
+
+                <!-- Project 1: Medical Risk API -->
+                <div class="project-card glass-card" data-category="mlops">
+                    <div class="card-badge live"><i class="fa-solid fa-signal"></i> Production En Ligne</div>
+                    <div class="card-icon-header">
+                        <i class="fa-solid fa-heart-pulse icon-ml"></i>
+                    </div>
+                    <h3 class="card-title">Medical Risk ML API</h3>
+                    <p class="card-desc">API de prédiction du risque médical déployée sur Render avec Scikit-learn (RandomForest) et FastAPI/Flask. Endpoint d'inférence en temps réel.</p>
+                    <div class="card-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Scikit-Learn</span>
+                        <span class="tag">RandomForest</span>
+                        <span class="tag">FastAPI/Render</span>
+                        <span class="tag">MLOps</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://medicalriskapi.onrender.com" target="_blank" class="btn-card primary"><i class="fa-solid fa-globe"></i> API Render</a>
+                        <a href="#api-tester" class="btn-card secondary"><i class="fa-solid fa-vial"></i> Tester en live</a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Marketing Scoring & Analytics -->
+                <div class="project-card glass-card" data-category="marketing">
+                    <div class="card-badge local"><i class="fa-solid fa-folder"></i> Projet Local</div>
+                    <div class="card-icon-header">
+                        <i class="fa-solid fa-chart-user icon-marketing"></i>
+                    </div>
+                    <h3 class="card-title">Lead & Credit Scoring & Segmentation</h3>
+                    <p class="card-desc">Modélisation complète du scoring client, segmentation K-Means & RFM, calcul du Customer Lifetime Value (CLV), rapport d'analyse et executive pitch.</p>
+                    <div class="card-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Segmentation RFM</span>
+                        <span class="tag">K-Means</span>
+                        <span class="tag">CLV Analysis</span>
+                        <span class="tag">Executive Pitch</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="#analytics" class="btn-card primary"><i class="fa-solid fa-circle-info"></i> Recommandations & Pitch</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: DataVisualization R (Mercury Data) -->
+                <div class="project-card glass-card" data-category="r-dataviz">
+                    <div class="card-badge local"><i class="fa-solid fa-folder"></i> Projet Local</div>
+                    <div class="card-icon-header">
+                        <i class="fa-brands fa-r-project icon-r"></i>
+                    </div>
+                    <h3 class="card-title">Analyse Environnementale & Dataviz en R</h3>
+                    <p class="card-desc">Analyse statistique avancée en RMarkdown et ggplot2. Matrice de corrélation, modèles de régression linéaire et graphiques d'impact environnemental.</p>
+                    <div class="card-tags">
+                        <span class="tag">R Language</span>
+                        <span class="tag">RMarkdown</span>
+                        <span class="tag">ggplot2</span>
+                        <span class="tag">Correlation Matrix</span>
+                        <span class="tag">Regression</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="#r-analytics" class="btn-card primary"><i class="fa-solid fa-file-pdf"></i> Découvrir le rapport R</a>
+                    </div>
+                </div>
+
+                <!-- Project 4: CornAI App (HuggingFace) -->
+                <div class="project-card glass-card" data-category="mlops">
+                    <div class="card-badge live"><i class="fa-solid fa-face-smile"></i> HF Space</div>
+                    <div class="card-icon-header">
+                        <i class="fa-solid fa-seedling icon-ai"></i>
+                    </div>
+                    <h3 class="card-title">CornAI App - Agricultural Vision</h3>
+                    <p class="card-desc">Application Computer Vision déployée sur Hugging Face Spaces pour la détection et la classification automatique des maladies des cultures de maïs.</p>
+                    <div class="card-tags">
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">Deep Learning</span>
+                        <span class="tag">HuggingFace Spaces</span>
+                        <span class="tag">Docker</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://huggingface.co/spaces/Loscope29/CornAIApp" target="_blank" class="btn-card primary"><i class="fa-solid fa-up-right-from-square"></i> Ouvrir le HF Space</a>
+                    </div>
+                </div>
+
+                <!-- Project 5: Streamlit Web Application -->
+                <div class="project-card glass-card" data-category="mlops">
+                    <div class="card-badge live"><i class="fa-solid fa-chart-line"></i> Streamlit Cloud</div>
+                    <div class="card-icon-header">
+                        <i class="fa-solid fa-sliders icon-streamlit"></i>
+                    </div>
+                    <h3 class="card-title">Streamlit Data & Predict App</h3>
+                    <p class="card-desc">Application web interactive avec Streamlit pour l'exploration visuelle de jeux de données complexes et l'exécution interactive de modèles prédictifs.</p>
+                    <div class="card-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">DataViz</span>
+                        <span class="tag">Interactive UI</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://x6ekhf8atwggcrwfqfr7rw.streamlit.app/" target="_blank" class="btn-card primary"><i class="fa-solid fa-window-restore"></i> Accéder à l'App</a>
+                    </div>
+                </div>
+
+                <!-- Project 6: IoT Fire Detection -->
+                <div class="project-card glass-card" data-category="iot">
+                    <div class="card-badge github"><i class="fa-brands fa-github"></i> GitHub Repo</div>
+                    <div class="card-icon-header">
+                        <i class="fa-solid fa-fire-flame-curved icon-iot"></i>
+                    </div>
+                    <h3 class="card-title">IoT Détection d'Incendie</h3>
+                    <p class="card-desc">Système d'alerte précoce de départ d'incendie basé sur la collecte et le traitement en temps réel de capteurs environnementaux IoT.</p>
+                    <div class="card-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">IoT Sensors</span>
+                        <span class="tag">Real-Time Data</span>
+                        <span class="tag">Alerting System</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://github.com/Loscope29/IoT-D-tection-incendie" target="_blank" class="btn-card primary"><i class="fa-brands fa-github"></i> Code Source</a>
+                    </div>
+                </div>
+
+                <!-- Project 7: LoRaWAN Agro IoT -->
+                <div class="project-card glass-card" data-category="iot">
+                    <div class="card-badge github"><i class="fa-brands fa-github"></i> GitHub Repo</div>
+                    <div class="card-icon-header">
+                        <i class="fa-solid fa-tower-cell icon-iot"></i>
+                    </div>
+                    <h3 class="card-title">LoRaWAN Agro-IoT Monitoring</h3>
+                    <p class="card-desc">Plateforme de suivi agricole utilisant le protocole LoRaWAN à longue portée et faible consommation pour monitorer les sols et le climat.</p>
+                    <div class="card-tags">
+                        <span class="tag">LoRaWAN</span>
+                        <span class="tag">Agro-Tech</span>
+                        <span class="tag">IoT Telemetry</span>
+                        <span class="tag">Python</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://github.com/Loscope29/Lorawan-Agro-IoT" target="_blank" class="btn-card primary"><i class="fa-brands fa-github"></i> Code Source</a>
+                    </div>
+                </div>
+
+                <!-- Project 8: IoT End to End & Metabase -->
+                <div class="project-card glass-card" data-category="iot">
+                    <div class="card-badge github"><i class="fa-brands fa-github"></i> GitHub Repo</div>
+                    <div class="card-icon-header">
+                        <i class="fa-solid fa-network-wired icon-iot"></i>
+                    </div>
+                    <h3 class="card-title">IoT End-To-End & Metabase Dashboard</h3>
+                    <p class="card-desc">Pipeline complet de données IoT : de la simulation du capteur jusqu'au stockage et à la restitution sur un tableau de bord analytique Metabase.</p>
+                    <div class="card-tags">
+                        <span class="tag">End-to-End Pipeline</span>
+                        <span class="tag">Metabase</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">SQL / Timeseries</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://github.com/Loscope29/IoT-End-To-End" target="_blank" class="btn-card primary"><i class="fa-brands fa-github"></i> Code Source</a>
+                    </div>
+                </div>
+
+                <!-- Project 9: Semantic Search API -->
+                <div class="project-card glass-card" data-category="nlp">
+                    <div class="card-badge github"><i class="fa-brands fa-github"></i> GitHub Repo</div>
+                    <div class="card-icon-header">
+                        <i class="fa-solid fa-magnifying-glass-chart icon-nlp"></i>
+                    </div>
+                    <h3 class="card-title">Semantic Search API</h3>
+                    <p class="card-desc">API de recherche sémantique basée sur les plongements vectoriels (Embeddings) et NLP pour retrouver rapidement l'information pertinente dans de larges corpus textuels.</p>
+                    <div class="card-tags">
+                        <span class="tag">NLP</span>
+                        <span class="tag">Embeddings</span>
+                        <span class="tag">Vector Search</span>
+                        <span class="tag">API</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://github.com/Loscope29/SemanticSearchAPI" target="_blank" class="btn-card primary"><i class="fa-brands fa-github"></i> Code Source</a>
+                    </div>
+                </div>
+
+                <!-- Project 10: Assistant Vocal IBMH -->
+                <div class="project-card glass-card" data-category="nlp">
+                    <div class="card-badge github"><i class="fa-brands fa-github"></i> GitHub Repo</div>
+                    <div class="card-icon-header">
+                        <i class="fa-solid fa-microphone-lines icon-nlp"></i>
+                    </div>
+                    <h3 class="card-title">Assistant Vocal Techniciens IBMH</h3>
+                    <p class="card-desc">Assistant vocal intelligent conçu pour assister les équipes techniques et répondre vocalement aux requêtes métiers complexes.</p>
+                    <div class="card-tags">
+                        <span class="tag">Voice AI</span>
+                        <span class="tag">Speech-to-Text</span>
+                        <span class="tag">LLM Assistant</span>
+                        <span class="tag">TypeScript/Python</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://github.com/Loscope29/Assistant-Vocal-IBMH" target="_blank" class="btn-card primary"><i class="fa-brands fa-github"></i> Code Source</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE API TESTER WIDGET SECTION -->
+    <section id="api-tester" class="section api-tester-section">
+        <div class="container">
+            <div class="glass-card api-tester-card">
+                <div class="api-header">
+                    <div class="api-header-left">
+                        <span class="live-pill"><i class="fa-solid fa-circle-dot"></i> Live API Online</span>
+                        <h2>Testeur Interactif de l'API ML</h2>
+                        <p>Interrogez en direct le modèle <code>RandomForestClassifier</code> hébergé sur Render (<code>https://medicalriskapi.onrender.com/predict</code>)</p>
+                    </div>
+                    <div class="api-header-right">
+                        <span class="endpoint-badge">POST /predict</span>
+                    </div>
+                </div>
+
+                <div class="api-tester-grid">
+                    <!-- Form Input -->
+                    <form id="api-test-form" class="api-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="age"><i class="fa-solid fa-calendar"></i> Âge</label>
+                                <input type="number" id="age" name="age" value="54" min="18" max="100" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cholesterol"><i class="fa-solid fa-vial-virus"></i> Cholestérol (mg/dL)</label>
+                                <input type="number" id="cholesterol" name="cholesterol" value="240" min="100" max="500" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bp"><i class="fa-solid fa-heart-pulse"></i> Pression Artérielle (mmHg)</label>
+                                <input type="number" id="bp" name="bp" value="135" min="80" max="220" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="glucose"><i class="fa-solid fa-cube"></i> Glycémie (mg/dL)</label>
+                                <input type="number" id="glucose" name="glucose" value="110" min="50" max="300" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="smoker"><i class="fa-solid fa-smoking"></i> Fumeur</label>
+                                <select id="smoker" name="smoker">
+                                    <option value="1">Oui (1)</option>
+                                    <option value="0" selected>Non (0)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="bmi"><i class="fa-solid fa-weight-scale"></i> IMC / BMI</label>
+                                <input type="number" step="0.1" id="bmi" name="bmi" value="27.5" min="15" max="50" required>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" id="btn-run-api" class="btn btn-primary">
+                                <i class="fa-solid fa-play"></i> Lancer la prédiction ML
+                            </button>
+                            <button type="button" id="btn-load-preset" class="btn btn-secondary">
+                                <i class="fa-solid fa-rotate-left"></i> Rétablir exemple
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- API Response Output -->
+                    <div class="api-response-wrapper">
+                        <div class="response-header">
+                            <span><i class="fa-solid fa-code"></i> Réponse JSON Serveur</span>
+                            <span id="api-status-tag" class="status-tag status-idle">Prêt à tester</span>
+                        </div>
+                        <pre class="json-code-box"><code id="api-json-output">{
+  "status": "awaiting_input",
+  "message": "Cliquez sur 'Lancer la prédiction' pour envoyer une requête au modèle en production."
+}</code></pre>
+                        
+                        <div id="prediction-result-card" class="prediction-result-card hidden">
+                            <div class="res-icon" id="res-icon"><i class="fa-solid fa-shield-heart"></i></div>
+                            <div class="res-info">
+                                <span class="res-label">Score de Risque calculé :</span>
+                                <h4 id="res-score" class="res-score">--</h4>
+                                <p id="res-verdict" class="res-verdict">--</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARKETING ANALYTICS & R DATAVIZ SECTION -->
+    <section id="analytics" class="section analytics-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fa-solid fa-chart-line"></i> Projets Locaux & Etudes Métiers</span>
+                <h2 class="section-title">Marketing Analytics & DataViz R</h2>
+                <p class="section-description">Aperçu détaillé des travaux d'analyse décisionnelle, segmentation client, scoring métrique et visualisations statistiques présentés dans ce repository.</p>
+            </div>
+
+            <!-- Marketing Analytics Grid -->
+            <div class="analytics-grid">
+                
+                <!-- Marketing Card 1 -->
+                <div class="glass-card analytics-box">
+                    <div class="analytics-icon"><i class="fa-solid fa-users-gear"></i></div>
+                    <h3>Segmentation Client RFM & K-Means</h3>
+                    <p>Découpage précis du portefeuille client en segments homogènes basés sur la Récence, la Fréquence et le Montant (RFM), couplé à l'algorithme K-Means pour l'optimisation des campagnes ciblées.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Algorithme K-Means optimisé par méthode du coude</li>
+                        <li><i class="fa-solid fa-check"></i> Matrice RFM et définition des personas clients</li>
+                        <li><i class="fa-solid fa-check"></i> Fichiers de résultats : <code>resultat_RFM.xlsx</code> & <code>resultat_segmentation.xlsx</code></li>
+                    </ul>
+                </div>
+
+                <!-- Marketing Card 2 -->
+                <div class="glass-card analytics-box">
+                    <div class="analytics-icon"><i class="fa-solid fa-calculator"></i></div>
+                    <h3>Customer Lifetime Value (CLV) & Scoring</h3>
+                    <p>Modélisation prédictive de la valeur d'un client au cours de son cycle de vie. Conception d'une grille de scoring décisionnelle et d'une présentation stratégique à destination de la direction.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Calcul prédictif CLV et taux d'attrition (churn)</li>
+                        <li><i class="fa-solid fa-check"></i> Modèle de scoring comportemental (<code>scoring.ipynb</code>)</li>
+                        <li><i class="fa-solid fa-check"></i> Supports exécutifs : <code>pitch_scoring.html</code> & PPTX</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- R Section Spotlight -->
+            <div id="r-analytics" class="r-spotlight-card glass-card">
+                <div class="r-badge"><i class="fa-brands fa-r-project"></i> Rapport de DataVisualization en R</div>
+                <div class="r-grid">
+                    <div class="r-info">
+                        <h3>Etude Statistique Environnementale (Mercury Data)</h3>
+                        <p>Réalisation d'une analyse complète d'impact environnemental (niveaux de mercure selon le pH, le calcium et l'alcalinité). Utilisation intensive de l'écosystème Tidyverse, ggplot2 et corrplot.</p>
+                        <div class="r-features">
+                            <div class="r-feat-item">
+                                <i class="fa-solid fa-chart-line"></i>
+                                <span>Régression Linéaire Multiple</span>
+                            </div>
+                            <div class="r-feat-item">
+                                <i class="fa-solid fa-grip"></i>
+                                <span>Matrice de Corrélation</span>
+                            </div>
+                            <div class="r-feat-item">
+                                <i class="fa-solid fa-file-code"></i>
+                                <span>RMarkdown dynamique</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="r-code-preview">
+                        <div class="code-topbar">
+                            <span>DARRYL_NOAH_DATAVIZ_CA.Rmd</span>
+                        </div>
+                        <pre><code>library(tidyverse)
+library(corrplot)
+
+# Import & Nettoyage
+Mercury <- read.csv('Mercury Data.csv', sep=";")
+
+# Matrice de corrélation
+correlation <- cor(select(Mercury, where(is.numeric)))
+corrplot(correlation, method = "color", type = "upper")
+
+# Régression linéaire
+model <- lm(StdMercury ~ pH + Calcium + Alkalinity, data=Mercury)
+summary(model)</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS MATRIX SECTION -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fa-solid fa-cubes"></i> Stack Technique</span>
+                <h2 class="section-title">Compétences & Technologies</h2>
+                <p class="section-description">Un éventail complet de technologies de la Data Science, de l'Ingénierie ML et du Développement Web.</p>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Skill Category 1 -->
+                <div class="glass-card skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3>Data Science & Machine Learning</h3>
+                    <div class="skill-pills">
+                        <span class="pill">Python</span>
+                        <span class="pill">Scikit-Learn</span>
+                        <span class="pill">RandomForest</span>
+                        <span class="pill">K-Means</span>
+                        <span class="pill">Pandas / NumPy</span>
+                        <span class="pill">Jupyter Notebooks</span>
+                        <span class="pill">Computer Vision</span>
+                    </div>
+                </div>
+
+                <!-- Skill Category 2 -->
+                <div class="glass-card skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h3>Analytics & DataViz</h3>
+                    <div class="skill-pills">
+                        <span class="pill">R Language</span>
+                        <span class="pill">RMarkdown</span>
+                        <span class="pill">ggplot2</span>
+                        <span class="pill">Segmentation RFM</span>
+                        <span class="pill">CLV</span>
+                        <span class="pill">Metabase</span>
+                        <span class="pill">Excel / Business Intelligence</span>
+                    </div>
+                </div>
+
+                <!-- Skill Category 3 -->
+                <div class="glass-card skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-server"></i></div>
+                    <h3>MLOps & Déploiement</h3>
+                    <div class="skill-pills">
+                        <span class="pill">FastAPI</span>
+                        <span class="pill">Flask</span>
+                        <span class="pill">Render Cloud</span>
+                        <span class="pill">Hugging Face Spaces</span>
+                        <span class="pill">Streamlit Cloud</span>
+                        <span class="pill">Docker</span>
+                        <span class="pill">REST APIs</span>
+                    </div>
+                </div>
+
+                <!-- Skill Category 4 -->
+                <div class="glass-card skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <h3>IoT & Embedded Systems</h3>
+                    <div class="skill-pills">
+                        <span class="pill">LoRaWAN</span>
+                        <span class="pill">Capteurs Environnementaux</span>
+                        <span class="pill">Telemetry Data</span>
+                        <span class="pill">Time-series Pipelines</span>
+                        <span class="pill">Détection d'Incendie</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER & CONTACT -->
+    <footer id="contact" class="footer-section">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <a href="#hero" class="brand-logo">
+                    <span class="logo-icon"><i class="fa-solid fa-brain"></i></span>
+                    <span class="logo-text">Noah<span class="highlight">.Obama</span></span>
+                </a>
+                <p>Data Scientist, ML Engineer & Analyste spécialisé dans le développement de modèles décisionnels et d'API en production.</p>
+                <div class="footer-socials">
+                    <a href="https://github.com/Loscope29" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://huggingface.co/Loscope29" target="_blank" rel="noopener"><i class="fa-solid fa-face-smile"></i></a>
+                    <a href="https://x6ekhf8atwggcrwfqfr7rw.streamlit.app/" target="_blank" rel="noopener"><i class="fa-solid fa-chart-line"></i></a>
+                    <a href="https://medicalriskapi.onrender.com" target="_blank" rel="noopener"><i class="fa-solid fa-server"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigation rapide</h4>
+                <ul>
+                    <li><a href="#hero">Accueil</a></li>
+                    <li><a href="#projects">Tous les projets</a></li>
+                    <li><a href="#api-tester">Testeur API ML</a></li>
+                    <li><a href="#analytics">Marketing & Dataviz R</a></li>
+                    <li><a href="#skills">Compétences</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Projets Phares</h4>
+                <ul>
+                    <li><a href="https://medicalriskapi.onrender.com" target="_blank">Medical Risk API</a></li>
+                    <li><a href="https://huggingface.co/spaces/Loscope29/CornAIApp" target="_blank">CornAI App (HuggingFace)</a></li>
+                    <li><a href="https://github.com/Loscope29/IoT-D-tection-incendie" target="_blank">IoT Détection Incendie</a></li>
+                    <li><a href="https://github.com/Loscope29/Lorawan-Agro-IoT" target="_blank">LoRaWAN Agro-IoT</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p>&copy; 2026 Noah Obama Darryl (Loscope29) — Portfolio Data Science & Machine Learning. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
