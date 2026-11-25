@@ -173,7 +173,7 @@ const nuage = JSON.stringify({
 // Preuves chiffrées : uniquement des résultats déjà présents dans les projets
 // [valeur, unité, ce qu'elle mesure, id du projet, nom affiché si différent du projet]
 const preuves = [
-  ['71', '%', 'des départs clients détectés', 'churn'],
+  ['82,3', '%', 'des départs clients détectés', 'churn'],
   ['+4,3', 'pts', 'de hit@10 face à la meilleure référence', 'reco'],
   ['2', '', 'plateformes IoT en production', 'fireprotect', 'FireProtect et Celsius'],
   ['3', '', 'clouds pour un même assistant RAG', 'rag'],

@@ -37,7 +37,7 @@
       <div class="container">
         <nav class="crumbs" aria-label="Fil d’Ariane">
           <a href="../#travaux"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>Tous les projets</a>
-          <span class="num">05 / 11</span>
+          <span class="num">04 / 10</span>
         </nav>
         <div class="detail__head">
           <div class="detail__title" data-reveal>
@@ -110,7 +110,7 @@
     <section class="detail__section" aria-labelledby="demarche">
       <div class="container split">
         <h2 id="demarche" data-reveal>La démarche</h2>
-        <div data-reveal><ol class="detail__steps"><li>Exploration : ces données permettent-elles de faire du pricing ?</li><li>Construction du panel, au grain produit par mois.</li><li>Six estimateurs de l’élasticité, validés sur données simulées.</li><li>Modèle de demande avec contrainte de monotonie, suivi dans MLflow.</li><li>Optimisation par la règle de Lerner, avec un garde-fou de ±25 % sur le prix.</li><li>API FastAPI, tableau de bord, 72 tests et CI/CD.</li></ol></div>
+        <div data-reveal><ol class="detail__steps"><li>Exploration : ces données permettent-elles de faire du pricing ?</li><li>Construction du panel, au grain produit par mois.</li><li>Six estimateurs de l’élasticité, validés sur données simulées.</li><li>Modèle de demande LightGBM contraint à décroître avec le prix, suivi dans MLflow.</li><li>Optimisation par la règle de Lerner, avec un garde-fou de ±25 % sur le prix.</li><li>API FastAPI de 10 routes, tableau de bord en 4 onglets, 72 tests et CI/CD.</li></ol></div>
       </div>
     </section>
 
@@ -129,7 +129,7 @@
     <section class="detail__section" aria-labelledby="limites">
       <div class="container split">
         <h2 id="limites" data-reveal>Les limites</h2>
-        <div data-reveal><ul class="detail__limits"><li>85 % des produits butent sur le garde-fou de ±25 % : leur optimum sort des prix jamais observés.</li><li>Aucun coût réel n’est publié par Olist : le gain affiché est auto-évalué. D’où un plan de test A/B séquencé plutôt qu’une hausse générale.</li></ul></div>
+        <div data-reveal><ul class="detail__limits"><li>85 % des produits butent sur le garde-fou de ±25 % : leur optimum sort des prix jamais observés.</li><li>Aucun coût réel n’est publié par Olist : le gain affiché est auto-évalué. D’où un plan de test A/B séquencé plutôt qu’une hausse générale.</li><li>L’élasticité mesurée est de court terme : elle ne capte ni la réponse des concurrents, ni un repositionnement durable.</li></ul></div>
       </div>
     </section>
 
@@ -152,7 +152,7 @@
         <h2>Un projet du même genre&nbsp;?</h2>
         <div class="actions">
           <a class="btn btn--primary" href="../#contact"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>M’écrire</a>
-          <a class="btn" href="../#travaux">Voir les 11 projets</a>
+          <a class="btn" href="../#travaux">Voir les 10 projets</a>
         </div>
       </div>
     </section>

@@ -69,6 +69,7 @@ export const details = {
     limites: [
       'Le gain réel dépend de l’incrémentalité, que seul un A/B test mesurera, au niveau du bloc.',
       'La factorisation ALS fait quatre fois moins bien qu’une règle métier : trop peu d’historique par visiteur.',
+      'Le bon produit n’est parmi les 50 candidats que dans 41 % des cas : c’est le premier levier d’amélioration.',
     ],
   },
 
@@ -82,9 +83,9 @@ export const details = {
       'Exploration : ces données permettent-elles de faire du pricing ?',
       'Construction du panel, au grain produit par mois.',
       'Six estimateurs de l’élasticité, validés sur données simulées.',
-      'Modèle de demande avec contrainte de monotonie, suivi dans MLflow.',
+      'Modèle de demande LightGBM contraint à décroître avec le prix, suivi dans MLflow.',
       'Optimisation par la règle de Lerner, avec un garde-fou de ±25 % sur le prix.',
-      'API FastAPI, tableau de bord, 72 tests et CI/CD.',
+      'API FastAPI de 10 routes, tableau de bord en 4 onglets, 72 tests et CI/CD.',
     ],
     resultats: [
       ['−0,75', 'élasticité retenue, effets fixes produit par mois'],
@@ -95,6 +96,7 @@ export const details = {
     limites: [
       '85 % des produits butent sur le garde-fou de ±25 % : leur optimum sort des prix jamais observés.',
       'Aucun coût réel n’est publié par Olist : le gain affiché est auto-évalué. D’où un plan de test A/B séquencé plutôt qu’une hausse générale.',
+      'L’élasticité mesurée est de court terme : elle ne capte ni la réponse des concurrents, ni un repositionnement durable.',
     ],
   },
 
@@ -121,54 +123,58 @@ export const details = {
     limites: [
       'Si l’envoi est gratuit, aucune règle de ciblage ne bat l’envoi à tous.',
       'Cibler n’est rentable que si le coût d’un e-mail rapporté à la valeur d’une visite se situe entre 0,075 et 0,12 environ.',
+      'Une seule campagne, en 2008 : l’effet d’un e-mail aujourd’hui peut être plus faible.',
     ],
   },
 
   churn: {
     contexte: [
       'Une banque perd des clients sans les voir partir. L’objectif métier : réduire le départ des clients à risque de 25 %, en les repérant assez tôt pour agir avant la résiliation.',
+      'Les deux erreurs n’ont pas le même prix : manquer un départ coûte bien plus cher qu’une relance inutile. Le seuil de décision en tient compte.',
     ],
-    donnees: 'Des données de clients bancaires : âge, pays de résidence, solde, nombre de produits et statut de membre actif.',
+    donnees: 'Des données de clients bancaires : score de crédit, pays, âge, ancienneté, solde, nombre de produits, statut de membre actif.',
     etapes: [
       'Exploration et nettoyage des données.',
       'Pipeline scikit-learn et Random Forest, réglage des hyperparamètres avec Optuna.',
-      'Lecture des causes de départ avec SHAP.',
-      'API FastAPI validée par Pydantic et tableau de bord Streamlit.',
-      'Docker Compose, tests pytest, CI/CD GitHub Actions et rapport CML.',
+      'Seuil de décision fixé à 0,371 en minimisant le coût des erreurs : 50 € pour une relance inutile, 360 € pour un départ manqué.',
+      'Lecture des causes de départ avec SHAP, et rapport décisionnel pour la direction.',
+      'API FastAPI validée par Pydantic et tableau de bord Streamlit, avec import CSV par lot.',
+      'Docker Compose, 9 tests Pytest, CI/CD GitHub Actions, images publiées sur Docker Hub et rapport CML.',
     ],
     resultats: [
-      ['71 %', 'des départs détectés, au seuil de 0,5'],
-      ['54,3 %', 'de précision'],
-      ['82 %', 'd’exactitude'],
-      ['3', 'signaux de départ en tête : âge, inactivité, nombre de produits'],
+      ['82,3 %', 'des départs détectés, au seuil de 0,371'],
+      ['0,860', 'de ROC-AUC'],
+      ['+82 900 €', 'd’impact net estimé sur le jeu d’évaluation'],
+      ['9', 'tests unitaires et d’intégration'],
     ],
     limites: [
+      'L’impact financier dépend des coûts unitaires retenus (50 € et 360 €), qui restent à valider avec le métier.',
       'Atteindre −25 % de départs supposerait de retenir environ 35 % des clients détectés, une hypothèse à valider sur le terrain.',
-      'L’AUC sera publiée une fois recalculée sur un jeu de test isolé.',
     ],
   },
 
   demande: {
     contexte: [
-      'Trois ans de demande journalière, avec des creux récurrents que personne n’expliquait. Mal anticiper la demande coûte deux fois : en ruptures de stock et en surstock.',
+      'Mal anticiper la demande coûte deux fois : une rupture fait perdre une vente, un surstock immobilise du capital. Et les deux erreurs n’ont pas le même coût.',
+      'Le projet produit une prévision journalière par catégorie et par région, puis une règle de commande qui arbitre entre ces deux coûts.',
     ],
     donnees: 'La demande quotidienne par magasin, catégorie et région, avec le prix, les promotions, la météo, la saisonnalité et les périodes d’épidémie.',
     etapes: [
       'Nettoyage, exploration et analyse des creux de demande.',
       'Variables de décalage (1, 7 et 14 jours), moyennes mobiles et écart de prix.',
       'Référence naïve, puis XGBoost réglé avec Optuna.',
-      'Validation walk-forward sur 4 périodes successives.',
-      'Simulation d’une politique de stock : stock de sécurité de 20 %, délai de livraison de 3 jours.',
-      'API FastAPI, tableau de bord Streamlit, Docker et CI.',
+      'Validation walk-forward sur 4 périodes de 90 jours.',
+      'Règle de commande : la prévision multipliée par le coefficient qui minimise le coût, avec 15 € par unité manquante et 2 € par unité en trop.',
+      'API FastAPI avec un simulateur de coûts, tableau de bord Streamlit, Docker, CI et rapport CML.',
     ],
     resultats: [
-      ['−36 %', 'de ruptures de stock, en simulation'],
-      ['26,3', 'd’erreur absolue moyenne sur les 4 périodes'],
-      ['100 %', 'des creux observés coïncident avec une période d’épidémie'],
+      ['−14,6 %', 'de coût total simulé : 4,17 M€ contre 4,89 M€'],
+      ['11,9 %', 'de taux de rupture, contre 25,9 % avec la règle actuelle'],
+      ['−19 %', 'd’erreur face à la demande de la veille (MAE 26,3 contre 32,3)'],
     ],
     limites: [
-      'Le gain sur les ruptures est mesuré en simulation, pas encore en conditions réelles.',
-      'Une variable à risque de fuite de données a été écartée après un test de sensibilité, sans perte de précision.',
+      'Les montants dépendent des deux coûts unitaires (15 € et 2 €), qui restent à valider : le simulateur recalcule tout pour d’autres valeurs.',
+      'Le modèle utilise la demande de la veille : sa précision pour une commande passée 3 jours à l’avance reste à mesurer.',
     ],
   },
 
@@ -190,26 +196,51 @@ export const details = {
     ],
   },
 
-  studio: {
+  polymind: {
     contexte: [
-      'Plusieurs projets Python autour du traitement du langage, de la génération multimodale et de la prédiction, réunis dans une seule application Streamlit.',
-      'Chaque page appelle son propre modèle : on passe de la transcription d’un audio à une question sur un PDF, puis à un commentaire de prévision boursière.',
+      'Polymind réunit quatre outils d’IA appliquée derrière une seule interface Streamlit : la voix, les documents et la finance.',
+      'Chaque appel aux LLM est tracé dans LangSmith : latence, jetons, enchaînement des étapes.',
     ],
-    donnees: 'Les fichiers audio et PDF fournis par l’utilisateur, les cours de quatre actions cotées récupérés avec yfinance.',
+    donnees: 'Les fichiers audio et PDF fournis par l’utilisateur, et dix ans de cours de quatre actions cotées, récupérés avec yfinance.',
     etapes: [
       'Transcription d’un fichier audio avec Whisper.',
-      'Questions sur un PDF, avec une recherche de passages dans ChromaDB.',
-      'Synthèse vocale avec un modèle Hugging Face.',
-      'Chatbot boursier : prévision par un LSTM entraîné en local ou par Chronos, réponse rédigée par Gemini.',
+      'Synthèse vocale en français avec MMS-TTS (VITS), via Hugging Face.',
+      'Questions sur un PDF : découpage, embeddings MiniLM, recherche dans ChromaDB, réponse de Gemini 2.5 Flash.',
+      'Chatbot boursier : prévision sur six mois par Chronos sans entraînement, ou par un LSTM entraîné sur dix ans, commentée par Gemini.',
       'Estimation du prix d’un logement avec un réseau de neurones Keras.',
-      'Application Streamlit en plusieurs pages, suivi des appels dans LangSmith.',
+      'Image Docker avec healthcheck, prête pour Cloud Run, Container Apps ou Streamlit Community Cloud.',
     ],
     resultats: [
-      ['4', 'pages dans l’application : audio, PDF, voix, bourse'],
-      ['2', 'modèles de prévision au choix : LSTM local ou Chronos'],
+      ['4', 'outils dans une même application : audio, voix, PDF, bourse'],
+      ['6 mois', 'de prévision de cours, commentée par Gemini'],
+      ['10 ans', 'd’historique pour entraîner les LSTM'],
     ],
     limites: [
-      'Au-delà de 64 jours, les prévisions de Chronos perdent en qualité.',
+      'Projet pédagogique : les prévisions de cours ne sont pas un conseil en investissement.',
+      'Whisper, Chronos et TensorFlow tiennent en mémoire : il faut au moins 4 Go de RAM pour l’héberger.',
+    ],
+  },
+
+  semantic: {
+    contexte: [
+      'Un projet de master : une API de recherche sémantique qui indexe des documents PDF et répond selon le sens de la question, plutôt que sur des mots-clés.',
+    ],
+    donnees: 'Les documents PDF téléversés par l’utilisateur.',
+    etapes: [
+      'Téléversement d’un PDF par l’API et extraction de son texte avec PyMuPDF.',
+      'Découpage du texte en segments, pour gagner en précision.',
+      'Calcul d’un embedding par segment avec Sentence-Transformers (MiniLM).',
+      'Stockage dans PostgreSQL avec pgvector, et un index ivfflat pour accélérer la recherche.',
+      'Recherche par similarité cosinus, documents similaires et historique des recherches.',
+      'API Django REST Framework documentée avec Swagger.',
+    ],
+    resultats: [
+      ['4', 'routes : téléversement, recherche, documents similaires, historique'],
+      ['ivfflat', 'index vectoriel pgvector pour accélérer la recherche'],
+    ],
+    limites: [
+      'Les PDF scannés ne sont pas encore lus : il faudrait un OCR.',
+      'Seul le format PDF est pris en charge pour l’instant.',
     ],
   },
 
