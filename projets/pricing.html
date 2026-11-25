@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prix d’une marketplace, projet de Luc Obama</title>
+  <meta name="description" content="De combien la demande suit-elle le prix ? Élasticité de −0,75 : des prix sous l’optimum, livrés comme plan de test A/B.">
+  <meta property="og:title" content="Prix d’une marketplace, projet de Luc Obama">
+  <meta property="og:description" content="De combien la demande suit-elle le prix ?">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="fr_FR">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/site.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#main">Aller au contenu</a>
+
+  <header class="bar">
+    <div class="container bar__inner">
+      <a class="wordmark" href="../" aria-label="Luc Obama, accueil du portfolio">Luc Obama</a>
+      <nav class="bar__nav" aria-label="Navigation principale">
+        <a href="../#travaux">Travaux</a>
+        <a href="../#methode">Méthode</a>
+        <a href="../#parcours">Parcours</a>
+        <a class="bar__action" href="../#contact"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="detail">
+    <section class="detail__hero">
+      <div class="container">
+        <nav class="crumbs" aria-label="Fil d’Ariane">
+          <a href="../#travaux"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>Tous les projets</a>
+          <span class="num">06 / 14</span>
+        </nav>
+        <div class="detail__head">
+          <div class="detail__title" data-reveal>
+            <div class="panel__bar">
+              <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>E-commerce</span>
+              <span class="chip chip--cool">Data science</span>
+            </div>
+            <h1>Prix d’une marketplace</h1>
+            <p class="lead">De combien la demande suit-elle le prix ?</p>
+            <p class="detail__links"><a class="btn" href="https://github.com/Loscope29/Dynamic-Pricing"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Voir le dépôt</a></p>
+          </div>
+          <p class="reading detail__reading" data-reveal style="--i:1"><span class="reading__val num">−0,75</span><span class="reading__unit">élasticité-prix retenue</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail__par" aria-label="En bref">
+      <div class="container">
+        <dl class="par par--wide" data-reveal>
+          <div><dt>Problème</dt><dd>Savoir si les prix d’Olist laissent de la marge sur la table.</dd></div>
+          <div><dt>Approche</dt><dd>Six estimateurs de l’élasticité ; référence en effets fixes produit × mois.</dd></div>
+          <div><dt>Résultat</dt><dd>Élasticité de −0,75 : des prix sous l’optimum, livrés comme plan de test A/B.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="detail__viz" aria-label="Élasticité-prix selon l’estimateur, Olist">
+      <div class="container">
+        <figure class="viz viz--wide" data-draw>
+          <ol class="dots" aria-label="Élasticité-prix selon l’estimateur, Olist">
+            <li class="dots__row" style="--i:0; --x:0.9900">
+              <span class="dots__label">OLS poolée</span>
+              <span class="dots__track"><span class="dots__dot"></span><span class="dots__val num">−0,02</span></span>
+            </li>
+            <li class="dots__row" style="--i:1; --x:0.9900">
+              <span class="dots__label">Effets fixes catégorie</span>
+              <span class="dots__track"><span class="dots__dot"></span><span class="dots__val num">−0,02</span></span>
+            </li>
+            <li class="dots__row" style="--i:2; --x:0.9400">
+              <span class="dots__label">DoubleML naïf</span>
+              <span class="dots__track"><span class="dots__dot"></span><span class="dots__val num">−0,12</span></span>
+            </li>
+            <li class="dots__row" style="--i:3; --x:0.6350">
+              <span class="dots__label">DoubleML après absorption</span>
+              <span class="dots__track"><span class="dots__dot"></span><span class="dots__val num">−0,73</span></span>
+            </li>
+            <li class="dots__row is-lead" style="--i:4; --x:0.6250">
+              <span class="dots__label">Effets fixes produit × mois</span>
+              <span class="dots__track"><span class="dots__dot"></span><span class="dots__val num">−0,75</span></span>
+            </li>
+            <li class="dots__row" style="--i:5; --x:0.0950">
+              <span class="dots__label">Poisson PPML, best-sellers</span>
+              <span class="dots__track"><span class="dots__dot"></span><span class="dots__val num">−1,81</span></span>
+            </li>
+          </ol>
+          <div class="dots__axis" aria-hidden="true"><span></span><span class="dots__ticks"><span class="dots__tick num" style="--x:0.0000">−2,0</span><span class="dots__tick num" style="--x:0.2500">−1,5</span><span class="dots__tick num" style="--x:0.5000">−1,0</span><span class="dots__tick num" style="--x:0.7500">−0,5</span><span class="dots__tick num" style="--x:1.0000">0</span></span></div>
+          <figcaption>Élasticité-prix selon l’estimateur, Olist</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="detail__section" aria-labelledby="contexte">
+      <div class="container split">
+        <h2 id="contexte" data-reveal>Le contexte</h2>
+        <div data-reveal><p>Optimiser un prix suppose de connaître l’élasticité-prix de la demande. Sur des données de ventes, elle est biaisée : un vendeur monte son prix quand il attend une forte demande, et solde quand elle faiblit.</p><h3 class="detail__sub">Les données</h3><p>Les ventes de la marketplace brésilienne Olist, regroupées en panel produit par mois. 1 % seulement de la variance du prix vient d’un même produit dont le prix change.</p></div>
+      </div>
+    </section>
+
+    <section class="detail__section" aria-labelledby="demarche">
+      <div class="container split">
+        <h2 id="demarche" data-reveal>La démarche</h2>
+        <div data-reveal><ol class="detail__steps"><li>Exploration : ces données permettent-elles de faire du pricing ?</li><li>Construction du panel, au grain produit par mois.</li><li>Six estimateurs de l’élasticité, validés sur données simulées.</li><li>Modèle de demande avec contrainte de monotonie, suivi dans MLflow.</li><li>Optimisation par la règle de Lerner, avec un garde-fou de ±25 % sur le prix.</li><li>API FastAPI, tableau de bord, 72 tests et CI/CD.</li></ol></div>
+      </div>
+    </section>
+
+    <section class="detail__section detail__results" aria-labelledby="resultats">
+      <div class="container">
+        <h2 id="resultats" data-reveal>Les résultats</h2>
+        <ul class="proofs__list detail__figures" data-reveal>
+          <li class="is-lead"><span class="proofs__val num">−0,75</span><span class="proofs__label">élasticité retenue, effets fixes produit par mois</span></li>
+          <li><span class="proofs__val num">−0,73</span><span class="proofs__label">confirmée par DoubleML après absorption des effets fixes</span></li>
+          <li><span class="proofs__val num">−1,81</span><span class="proofs__label">pour les 600 meilleures ventes, nettement plus élastiques</span></li>
+          <li><span class="proofs__val num">1 %</span><span class="proofs__label">de la variance du prix vient de vraies décisions de prix</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="detail__section" aria-labelledby="limites">
+      <div class="container split">
+        <h2 id="limites" data-reveal>Les limites</h2>
+        <div data-reveal><ul class="detail__limits"><li>85 % des produits butent sur le garde-fou de ±25 % : leur optimum sort des prix jamais observés.</li><li>Aucun coût réel n’est publié par Olist : le gain affiché est auto-évalué. D’où un plan de test A/B séquencé plutôt qu’une hausse générale.</li></ul></div>
+      </div>
+    </section>
+
+    <section class="detail__section" aria-labelledby="outils">
+      <div class="container split">
+        <h2 id="outils" data-reveal>Les outils</h2>
+        <div data-reveal><ul class="panel__tools detail__tools"><li>Économétrie</li><li>DoubleML</li><li>MLflow</li></ul></div>
+      </div>
+    </section>
+
+    <nav class="detail__more" aria-label="Autres projets">
+      <div class="container detail__more-grid">
+        <a class="detail__next" href="reco.html"><span class="detail__dir"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>Projet précédent</span><span class="detail__name">Recommandation produit</span><span class="detail__sector">E-commerce</span></a>
+        <a class="detail__next detail__next--right" href="uplift.html"><span class="detail__dir">Projet suivant<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span><span class="detail__name">Ciblage d’un e-mail</span><span class="detail__sector">E-commerce</span></a>
+      </div>
+    </nav>
+
+    <section class="detail__cta">
+      <div class="container detail__cta-inner">
+        <h2>Un projet du même genre&nbsp;?</h2>
+        <div class="actions">
+          <a class="btn btn--primary" href="../#contact"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>M’écrire</a>
+          <a class="btn" href="../#travaux">Voir les 14 projets</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <div class="container">
+      <p>Luc Obama, Nantes. Chiffres tirés des rapports du projet.</p>
+    </div>
+  </footer>
+
+  <script src="../scripts/site.js" defer></script>
+</body>
+</html>

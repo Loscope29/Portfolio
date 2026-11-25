@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FireProtect, projet de Luc Obama</title>
+  <meta name="description" content="Détecter un départ de feu et déclencher les sirènes. En production chez IBMH Conseils : alarmes, sirènes et notifications.">
+  <meta property="og:title" content="FireProtect, projet de Luc Obama">
+  <meta property="og:description" content="Détecter un départ de feu et déclencher les sirènes.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="fr_FR">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/site.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#main">Aller au contenu</a>
+
+  <header class="bar">
+    <div class="container bar__inner">
+      <a class="wordmark" href="../" aria-label="Luc Obama, accueil du portfolio">Luc Obama</a>
+      <nav class="bar__nav" aria-label="Navigation principale">
+        <a href="../#travaux">Travaux</a>
+        <a href="../#methode">Méthode</a>
+        <a href="../#parcours">Parcours</a>
+        <a class="bar__action" href="../#contact"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="detail">
+    <section class="detail__hero">
+      <div class="container">
+        <nav class="crumbs" aria-label="Fil d’Ariane">
+          <a href="../#travaux"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>Tous les projets</a>
+          <span class="num">01 / 14</span>
+        </nav>
+        <div class="detail__head">
+          <div class="detail__title" data-reveal>
+            <div class="panel__bar">
+              <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>Santé</span>
+              <span class="chip chip--cool">IoT et cloud</span>
+            </div>
+            <h1>FireProtect</h1>
+            <p class="lead">Détecter un départ de feu et déclencher les sirènes.</p>
+            <p class="detail__links"><span class="panel__private"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Réalisé pour IBMH Conseils, code et démo non publics</span></p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <section class="detail__par" aria-label="En bref">
+      <div class="container">
+        <dl class="par par--wide" data-reveal>
+          <div><dt>Problème</dt><dd>Alerter vite, sans fausse alarme, sur des sites de plusieurs clients.</dd></div>
+          <div><dt>Approche</dt><dd>Capteurs LoRaWAN, détection confirmée par plusieurs capteurs, données isolées par client.</dd></div>
+          <div><dt>Résultat</dt><dd>En production chez IBMH Conseils : alarmes, sirènes et notifications.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="detail__viz" aria-label="Chaîne de détection FireProtect">
+      <div class="container">
+        <figure class="viz viz--wide" data-draw>
+          <ol class="chain" aria-label="Chaîne de détection FireProtect">
+            <li class="chain__step" style="--i:0">
+              <span class="chain__name">Capteurs</span><span class="chain__detail">fumée, déclencheur manuel</span>
+            </li>
+            <li class="chain__step" style="--i:1">
+              <span class="chain__name">Réseau LoRaWAN</span><span class="chain__detail">ChirpStack, MQTT</span>
+            </li>
+            <li class="chain__step" style="--i:2">
+              <span class="chain__name">Détection</span><span class="chain__detail">Django, confirmation multi-capteurs</span>
+            </li>
+            <li class="chain__step" style="--i:3">
+              <span class="chain__name">Données</span><span class="chain__detail">PostgreSQL, isolation par client</span>
+            </li>
+            <li class="chain__step" style="--i:4">
+              <span class="chain__name">Action</span><span class="chain__detail">sirènes, relais, notifications</span>
+            </li>
+          </ol>
+          <figcaption>Chaîne de détection FireProtect</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="detail__section" aria-labelledby="contexte">
+      <div class="container split">
+        <h2 id="contexte" data-reveal>Le contexte</h2>
+        <div data-reveal><p>Une plateforme de supervision incendie pour plusieurs clients : détection d’un départ de feu et alertes techniques (batterie, communication) à partir de capteurs LoRaWAN.</p><p>Quand un incendie est confirmé, la plateforme déclenche les actionneurs (sirènes, relais) et prévient les équipes concernées.</p><h3 class="detail__sub">Les données</h3><p>Les trames radio des capteurs : fumée, déclencheur manuel, niveau de batterie et qualité du signal, stockées en séries temporelles.</p></div>
+      </div>
+    </section>
+
+    <section class="detail__section" aria-labelledby="demarche">
+      <div class="container split">
+        <h2 id="demarche" data-reveal>La démarche</h2>
+        <div data-reveal><ol class="detail__steps"><li>Réseau LoRaWAN avec ChirpStack et transmission des trames par MQTT.</li><li>Ingestion et détection dans Django : un incendie est confirmé par plusieurs capteurs avant de déclencher l’alarme.</li><li>PostgreSQL et TimescaleDB, chaque client isolé par Row-Level Security au niveau de la base.</li><li>Interfaces Next.js à trois niveaux : plateforme, client et site.</li><li>Serveur de production sécurisé, conteneurs Docker, HTTPS par Traefik, CI/CD GitHub Actions.</li><li>Supervision de l’infrastructure avec Prometheus et Grafana.</li></ol></div>
+      </div>
+    </section>
+
+    <section class="detail__section detail__results" aria-labelledby="resultats">
+      <div class="container">
+        <h2 id="resultats" data-reveal>Les résultats</h2>
+        <ul class="proofs__list detail__figures" data-reveal>
+          <li class="is-lead"><span class="proofs__val num">3</span><span class="proofs__label">niveaux d’interface : plateforme, client, site</span></li>
+          <li><span class="proofs__val num">RLS</span><span class="proofs__label">isolation des clients dans la base, pas seulement dans le code</span></li>
+        </ul>
+      </div>
+    </section>
+
+
+    <section class="detail__section" aria-labelledby="outils">
+      <div class="container split">
+        <h2 id="outils" data-reveal>Les outils</h2>
+        <div data-reveal><ul class="panel__tools detail__tools"><li>Django</li><li>Next.js</li><li>TimescaleDB</li><li>Traefik</li></ul></div>
+      </div>
+    </section>
+
+    <nav class="detail__more" aria-label="Autres projets">
+      <div class="container detail__more-grid">
+        <a class="detail__next" href="semantic.html"><span class="detail__dir"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>Projet précédent</span><span class="detail__name">SemanticSearchAPI</span><span class="detail__sector">IA générative</span></a>
+        <a class="detail__next detail__next--right" href="celsius.html"><span class="detail__dir">Projet suivant<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span><span class="detail__name">Celsius</span><span class="detail__sector">Santé</span></a>
+      </div>
+    </nav>
+
+    <section class="detail__cta">
+      <div class="container detail__cta-inner">
+        <h2>Un projet du même genre&nbsp;?</h2>
+        <div class="actions">
+          <a class="btn btn--primary" href="../#contact"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>M’écrire</a>
+          <a class="btn" href="../#travaux">Voir les 14 projets</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <div class="container">
+      <p>Luc Obama, Nantes. Chiffres tirés des rapports du projet.</p>
+    </div>
+  </footer>
+
+  <script src="../scripts/site.js" defer></script>
+</body>
+</html>

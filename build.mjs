@@ -6,6 +6,7 @@
 //   SITE_URL       https://ton-domaine.fr (lien canonique, partage, sitemap), facultatif
 import { writeFileSync, mkdirSync, rmSync, cpSync } from 'node:fs';
 import { secteurs, projets } from './content/projets.mjs';
+import { details } from './content/details.mjs';
 
 const SITE_URL = (process.env.SITE_URL || '').replace(/\/+$/, '');
 const EMAIL = (process.env.CONTACT_EMAIL || '').trim();
@@ -97,17 +98,18 @@ const groupes = secteursUtilises.map((s) => {
           </li>`;
 }).join('');
 
-const liens = (p) => p.client
+const liensExternes = (p, classe = 'panel__link') => p.client
   ? `<span class="panel__private">${icone('cadenas', 16)}Réalisé pour ${esc(p.client)}, code et démo non publics</span>`
-  : [p.demo && `<a class="panel__link panel__link--demo" href="${p.demo}">${icone('externe', 16)}Voir la démo</a>`,
-     p.depot && `<a class="panel__link" href="${p.depot}">${icone('github', 16)}Voir le dépôt</a>`].filter(Boolean).join('');
+  : [p.demo && `<a class="${classe} ${classe}--demo" href="${p.demo}">${icone('externe', 16)}Voir la démo</a>`,
+     p.depot && `<a class="${classe}" href="${p.depot}">${icone('github', 16)}Voir le dépôt</a>`].filter(Boolean).join('');
+const liens = (p) => `<a class="panel__link panel__link--page" href="projets/${p.id}.html">Voir le projet${icone('droite', 16)}</a>${liensExternes(p)}`;
 
 const panneaux = ordre.map((p, i) => {
   const prev = ordre[(i - 1 + ordre.length) % ordre.length];
   const next = ordre[(i + 1) % ordre.length];
   const outils = p.pile.split(/,\s*/).map((o) => `<li>${esc(o)}</li>`).join('');
   return `
-        <article class="panel" id="p-${p.id}" data-id="${p.id}" aria-labelledby="t-${p.id}">
+        <article class="panel" id="p-${p.id}" data-id="${p.id}" data-draw aria-labelledby="t-${p.id}">
           <div class="panel__bar">
             <span class="panel__count num">${numero.get(p.id)} / ${pad(ordre.length)}</span>
             <span class="chip">${icone(p.secteur, 14)}${esc(p.secteur)}</span>
@@ -204,8 +206,8 @@ const html = `<!doctype html>
 
       <div class="container hero__inner">
         <div class="hero__text">
-          <h1 id="hero-titre" data-reveal style="--i:0">Data science et IA, du besoin métier à la production.</h1>
-          <p class="hero__lead" data-reveal style="--i:1">Je cadre la question, je construis le modèle qui y répond, je le mets en service.</p>
+          <h1 id="hero-titre" data-reveal style="--i:0">Une question métier, un modèle, un chiffre.</h1>
+          <p class="hero__lead" data-reveal style="--i:1">C’est ainsi que j’ai mené ${ordre.length} projets de data science et d’IA, de l’analyse jusqu’à la mise en production.</p>
           <div class="actions" data-reveal style="--i:2">
             <a class="btn btn--primary" href="#travaux">Voir les ${ordre.length} projets${icone('bas')}</a>
             <a class="btn" href="${MAIL_HREF}">${icone('mail')}M’écrire</a>
@@ -323,6 +325,141 @@ const html = `<!doctype html>
 </html>
 `;
 
+// ---------- Pages de détail, une par projet (projets/<id>.html) ----------
+const pageProjet = (p, i) => {
+  const d = details[p.id] || {};
+  const prev = ordre[(i - 1 + ordre.length) % ordre.length];
+  const next = ordre[(i + 1) % ordre.length];
+  const ecrire = EMAIL ? MAIL_HREF : '../#contact';
+  const outils = p.pile.split(/,\s*/).map((o) => `<li>${esc(o)}</li>`).join('');
+  const contexte = (d.contexte || []).map((t) => `<p>${esc(t)}</p>`).join('');
+  const section = (id, titre, corps) => corps ? `
+    <section class="detail__section" aria-labelledby="${id}">
+      <div class="container split">
+        <h2 id="${id}" data-reveal>${titre}</h2>
+        <div data-reveal>${corps}</div>
+      </div>
+    </section>` : '';
+
+  return `<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${esc(p.nom)}, projet de Luc Obama</title>
+  <meta name="description" content="${esc(p.question)} ${esc(p.resultat)}">
+  <meta property="og:title" content="${esc(p.nom)}, projet de Luc Obama">
+  <meta property="og:description" content="${esc(p.question)}">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="fr_FR">${SITE_URL ? `
+  <link rel="canonical" href="${SITE_URL}/projets/${p.id}">
+  <meta property="og:url" content="${SITE_URL}/projets/${p.id}">` : ''}
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/site.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#main">Aller au contenu</a>
+
+  <header class="bar">
+    <div class="container bar__inner">
+      <a class="wordmark" href="../" aria-label="Luc Obama, accueil du portfolio">Luc Obama</a>
+      <nav class="bar__nav" aria-label="Navigation principale">
+        <a href="../#travaux">Travaux</a>
+        <a href="../#methode">Méthode</a>
+        <a href="../#parcours">Parcours</a>
+        <a class="bar__action" href="../#contact">${icone('mail', 16)}Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="detail">
+    <section class="detail__hero">
+      <div class="container">
+        <nav class="crumbs" aria-label="Fil d’Ariane">
+          <a href="../#travaux">${icone('gauche', 16)}Tous les projets</a>
+          <span class="num">${numero.get(p.id)} / ${pad(ordre.length)}</span>
+        </nav>
+        <div class="detail__head">
+          <div class="detail__title" data-reveal>
+            <div class="panel__bar">
+              <span class="chip">${icone(p.secteur, 14)}${esc(p.secteur)}</span>
+              <span class="chip chip--cool">${esc(p.discipline)}</span>
+            </div>
+            <h1>${esc(p.nom)}</h1>
+            <p class="lead">${esc(p.question)}</p>
+            <p class="detail__links">${liensExternes(p, 'btn')}</p>
+          </div>
+          ${p.mesure ? `<p class="reading detail__reading" data-reveal style="--i:1"><span class="reading__val num">${esc(p.mesure.valeur)}</span><span class="reading__unit">${esc(p.mesure.unite)}</span></p>` : ''}
+        </div>
+      </div>
+    </section>
+
+    <section class="detail__par" aria-label="En bref">
+      <div class="container">
+        <dl class="par par--wide" data-reveal>
+          <div><dt>Problème</dt><dd>${esc(p.probleme)}</dd></div>
+          <div><dt>Approche</dt><dd>${esc(p.approche)}</dd></div>
+          <div><dt>Résultat</dt><dd>${esc(p.resultat)}</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="detail__viz" aria-label="${esc(p.visuel.titre)}">
+      <div class="container">
+        <figure class="viz viz--wide" data-draw>
+          ${visuel(p.visuel)}
+          <figcaption>${esc(p.visuel.titre)}</figcaption>
+        </figure>
+      </div>
+    </section>
+${section('contexte', 'Le contexte', contexte + (d.donnees ? `<h3 class="detail__sub">Les données</h3><p>${esc(d.donnees)}</p>` : ''))}
+${section('demarche', 'La démarche', d.etapes ? `<ol class="detail__steps">${d.etapes.map((e) => `<li>${esc(e)}</li>`).join('')}</ol>` : '')}
+${d.resultats ? `
+    <section class="detail__section detail__results" aria-labelledby="resultats">
+      <div class="container">
+        <h2 id="resultats" data-reveal>Les résultats</h2>
+        <ul class="proofs__list detail__figures" data-reveal>${d.resultats.map(([v, l], k) => `
+          <li${k === 0 ? ' class="is-lead"' : ''}><span class="proofs__val num">${esc(v)}</span><span class="proofs__label">${esc(l)}</span></li>`).join('')}
+        </ul>
+      </div>
+    </section>` : ''}
+${section('limites', 'Les limites', d.limites ? `<ul class="detail__limits">${d.limites.map((l) => `<li>${esc(l)}</li>`).join('')}</ul>` : '')}
+${section('outils', 'Les outils', `<ul class="panel__tools detail__tools">${outils}</ul>`)}
+
+    <nav class="detail__more" aria-label="Autres projets">
+      <div class="container detail__more-grid">
+        <a class="detail__next" href="${prev.id}.html"><span class="detail__dir">${icone('gauche', 16)}Projet précédent</span><span class="detail__name">${esc(prev.nom)}</span><span class="detail__sector">${esc(prev.secteur)}</span></a>
+        <a class="detail__next detail__next--right" href="${next.id}.html"><span class="detail__dir">Projet suivant${icone('droite', 16)}</span><span class="detail__name">${esc(next.nom)}</span><span class="detail__sector">${esc(next.secteur)}</span></a>
+      </div>
+    </nav>
+
+    <section class="detail__cta">
+      <div class="container detail__cta-inner">
+        <h2>Un projet du même genre&nbsp;?</h2>
+        <div class="actions">
+          <a class="btn btn--primary" href="${ecrire}">${icone('mail')}M’écrire</a>
+          <a class="btn" href="../#travaux">Voir les ${ordre.length} projets</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <div class="container">
+      <p>Luc Obama, Nantes. Chiffres tirés des rapports du projet.</p>
+    </div>
+  </footer>
+
+  <script src="../scripts/site.js" defer></script>
+</body>
+</html>
+`;
+};
+
 // Page 404, avec des chemins absolus car elle est servie à n'importe quelle adresse
 const page404 = `<!doctype html>
 <html lang="fr">
@@ -355,7 +492,8 @@ const page404 = `<!doctype html>
 const robots = `User-agent: *\nAllow: /\n${SITE_URL ? `Sitemap: ${SITE_URL}/sitemap.xml\n` : ''}`;
 const sitemap = SITE_URL && `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>${SITE_URL}/</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod></url>
+  <url><loc>${SITE_URL}/</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod></url>${ordre.map((p) => `
+  <url><loc>${SITE_URL}/projets/${p.id}</loc></url>`).join('')}
 </urlset>
 `;
 
@@ -363,6 +501,10 @@ const sitemap = SITE_URL && `<?xml version="1.0" encoding="UTF-8"?>
 const racine = (f) => new URL(`./${f}`, import.meta.url);
 writeFileSync(racine('index.html'), html);
 writeFileSync(racine('404.html'), page404);
+const pages = ordre.map((p, i) => [p.id, pageProjet(p, i)]);
+rmSync(racine('projets/'), { recursive: true, force: true });
+mkdirSync(racine('projets/'), { recursive: true });
+for (const [id, page] of pages) writeFileSync(racine(`projets/${id}.html`), page);
 
 // Dossier mis en ligne : uniquement ce que le visiteur doit recevoir
 const dist = racine('dist/');
@@ -372,8 +514,10 @@ writeFileSync(new URL('index.html', dist), html);
 writeFileSync(new URL('404.html', dist), page404);
 writeFileSync(new URL('robots.txt', dist), robots);
 if (sitemap) writeFileSync(new URL('sitemap.xml', dist), sitemap);
+mkdirSync(new URL('projets/', dist), { recursive: true });
+for (const [id, page] of pages) writeFileSync(new URL(`projets/${id}.html`, dist), page);
 for (const f of ['favicon.svg', 'styles', 'scripts']) cpSync(racine(f), new URL(f, dist), { recursive: true });
 
-console.log(`index.html : ${ordre.length} projets, ${secteursUtilises.length} secteurs.`);
+console.log(`index.html : ${ordre.length} projets, ${secteursUtilises.length} secteurs, ${pages.length} pages de détail.`);
 if (!EMAIL) console.log('CONTACT_EMAIL non défini : la ligne e-mail est masquée et « M’écrire » mène à la section Contact.');
 console.log(`dist/ prêt${SITE_URL ? ` pour ${SITE_URL}` : ' (SITE_URL non défini : pas de lien canonique ni de sitemap)'}.`);

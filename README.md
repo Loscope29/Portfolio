@@ -88,6 +88,23 @@ visuel: {
 
 Ajouter `retrait: true` pour une hiérarchie (chaque étape décalée sous la précédente).
 
+### La page de détail du projet
+
+Chaque projet a sa page, générée dans `projets/<id>.html` (en ligne : `/projets/<id>`). Elle reprend la
+fiche et y ajoute ce que tu écris dans `content/details.mjs`, sous la même `id` :
+
+```js
+fraude: {
+  contexte: ['La situation et l’enjeu, en un ou deux paragraphes.'],
+  donnees: 'D’où viennent les données et ce qu’elles contiennent.',
+  etapes: ['Exploration', 'Modèle XGBoost', 'API FastAPI sur Cloud Run'],
+  resultats: [['82 %', 'des fraudes détectées sur le test']],
+  limites: ['Ce que le projet ne prouve pas encore.'],
+},
+```
+
+Tous ces champs sont facultatifs : une section vide n’apparaît pas.
+
 ## Ajouter un secteur
 
 Ajouter son nom dans la liste `secteurs` en haut de `content/projets.mjs`. L'ordre de la liste est l'ordre
@@ -123,6 +140,8 @@ vercel --prod
 | Fichier | Rôle |
 |---|---|
 | `content/projets.mjs` | les projets et les secteurs |
+| `content/details.mjs` | le contenu des pages de détail |
+| `projets/` | pages de détail générées, ne pas modifier à la main |
 | `build.mjs` | génère `index.html`, `404.html` et `dist/` (textes du hero, compétences, parcours, contact : à modifier ici) |
 | `vercel.json` | réglages de déploiement |
 | `dist/` | généré, ne pas modifier à la main |

@@ -10,6 +10,14 @@
   }), { rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
 
+  /* ---------- Pages projet : le graphique se dessine quand il apparaît ---------- */
+  const draw = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add('is-active'); draw.unobserve(e.target); }
+  }), { threshold: 0.25 });
+  document.querySelectorAll('[data-draw]:not(.panel)').forEach((el) => {
+    if (document.hidden) el.classList.add('is-active'); else draw.observe(el);
+  });
+
   /* ---------- Index : une ligne choisie dessine sa fiche ---------- */
   const rows = [...document.querySelectorAll('.row')];
   const panels = new Map([...document.querySelectorAll('.panel')].map((p) => [p.dataset.id, p]));
