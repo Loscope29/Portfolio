@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luc Obama, data scientist et AI engineer à Nantes</title>
+  <meta name="description" content="Luc Obama, data scientist et AI engineer à Nantes : 14 projets livrés dans 6 secteurs, du modèle mesuré au service en production.">
+  <meta property="og:title" content="Luc Obama, data scientist et AI engineer">
+  <meta property="og:description" content="Je transforme une question métier en modèle mesuré, puis en service en production.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/site.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#main">Aller au contenu</a>
+
+  <header class="bar">
+    <div class="container bar__inner">
+      <a class="wordmark" href="#main" aria-label="Luc Obama, retour en haut">Luc Obama</a>
+      <nav class="bar__nav" aria-label="Navigation principale">
+        <a href="#travaux">Travaux</a>
+        <a href="#methode">Méthode</a>
+        <a href="#parcours">Parcours</a>
+        <a class="bar__action" href="#contact"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-titre" data-loop>
+      <canvas class="hero__cloud" role="img" aria-label="Nuage en trois dimensions : chaque point lumineux est un projet, regroupé par secteur. Cliquer un point ouvre sa fiche."></canvas>
+      <script type="application/json" id="cloud-data">{"secteurs":["Santé","E-commerce","Banque et finance","Grande distribution","Immobilier","IA générative"],"projets":[{"id":"fireprotect","nom":"FireProtect","secteur":"Santé"},{"id":"celsius","nom":"Celsius","secteur":"Santé"},{"id":"medicalrisk","nom":"MedicalRiskAPI","secteur":"Santé"},{"id":"diabete","nom":"Risque de diabète","secteur":"Santé"},{"id":"reco","nom":"Recommandation produit","secteur":"E-commerce"},{"id":"pricing","nom":"Prix d’une marketplace","secteur":"E-commerce"},{"id":"uplift","nom":"Ciblage d’un e-mail","secteur":"E-commerce"},{"id":"churn","nom":"Attrition bancaire","secteur":"Banque et finance"},{"id":"bourse","nom":"Chatbot boursier","secteur":"Banque et finance"},{"id":"demande","nom":"Demande par magasin","secteur":"Grande distribution"},{"id":"logement","nom":"Prix des logements","secteur":"Immobilier"},{"id":"rag","nom":"Assistant RAG personnel","secteur":"IA générative"},{"id":"atelier","nom":"Atelier voix et documents","secteur":"IA générative"},{"id":"semantic","nom":"SemanticSearchAPI","secteur":"IA générative"}]}</script>
+
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <h1 id="hero-titre" data-reveal style="--i:0">Data science et IA, du besoin métier à la production.</h1>
+          <p class="hero__lead" data-reveal style="--i:1">Je cadre la question, je construis le modèle qui y répond, je le mets en service.</p>
+          <div class="actions" data-reveal style="--i:2">
+            <a class="btn btn--primary" href="#travaux">Voir les 14 projets<svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></a>
+            <a class="btn" href="#contact"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>M’écrire</a>
+          </div>
+          <p class="hero__status" data-reveal style="--i:3"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Nantes, ouvert à une alternance, un CDI ou une mission.</p>
+        </div>
+      </div>
+
+      <div class="hero__foot">
+        <div class="container hero__foot-inner">
+          <p>Chaque point est un projet, groupé par secteur. Glissez pour faire pivoter.</p>
+          <button class="hero__toggle" type="button" data-loop-toggle aria-pressed="false">Pause</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="proofs" aria-label="Résultats clés">
+      <div class="container">
+        <ul class="proofs__list" data-reveal>
+          <li class="is-lead"><span class="proofs__val num">71 %</span><span class="proofs__label">des départs clients détectés, en banque</span></li>
+          <li><span class="proofs__val num">+4,3 pts</span><span class="proofs__label">de hit@10 face à la meilleure référence, en e-commerce</span></li>
+          <li><span class="proofs__val num">2</span><span class="proofs__label">plateformes IoT en production, en santé</span></li>
+          <li><span class="proofs__val num">3</span><span class="proofs__label">clouds pour un même assistant RAG : AWS, GCP, Azure</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="work" id="travaux" aria-labelledby="travaux-titre">
+      <div class="container">
+        <div class="work__head" data-reveal>
+          <h2 id="travaux-titre">Ce que j’ai livré, secteur par secteur.</h2>
+          <p class="lead">Chaque projet part d’une question métier et se termine par un chiffre. Choisissez-en un.</p>
+        </div>
+        <div class="work__grid">
+          <ol class="index" data-reveal>
+          <li class="group">
+            <h3 class="group__name"><span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>Santé</span><span class="num">04</span></h3>
+            <ul class="group__rows">
+              <li><a class="row" href="#p-fireprotect" data-id="fireprotect" aria-controls="p-fireprotect"><span class="row__num num">01</span><span class="row__name">FireProtect</span></a></li>
+              <li><a class="row" href="#p-celsius" data-id="celsius" aria-controls="p-celsius"><span class="row__num num">02</span><span class="row__name">Celsius</span></a></li>
+              <li><a class="row" href="#p-medicalrisk" data-id="medicalrisk" aria-controls="p-medicalrisk"><span class="row__num num">03</span><span class="row__name">MedicalRiskAPI</span></a></li>
+              <li><a class="row" href="#p-diabete" data-id="diabete" aria-controls="p-diabete"><span class="row__num num">04</span><span class="row__name">Risque de diabète</span></a></li>
+            </ul>
+          </li>
+          <li class="group">
+            <h3 class="group__name"><span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>E-commerce</span><span class="num">03</span></h3>
+            <ul class="group__rows">
+              <li><a class="row" href="#p-reco" data-id="reco" aria-controls="p-reco"><span class="row__num num">05</span><span class="row__name">Recommandation produit</span></a></li>
+              <li><a class="row" href="#p-pricing" data-id="pricing" aria-controls="p-pricing"><span class="row__num num">06</span><span class="row__name">Prix d’une marketplace</span></a></li>
+              <li><a class="row" href="#p-uplift" data-id="uplift" aria-controls="p-uplift"><span class="row__num num">07</span><span class="row__name">Ciblage d’un e-mail</span></a></li>
+            </ul>
+          </li>
+          <li class="group">
+            <h3 class="group__name"><span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>Banque et finance</span><span class="num">02</span></h3>
+            <ul class="group__rows">
+              <li><a class="row" href="#p-churn" data-id="churn" aria-controls="p-churn"><span class="row__num num">08</span><span class="row__name">Attrition bancaire</span></a></li>
+              <li><a class="row" href="#p-bourse" data-id="bourse" aria-controls="p-bourse"><span class="row__num num">09</span><span class="row__name">Chatbot boursier</span></a></li>
+            </ul>
+          </li>
+          <li class="group">
+            <h3 class="group__name"><span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 2.004 0L20.7 7"/></svg>Grande distribution</span><span class="num">01</span></h3>
+            <ul class="group__rows">
+              <li><a class="row" href="#p-demande" data-id="demande" aria-controls="p-demande"><span class="row__num num">10</span><span class="row__name">Demande par magasin</span></a></li>
+            </ul>
+          </li>
+          <li class="group">
+            <h3 class="group__name"><span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Immobilier</span><span class="num">01</span></h3>
+            <ul class="group__rows">
+              <li><a class="row" href="#p-logement" data-id="logement" aria-controls="p-logement"><span class="row__num num">11</span><span class="row__name">Prix des logements</span></a></li>
+            </ul>
+          </li>
+          <li class="group">
+            <h3 class="group__name"><span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>IA générative</span><span class="num">03</span></h3>
+            <ul class="group__rows">
+              <li><a class="row" href="#p-rag" data-id="rag" aria-controls="p-rag"><span class="row__num num">12</span><span class="row__name">Assistant RAG personnel</span></a></li>
+              <li><a class="row" href="#p-atelier" data-id="atelier" aria-controls="p-atelier"><span class="row__num num">13</span><span class="row__name">Atelier voix et documents</span></a></li>
+              <li><a class="row" href="#p-semantic" data-id="semantic" aria-controls="p-semantic"><span class="row__num num">14</span><span class="row__name">SemanticSearchAPI</span></a></li>
+            </ul>
+          </li>
+          </ol>
+          <div class="stage" aria-live="polite">
+        <article class="panel" id="p-fireprotect" data-id="fireprotect" aria-labelledby="t-fireprotect">
+          <div class="panel__bar">
+            <span class="panel__count num">01 / 14</span>
+            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>Santé</span>
+            <span class="chip chip--cool">IoT et cloud</span>
+            <span class="panel__nav">
+              <a class="panel__step" href="#p-semantic" data-go="semantic" aria-label="Projet précédent : SemanticSearchAPI"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+              <a class="panel__step" href="#p-celsius" data-go="celsius" aria-label="Projet suivant : Celsius"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+            </span>
+          </div>
+          <div class="panel__head">
+            <div class="panel__heading">
+              <h3 class="panel__title" id="t-fireprotect">FireProtect</h3>
+              <p class="panel__q">Détecter un départ de feu et déclencher les sirènes.</p>
+            </div>
+            
+          </div>
+          <div class="panel__body">
+            <dl class="par">
+              <div><dt>Problème</dt><dd>Alerter vite, sans fausse alarme, sur des sites de plusieurs clients.</dd></div>
+              <div><dt>Approche</dt><dd>Capteurs LoRaWAN, détection confirmée par plusieurs capteurs, données isolées par client.</dd></div>
+              <div><dt>Résultat</dt><dd>En production chez IBMH Conseils : alarmes, sirènes et notifications.</dd></div>
+            </dl>
+            <figure class="viz">
+            <ol class="chain" aria-label="Chaîne de détection FireProtect">
+            <li class="chain__step" style="--i:0">
+              <span class="chain__name">Capteurs</span><span class="chain__detail">fumée, déclencheur manuel</span>
+            </li>
+            <li class="chain__step" style="--i:1">
+              <span class="chain__name">Réseau LoRaWAN</span><span class="chain__detail">ChirpStack, MQTT</span>
+            </li>
+            <li class="chain__step" style="--i:2">
+              <span class="chain__name">Détection</span><span class="chain__detail">Django, confirmation multi-capteurs</span>
+            </li>
+            <li class="chain__step" style="--i:3">
+              <span class="chain__name">Données</span><span class="chain__detail">PostgreSQL, isolation par client</span>
+            </li>
+            <li class="chain__step" style="--i:4">
+              <span class="chain__name">Action</span><span class="chain__detail">sirènes, relais, notifications</span>
+            </li>
+          </ol>
+              <figcaption>Chaîne de détection FireProtect</figcaption>
+            </figure>
+          </div>
+          <div class="panel__foot">
+            <ul class="panel__tools" aria-label="Outils"><li>Django</li><li>Next.js</li><li>TimescaleDB</li><li>Traefik</li></ul>
+            <p class="panel__links"><span class="panel__private"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Réalisé pour IBMH Conseils, code et démo non publics</span></p>
+          </div>
+        </article>
+        <article class="panel" id="p-celsius" data-id="celsius" aria-labelledby="t-celsius">
+          <div class="panel__bar">
+            <span class="panel__count num">02 / 14</span>
+            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>Santé</span>
+            <span class="chip chip--cool">IoT et cloud</span>
+            <span class="panel__nav">
+              <a class="panel__step" href="#p-fireprotect" data-go="fireprotect" aria-label="Projet précédent : FireProtect"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+              <a class="panel__step" href="#p-medicalrisk" data-go="medicalrisk" aria-label="Projet suivant : MedicalRiskAPI"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+            </span>
+          </div>
+          <div class="panel__head">
+            <div class="panel__heading">
+              <h3 class="panel__title" id="t-celsius">Celsius</h3>
+              <p class="panel__q">Surveiller la chaîne du froid, jusqu’aux groupes hospitaliers.</p>
+            </div>
+            
+          </div>
+          <div class="panel__body">
+            <dl class="par">
+              <div><dt>Problème</dt><dd>Prouver que la chaîne du froid tient, du frigo à la chambre froide.</dd></div>
+              <div><dt>Approche</dt><dd>Capteurs de température LoRaWAN, organisation client, site, bâtiment, local, alertes de seuil.</dd></div>
+              <div><dt>Résultat</dt><dd>En production chez IBMH Conseils, pour des clients répartis sur plusieurs sites.</dd></div>
+            </dl>
+            <figure class="viz">
+            <ol class="chain chain--tree" aria-label="Organisation d’un client Celsius">
+            <li class="chain__step" style="--i:0; --r:0">
+              <span class="chain__name">Client</span><span class="chain__detail">par exemple un groupe hospitalier</span>
+            </li>
+            <li class="chain__step" style="--i:1; --r:1">
+              <span class="chain__name">Site</span><span class="chain__detail">plusieurs par client</span>
+            </li>
+            <li class="chain__step" style="--i:2; --r:2">
+              <span class="chain__name">Bâtiment</span>
+            </li>
+            <li class="chain__step" style="--i:3; --r:3">
+              <span class="chain__name">Étage</span>
+            </li>
+            <li class="chain__step" style="--i:4; --r:4">
+              <span class="chain__name">Local</span><span class="chain__detail">frigo, congélateur, chambre froide</span>
+            </li>
+          </ol>
+              <figcaption>Organisation d’un client Celsius</figcaption>
+            </figure>
+          </div>
+          <div class="panel__foot">
+            <ul class="panel__tools" aria-label="Outils"><li>LoRaWAN</li><li>ChirpStack</li><li>Docker</li><li>GitHub Actions</li></ul>
+            <p class="panel__links"><span class="panel__private"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Réalisé pour IBMH Conseils, code et démo non publics</span></p>
+          </div>
+        </article>
+        <article class="panel" id="p-medicalrisk" data-id="medicalrisk" aria-labelledby="t-medicalrisk">
+          <div class="panel__bar">
+            <span class="panel__count num">03 / 14</span>
+            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>Santé</span>
+            <span class="chip chip--cool">Data science</span>
+            <span class="panel__nav">
+              <a class="panel__step" href="#p-celsius" data-go="celsius" aria-label="Projet précédent : Celsius"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+              <a class="panel__step" href="#p-diabete" data-go="diabete" aria-label="Projet suivant : Risque de diabète"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+            </span>
+          </div>
+          <div class="panel__head">
+            <div class="panel__heading">
+              <h3 class="panel__title" id="t-medicalrisk">MedicalRiskAPI</h3>
+              <p class="panel__q">Servir un score de risque médical en aide à la décision.</p>
+            </div>
+            
+          </div>
+          <div class="panel__body">
+            <dl class="par">
+              <div><dt>Problème</dt><dd>Donner au soignant un score de risque exploitable.</dd></div>
+              <div><dt>Approche</dt><dd>Un modèle de machine learning servi par une API Flask.</dd></div>
+              <div><dt>Résultat</dt><dd>Un score renvoyé à la demande ; la décision reste humaine.</dd></div>
+            </dl>
+            <figure class="viz">
+            <ol class="chain" aria-label="Service MedicalRiskAPI">
+            <li class="chain__step" style="--i:0">
+              <span class="chain__name">Données patient</span><span class="chain__detail">requête à l’API</span>
+            </li>
+            <li class="chain__step" style="--i:1">
+              <span class="chain__name">Modèle de risque</span><span class="chain__detail">machine learning</span>
+            </li>
+            <li class="chain__step" style="--i:2">
+              <span class="chain__name">API Flask</span><span class="chain__detail">score renvoyé</span>
+            </li>
+            <li class="chain__step" style="--i:3">
+              <span class="chain__name">Décision</span><span class="chain__detail">reste au soignant</span>
+            </li>
+          </ol>
+              <figcaption>Service MedicalRiskAPI</figcaption>
+            </figure>
+          </div>
+          <div class="panel__foot">
+            <ul class="panel__tools" aria-label="Outils"><li>Machine learning</li><li>Flask</li></ul>
+            <p class="panel__links"></p>
+          </div>
+        </article>
+        <article class="panel" id="p-diabete" data-id="diabete" aria-labelledby="t-diabete">
+          <div class="panel__bar">
+            <span class="panel__count num">04 / 14</span>
+            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>Santé</span>
+            <span class="chip chip--cool">Data science</span>
+            <span class="panel__nav">
+              <a class="panel__step" href="#p-medicalrisk" data-go="medicalrisk" aria-label="Projet précédent : MedicalRiskAPI"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+              <a class="panel__step" href="#p-reco" data-go="reco" aria-label="Projet suivant : Recommandation produit"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+            </span>
+          </div>
+          <div class="panel__head">
+            <div class="panel__heading">
+              <h3 class="panel__title" id="t-diabete">Risque de diabète</h3>
+              <p class="panel__q">Estimer un risque de diabète depuis des indicateurs de santé.</p>
+            </div>
+            
+          </div>
+          <div class="panel__body">
+            <dl class="par">
+              <div><dt>Problème</dt><dd>Repérer les personnes à risque de diabète.</dd></div>
+              <div><dt>Approche</dt><dd>Un réseau de neurones Keras entraîné sur l’enquête de santé BRFSS 2015.</dd></div>
+              <div><dt>Résultat</dt><dd>Un score de risque par personne.</dd></div>
+            </dl>
+            <figure class="viz">
+            <ol class="chain" aria-label="Modèle de risque de diabète">
+            <li class="chain__step" style="--i:0">
+              <span class="chain__name">Indicateurs</span><span class="chain__detail">enquête BRFSS 2015</span>
+            </li>
+            <li class="chain__step" style="--i:1">
+              <span class="chain__name">Réseau de neurones</span><span class="chain__detail">Keras</span>
+            </li>
+            <li class="chain__step" style="--i:2">
+              <span class="chain__name">Risque estimé</span><span class="chain__detail">par personne</span>
+            </li>
+          </ol>
+              <figcaption>Modèle de risque de diabète</figcaption>
+            </figure>
+          </div>
+          <div class="panel__foot">
+            <ul class="panel__tools" aria-label="Outils"><li>Keras</li><li>enquête BRFSS 2015</li></ul>
+            <p class="panel__links"><a class="panel__link" href="https://github.com/Loscope29/SN_NLP"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Voir le dépôt</a></p>
+          </div>
+        </article>
+        <article class="panel" id="p-reco" data-id="reco" aria-labelledby="t-reco">
+          <div class="panel__bar">
+            <span class="panel__count num">05 / 14</span>
+            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>E-commerce</span>
+            <span class="chip chip--cool">Data science</span>
+            <span class="panel__nav">
+              <a class="panel__step" href="#p-diabete" data-go="diabete" aria-label="Projet précédent : Risque de diabète"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+              <a class="panel__step" href="#p-pricing" data-go="pricing" aria-label="Projet suivant : Prix d’une marketplace"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+            </span>
+          </div>
+          <div class="panel__head">
+            <div class="panel__heading">
+              <h3 class="panel__title" id="t-reco">Recommandation produit</h3>
+              <p class="panel__q">Quels dix produits montrer pendant la visite ?</p>
+            </div>
+            <p class="reading"><span class="reading__val num">30,6 %</span><span class="reading__unit">hit@10 sur le test</span></p>
+          </div>
+          <div class="panel__body">
+            <dl class="par">
+              <div><dt>Problème</dt><dd>Montrer, pendant la visite, des produits que le client n’aurait pas trouvés seul.</dd></div>
+              <div><dt>Approche</dt><dd>Candidats par co-visitation, reclassés par un ranker LightGBM à deux étages.</dd></div>
+              <div><dt>Résultat</dt><dd>30,6 % de hit@10 sur le test, +4,3 pts face à la co-visitation.</dd></div>
+            </dl>
+            <figure class="viz">
+            <ol class="bars" aria-label="hit@10 sur le test, RetailRocket, 14 jours">
+            <li class="bars__row" style="--i:0; --v:0.0171">
+              <span class="bars__label">Popularité globale</span>
+              <span class="bars__track"><span class="bars__bar"></span><span class="bars__val num">0,6 %</span></span>
+            </li>
+            <li class="bars__row" style="--i:1; --v:0.1057">
+              <span class="bars__label">ALS</span>
+              <span class="bars__track"><span class="bars__bar"></span><span class="bars__val num">3,7 %</span></span>
+            </li>
+            <li class="bars__row" style="--i:2; --v:0.3886">
+              <span class="bars__label">Populaires de la catégorie</span>
+              <span class="bars__track"><span class="bars__bar"></span><span class="bars__val num">13,6 %</span></span>
+            </li>
+            <li class="bars__row" style="--i:3; --v:0.7514">
+              <span class="bars__label">Co-visitation</span>
+              <span class="bars__track"><span class="bars__bar"></span><span class="bars__val num">26,3 %</span></span>
+            </li>
+            <li class="bars__row is-lead" style="--i:4; --v:0.8743">
+              <span class="bars__label">Ranker LightGBM</span>
+              <span class="bars__track"><span class="bars__bar"></span><span class="bars__val num">30,6 %</span></span>
+            </li>
+          </ol>
+              <figcaption>hit@10 sur le test, RetailRocket, 14 jours</figcaption>
+            </figure>
+          </div>
+          <div class="panel__foot">
+            <ul class="panel__tools" aria-label="Outils"><li>LightGBM LambdaRank</li><li>FastAPI</li><li>Docker</li></ul>
+            <p class="panel__links"></p>
+          </div>
+        </article>
+        <article class="panel" id="p-pricing" data-id="pricing" aria-labelledby="t-pricing">
+          <div class="panel__bar">
+            <span class="panel__count num">06 / 14</span>
+            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>E-commerce</span>
+            <span class="chip chip--cool">Data science</span>
+            <span class="panel__nav">
+              <a class="panel__step" href="#p-reco" data-go="reco" aria-label="Projet précédent : Recommandation produit"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+              <a class="panel__step" href="#p-uplift" data-go="uplift" aria-label="Projet suivant : Ciblage d’un e-mail"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+            </span>
+          </div>
+          <div class="panel__head">
+            <div class="panel__heading">
+              <h3 class="panel__title" id="t-pricing">Prix d’une marketplace</h3>
+              <p class="panel__q">De combien la demande suit-elle le prix ?</p>
+            </div>
+            <p class="reading"><span class="reading__val num">−0,75</span><span class="reading__unit">élasticité-prix retenue</span></p>
+          </div>
+          <div class="panel__body">
+            <dl class="par">
+              <div><dt>Problème</dt><dd>Savoir si les prix d’Olist laissent de la marge sur la table.</dd></div>
+              <div><dt>Approche</dt><dd>Six estimateurs de l’élasticité ; référence en effets fixes produit × mois.</dd></div>
+              <div><dt>Résultat</dt><dd>Élasticité de −0,75 : des prix sous l’optimum, livrés comme plan de test A/B.</dd></div>
+            </dl>
+            <figure class="viz">
+            <ol class="dots" aria-label="Élasticité-prix selon l’estimateur, Olist">
+            <li class="dots__row" style="--i:0; --x:0.9900">
+              <span class="dots__label">OLS poolée</span>
+              <span class="dots__track"><span class="dots__dot"></span><span class="dots__val num">−0,02</span></span>
+            </li>
+            <li class="dots__row" style="--i:1; --x:0.9900">
+              <span class="dots__label">Effets fixes catégorie</span>
+              <span class="dots__track"><span class="dots__dot"></span><span class="dots__val num">−0,02</span></span>
+            </li>
+            <li class="dots__row" style="--i:2; --x:0.9400">
+              <span class="dots__label">DoubleML naïf</span>
+              <span class="dots__track"><span class="dots__dot"></span><span class="dots__val num">−0,12</span></span>
+            </li>
+            <li class="dots__row" style="--i:3; --x:0.6350">
+              <span class="dots__label">DoubleML après absorption</span>
+              <span class="dots__track"><span class="dots__dot"></span><span class="dots__val num">−0,73</span></span>
+            </li>
+            <li class="dots__row is-lead" style="--i:4; --x:0.6250">
+              <span class="dots__label">Effets fixes produit × mois</span>
+              <span class="dots__track"><span class="dots__dot"></span><span class="dots__val num">−0,75</span></span>
+            </li>
+            <li class="dots__row" style="--i:5; --x:0.0950">
+              <span class="dots__label">Poisson PPML, best-sellers</span>
+              <span class="dots__track"><span class="dots__dot"></span><span class="dots__val num">−1,81</span></span>
+            </li>
+          </ol>
+          <div class="dots__axis" aria-hidden="true"><span></span><span class="dots__ticks"><span class="dots__tick num" style="--x:0.0000">−2,0</span><span class="dots__tick num" style="--x:0.2500">−1,5</span><span class="dots__tick num" style="--x:0.5000">−1,0</span><span class="dots__tick num" style="--x:0.7500">−0,5</span><span class="dots__tick num" style="--x:1.0000">0</span></span></div>
+              <figcaption>Élasticité-prix selon l’estimateur, Olist</figcaption>
+            </figure>
+          </div>
+          <div class="panel__foot">
+            <ul class="panel__tools" aria-label="Outils"><li>Économétrie</li><li>DoubleML</li><li>MLflow</li></ul>
+            <p class="panel__links"><a class="panel__link" href="https://github.com/Loscope29/Dynamic-Pricing"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Voir le dépôt</a></p>
+          </div>
+        </article>
+        <article class="panel" id="p-uplift" data-id="uplift" aria-labelledby="t-uplift">
+          <div class="panel__bar">
+            <span class="panel__count num">07 / 14</span>
+            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>E-commerce</span>
+            <span class="chip chip--cool">Data science</span>
+            <span class="panel__nav">
+              <a class="panel__step" href="#p-pricing" data-go="pricing" aria-label="Projet précédent : Prix d’une marketplace"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+              <a class="panel__step" href="#p-churn" data-go="churn" aria-label="Projet suivant : Attrition bancaire"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+            </span>
+          </div>
+          <div class="panel__head">
+            <div class="panel__heading">
+              <h3 class="panel__title" id="t-uplift">Ciblage d’un e-mail</h3>
+              <p class="panel__q">Pour qui l’e-mail change-t-il vraiment quelque chose ?</p>
+            </div>
+            <p class="reading"><span class="reading__val num">+0,55 pt</span><span class="reading__unit">de visites, budget de 10 %</span></p>
+          </div>
+          <div class="panel__body">
+            <dl class="par">
+              <div><dt>Problème</dt><dd>Ne plus écrire à ceux qui achèteraient de toute façon.</dd></div>
+              <div><dt>Approche</dt><dd>Uplift modeling, T-learner et X-learner, sur un essai randomisé de 64 000 clients.</dd></div>
+              <div><dt>Résultat</dt><dd>+0,55 pt de visites à 10 % du budget : environ deux fois plus de visites par e-mail.</dd></div>
+            </dl>
+            <figure class="viz">
+            <ol class="bars" aria-label="Effet de l’e-mail sur le taux de visite, en points">
+            <li class="bars__row" style="--i:0; --v:0.3214">
+              <span class="bars__label">E-mail femme</span>
+              <span class="bars__track"><span class="bars__bar"></span><span class="bars__val num">+4,5</span></span>
+            </li>
+            <li class="bars__row" style="--i:1; --v:0.5500">
+              <span class="bars__label">E-mail homme</span>
+              <span class="bars__track"><span class="bars__bar"></span><span class="bars__val num">+7,7</span></span>
+            </li>
+            <li class="bars__row is-lead" style="--i:2; --v:0.8714">
+              <span class="bars__label">Homme, clients des deux collections</span>
+              <span class="bars__track"><span class="bars__bar"></span><span class="bars__val num">+12,2</span></span>
+            </li>
+          </ol>
+              <figcaption>Effet de l’e-mail sur le taux de visite, en points</figcaption>
+            </figure>
+          </div>
+          <div class="panel__foot">
+            <ul class="panel__tools" aria-label="Outils"><li>Uplift</li><li>T-learner</li><li>X-learner</li><li>FastAPI</li></ul>
+            <p class="panel__links"></p>
+          </div>
+        </article>
+        <article class="panel" id="p-churn" data-id="churn" aria-labelledby="t-churn">
+          <div class="panel__bar">
+            <span class="panel__count num">08 / 14</span>
+            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>Banque et finance</span>
+            <span class="chip chip--cool">Data science</span>
+            <span class="panel__nav">
+              <a class="panel__step" href="#p-uplift" data-go="uplift" aria-label="Projet précédent : Ciblage d’un e-mail"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+              <a class="panel__step" href="#p-bourse" data-go="bourse" aria-label="Projet suivant : Chatbot boursier"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+            </span>
+          </div>
+          <div class="panel__head">
+            <div class="panel__heading">
+              <h3 class="panel__title" id="t-churn">Attrition bancaire</h3>
+              <p class="panel__q">Quels clients vont partir, et pourquoi ?</p>
+            </div>
+            <p class="reading"><span class="reading__val num">71 %</span><span class="reading__unit">des départs détectés</span></p>
+          </div>
+          <div class="panel__body">
+            <dl class="par">
+              <div><dt>Problème</dt><dd>Repérer les clients sur le départ assez tôt pour les retenir.</dd></div>
+              <div><dt>Approche</dt><dd>Random Forest, lecture SHAP des causes : âge, inactivité, nombre de produits.</dd></div>
+              <div><dt>Résultat</dt><dd>7 départs sur 10 repérés au seuil de 0,5, avec une précision de 54,3 %.</dd></div>
+            </dl>
+            <figure class="viz">
+            <ol class="bars" aria-label="Évaluation au seuil de 0,5">
+            <li class="bars__row" style="--i:0; --v:0.8200">
+              <span class="bars__label">Exactitude</span>
+              <span class="bars__track"><span class="bars__bar"></span><span class="bars__val num">82 %</span></span>
+            </li>
+            <li class="bars__row is-lead" style="--i:1; --v:0.7100">
+              <span class="bars__label">Rappel, départs détectés</span>
+              <span class="bars__track"><span class="bars__bar"></span><span class="bars__val num">71 %</span></span>
+            </li>
+            <li class="bars__row" style="--i:2; --v:0.5430">
+              <span class="bars__label">Précision</span>
+              <span class="bars__track"><span class="bars__bar"></span><span class="bars__val num">54,3 %</span></span>
+            </li>
+          </ol>
+              <figcaption>Évaluation au seuil de 0,5</figcaption>
+            </figure>
+          </div>
+          <div class="panel__foot">
+            <ul class="panel__tools" aria-label="Outils"><li>Random Forest</li><li>SHAP</li><li>FastAPI</li><li>Docker</li></ul>
+            <p class="panel__links"><a class="panel__link" href="https://github.com/Loscope29/Churn-Prediction"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Voir le dépôt</a></p>
+          </div>
+        </article>
+        <article class="panel" id="p-bourse" data-id="bourse" aria-labelledby="t-bourse">
+          <div class="panel__bar">
+            <span class="panel__count num">09 / 14</span>
+            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>Banque et finance</span>
+            <span class="chip chip--cool">IA générative</span>
+            <span class="panel__nav">
+              <a class="panel__step" href="#p-churn" data-go="churn" aria-label="Projet précédent : Attrition bancaire"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+              <a class="panel__step" href="#p-demande" data-go="demande" aria-label="Projet suivant : Demande par magasin"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+            </span>
+          </div>
+          <div class="panel__head">
+            <div class="panel__heading">
+              <h3 class="panel__title" id="t-bourse">Chatbot boursier</h3>
+              <p class="panel__q">Commenter des prévisions de cours en langage naturel.</p>
+            </div>
+            
+          </div>
+          <div class="panel__body">
+            <dl class="par">
+              <div><dt>Problème</dt><dd>Rendre lisibles des prévisions de cours.</dd></div>
+              <div><dt>Approche</dt><dd>Prévisions LSTM ou Chronos, commentées par Gemini, dans une interface Streamlit.</dd></div>
+              <div><dt>Résultat</dt><dd>Un chatbot qui répond sur quatre actions cotées.</dd></div>
+            </dl>
+            <figure class="viz">
+            <ol class="chain" aria-label="Chaîne du chatbot boursier">
+            <li class="chain__step" style="--i:0">
+              <span class="chain__name">Cours</span><span class="chain__detail">quatre actions, via yfinance</span>
+            </li>
+            <li class="chain__step" style="--i:1">
+              <span class="chain__name">Prévision</span><span class="chain__detail">LSTM local ou Chronos</span>
+            </li>
+            <li class="chain__step" style="--i:2">
+              <span class="chain__name">Rédaction</span><span class="chain__detail">Gemini</span>
+            </li>
+            <li class="chain__step" style="--i:3">
+              <span class="chain__name">Interface</span><span class="chain__detail">Streamlit</span>
+            </li>
+          </ol>
+              <figcaption>Chaîne du chatbot boursier</figcaption>
+            </figure>
+          </div>
+          <div class="panel__foot">
+            <ul class="panel__tools" aria-label="Outils"><li>LSTM</li><li>Chronos</li><li>Gemini</li><li>Streamlit</li></ul>
+            <p class="panel__links"><a class="panel__link" href="https://github.com/Loscope29/SN_NLP"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Voir le dépôt</a></p>
+          </div>
+        </article>
+        <article class="panel" id="p-demande" data-id="demande" aria-labelledby="t-demande">
+          <div class="panel__bar">
+            <span class="panel__count num">10 / 14</span>
+            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 2.004 0L20.7 7"/></svg>Grande distribution</span>
+            <span class="chip chip--cool">Data science</span>
+            <span class="panel__nav">
+              <a class="panel__step" href="#p-bourse" data-go="bourse" aria-label="Projet précédent : Chatbot boursier"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+              <a class="panel__step" href="#p-logement" data-go="logement" aria-label="Projet suivant : Prix des logements"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+            </span>
+          </div>
+          <div class="panel__head">
+            <div class="panel__heading">
+              <h3 class="panel__title" id="t-demande">Demande par magasin</h3>
+              <p class="panel__q">D’où viennent les creux, et combien commander ?</p>
+            </div>
+            <p class="reading"><span class="reading__val num">−36 %</span><span class="reading__unit">de ruptures, en simulation</span></p>
+          </div>
+          <div class="panel__body">
+            <dl class="par">
+              <div><dt>Problème</dt><dd>Expliquer les creux de demande et commander juste.</dd></div>
+              <div><dt>Approche</dt><dd>XGBoost sur 3 ans de ventes, validé sur 4 périodes, puis simulation de stock.</dd></div>
+              <div><dt>Résultat</dt><dd>−36 % de ruptures en simulation ; chaque creux coïncide avec une épidémie.</dd></div>
+            </dl>
+            <figure class="viz">
+            <ol class="bars" aria-label="Erreur absolue moyenne, validation walk-forward">
+            <li class="bars__row" style="--i:0; --v:0.6754">
+              <span class="bars__label">Pli 1, février à mai 2023</span>
+              <span class="bars__track"><span class="bars__bar"></span><span class="bars__val num">23,6</span></span>
+            </li>
+            <li class="bars__row" style="--i:1; --v:0.8286">
+              <span class="bars__label">Pli 2, mai à août 2023</span>
+              <span class="bars__track"><span class="bars__bar"></span><span class="bars__val num">29,0</span></span>
+            </li>
+            <li class="bars__row" style="--i:2; --v:0.7383">
+              <span class="bars__label">Pli 3, août à novembre 2023</span>
+              <span class="bars__track"><span class="bars__bar"></span><span class="bars__val num">25,8</span></span>
+            </li>
+            <li class="bars__row" style="--i:3; --v:0.7597">
+              <span class="bars__label">Pli 4, novembre 2023 à janvier 2024</span>
+              <span class="bars__track"><span class="bars__bar"></span><span class="bars__val num">26,6</span></span>
+            </li>
+            <li class="bars__row is-lead" style="--i:4; --v:0.7506">
+              <span class="bars__label">Moyenne</span>
+              <span class="bars__track"><span class="bars__bar"></span><span class="bars__val num">26,3</span></span>
+            </li>
+          </ol>
+              <figcaption>Erreur absolue moyenne, validation walk-forward</figcaption>
+            </figure>
+          </div>
+          <div class="panel__foot">
+            <ul class="panel__tools" aria-label="Outils"><li>XGBoost</li><li>Optuna</li><li>FastAPI</li><li>Streamlit</li></ul>
+            <p class="panel__links"><a class="panel__link" href="https://github.com/Loscope29/Pr-diction-Demand"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Voir le dépôt</a></p>
+          </div>
+        </article>
+        <article class="panel" id="p-logement" data-id="logement" aria-labelledby="t-logement">
+          <div class="panel__bar">
+            <span class="panel__count num">11 / 14</span>
+            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Immobilier</span>
+            <span class="chip chip--cool">Data science</span>
+            <span class="panel__nav">
+              <a class="panel__step" href="#p-demande" data-go="demande" aria-label="Projet précédent : Demande par magasin"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+              <a class="panel__step" href="#p-rag" data-go="rag" aria-label="Projet suivant : Assistant RAG personnel"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+            </span>
+          </div>
+          <div class="panel__head">
+            <div class="panel__heading">
+              <h3 class="panel__title" id="t-logement">Prix des logements</h3>
+              <p class="panel__q">Estimer un prix de vente à partir du bien.</p>
+            </div>
+            
+          </div>
+          <div class="panel__body">
+            <dl class="par">
+              <div><dt>Problème</dt><dd>Estimer le prix de vente d’un bien.</dd></div>
+              <div><dt>Approche</dt><dd>Un réseau de neurones Keras sur les caractéristiques du bien.</dd></div>
+              <div><dt>Résultat</dt><dd>Un prix estimé par bien.</dd></div>
+            </dl>
+            <figure class="viz">
+            <ol class="chain" aria-label="Modèle de prix immobilier">
+            <li class="chain__step" style="--i:0">
+              <span class="chain__name">Caractéristiques</span><span class="chain__detail">du bien</span>
+            </li>
+            <li class="chain__step" style="--i:1">
+              <span class="chain__name">Réseau de neurones</span><span class="chain__detail">Keras</span>
+            </li>
+            <li class="chain__step" style="--i:2">
+              <span class="chain__name">Prix estimé</span>
+            </li>
+          </ol>
+              <figcaption>Modèle de prix immobilier</figcaption>
+            </figure>
+          </div>
+          <div class="panel__foot">
+            <ul class="panel__tools" aria-label="Outils"><li>Keras</li></ul>
+            <p class="panel__links"><a class="panel__link" href="https://github.com/Loscope29/SN_NLP"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Voir le dépôt</a></p>
+          </div>
+        </article>
+        <article class="panel" id="p-rag" data-id="rag" aria-labelledby="t-rag">
+          <div class="panel__bar">
+            <span class="panel__count num">12 / 14</span>
+            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>IA générative</span>
+            <span class="chip chip--cool">IA générative</span>
+            <span class="panel__nav">
+              <a class="panel__step" href="#p-logement" data-go="logement" aria-label="Projet précédent : Prix des logements"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+              <a class="panel__step" href="#p-atelier" data-go="atelier" aria-label="Projet suivant : Atelier voix et documents"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+            </span>
+          </div>
+          <div class="panel__head">
+            <div class="panel__heading">
+              <h3 class="panel__title" id="t-rag">Assistant RAG personnel</h3>
+              <p class="panel__q">Répondre sur mon parcours, à partir de mes documents.</p>
+            </div>
+            <p class="reading"><span class="reading__val num">3</span><span class="reading__unit">clouds : AWS, GCP, Azure</span></p>
+          </div>
+          <div class="panel__body">
+            <dl class="par">
+              <div><dt>Problème</dt><dd>Répondre aux recruteurs sur mon parcours, à toute heure.</dd></div>
+              <div><dt>Approche</dt><dd>RAG sur mon CV et mes documents, Amazon Nova 2 Lite via Bedrock, mémoire sur S3.</dd></div>
+              <div><dt>Résultat</dt><dd>Déployé sur AWS Lambda, puis porté sur GCP et Azure.</dd></div>
+            </dl>
+            <figure class="viz">
+            <ol class="chain" aria-label="Architecture de l’assistant RAG">
+            <li class="chain__step" style="--i:0">
+              <span class="chain__name">Sources</span><span class="chain__detail">CV et documents collectés</span>
+            </li>
+            <li class="chain__step" style="--i:1">
+              <span class="chain__name">Génération</span><span class="chain__detail">Amazon Nova 2 Lite via Bedrock</span>
+            </li>
+            <li class="chain__step" style="--i:2">
+              <span class="chain__name">Service</span><span class="chain__detail">Docker sur ECR, AWS Lambda</span>
+            </li>
+            <li class="chain__step" style="--i:3">
+              <span class="chain__name">Mémoire</span><span class="chain__detail">conversations stockées sur S3</span>
+            </li>
+            <li class="chain__step" style="--i:4">
+              <span class="chain__name">Portage</span><span class="chain__detail">Cloud Run, Container Apps</span>
+            </li>
+          </ol>
+              <figcaption>Architecture de l’assistant RAG</figcaption>
+            </figure>
+          </div>
+          <div class="panel__foot">
+            <ul class="panel__tools" aria-label="Outils"><li>Bedrock</li><li>Lambda</li><li>S3</li><li>Docker</li><li>IAM</li></ul>
+            <p class="panel__links"><a class="panel__link" href="https://github.com/Loscope29/digital-twin"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Voir le dépôt</a></p>
+          </div>
+        </article>
+        <article class="panel" id="p-atelier" data-id="atelier" aria-labelledby="t-atelier">
+          <div class="panel__bar">
+            <span class="panel__count num">13 / 14</span>
+            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>IA générative</span>
+            <span class="chip chip--cool">IA générative</span>
+            <span class="panel__nav">
+              <a class="panel__step" href="#p-rag" data-go="rag" aria-label="Projet précédent : Assistant RAG personnel"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+              <a class="panel__step" href="#p-semantic" data-go="semantic" aria-label="Projet suivant : SemanticSearchAPI"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+            </span>
+          </div>
+          <div class="panel__head">
+            <div class="panel__heading">
+              <h3 class="panel__title" id="t-atelier">Atelier voix et documents</h3>
+              <p class="panel__q">Transcrire, interroger un PDF, synthétiser la voix.</p>
+            </div>
+            
+          </div>
+          <div class="panel__body">
+            <dl class="par">
+              <div><dt>Problème</dt><dd>Réunir transcription, questions sur PDF et synthèse vocale.</dd></div>
+              <div><dt>Approche</dt><dd>Whisper, RAG avec ChromaDB, un modèle Hugging Face, suivi dans LangSmith.</dd></div>
+              <div><dt>Résultat</dt><dd>Une application Streamlit en quatre pages.</dd></div>
+            </dl>
+            <figure class="viz">
+            <ol class="chain" aria-label="Les quatre outils de l’atelier">
+            <li class="chain__step" style="--i:0">
+              <span class="chain__name">Audio vers texte</span><span class="chain__detail">Whisper</span>
+            </li>
+            <li class="chain__step" style="--i:1">
+              <span class="chain__name">Questions sur un PDF</span><span class="chain__detail">RAG, ChromaDB</span>
+            </li>
+            <li class="chain__step" style="--i:2">
+              <span class="chain__name">Texte vers voix</span><span class="chain__detail">modèle Hugging Face</span>
+            </li>
+            <li class="chain__step" style="--i:3">
+              <span class="chain__name">Suivi</span><span class="chain__detail">LangSmith</span>
+            </li>
+          </ol>
+              <figcaption>Les quatre outils de l’atelier</figcaption>
+            </figure>
+          </div>
+          <div class="panel__foot">
+            <ul class="panel__tools" aria-label="Outils"><li>Whisper</li><li>RAG</li><li>TTS</li><li>LangSmith</li></ul>
+            <p class="panel__links"><a class="panel__link" href="https://github.com/Loscope29/SN_NLP"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Voir le dépôt</a></p>
+          </div>
+        </article>
+        <article class="panel" id="p-semantic" data-id="semantic" aria-labelledby="t-semantic">
+          <div class="panel__bar">
+            <span class="panel__count num">14 / 14</span>
+            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>IA générative</span>
+            <span class="chip chip--cool">IA générative</span>
+            <span class="panel__nav">
+              <a class="panel__step" href="#p-atelier" data-go="atelier" aria-label="Projet précédent : Atelier voix et documents"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+              <a class="panel__step" href="#p-fireprotect" data-go="fireprotect" aria-label="Projet suivant : FireProtect"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+            </span>
+          </div>
+          <div class="panel__head">
+            <div class="panel__heading">
+              <h3 class="panel__title" id="t-semantic">SemanticSearchAPI</h3>
+              <p class="panel__q">Chercher par le sens, pas par les mots.</p>
+            </div>
+            
+          </div>
+          <div class="panel__body">
+            <dl class="par">
+              <div><dt>Problème</dt><dd>Trouver un document par son sens, pas par ses mots.</dd></div>
+              <div><dt>Approche</dt><dd>Embeddings et recherche des plus proches voisins, servis par une API.</dd></div>
+              <div><dt>Résultat</dt><dd>Des résultats classés par pertinence.</dd></div>
+            </dl>
+            <figure class="viz">
+            <ol class="chain" aria-label="Recherche sémantique">
+            <li class="chain__step" style="--i:0">
+              <span class="chain__name">Requête</span><span class="chain__detail">en langage naturel</span>
+            </li>
+            <li class="chain__step" style="--i:1">
+              <span class="chain__name">Embedding</span><span class="chain__detail">vecteur de sens</span>
+            </li>
+            <li class="chain__step" style="--i:2">
+              <span class="chain__name">Voisins</span><span class="chain__detail">les plus proches</span>
+            </li>
+            <li class="chain__step" style="--i:3">
+              <span class="chain__name">Résultats</span><span class="chain__detail">classés par pertinence</span>
+            </li>
+          </ol>
+              <figcaption>Recherche sémantique</figcaption>
+            </figure>
+          </div>
+          <div class="panel__foot">
+            <ul class="panel__tools" aria-label="Outils"><li>Embeddings</li><li>API</li></ul>
+            <p class="panel__links"></p>
+          </div>
+        </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="method" id="methode" aria-labelledby="methode-titre">
+      <div class="container">
+        <h2 id="methode-titre" data-reveal>Trois étapes, sur chaque projet.</h2>
+        <ol class="steps" data-reveal>
+          <li class="is-lead"><h3>Cadrer</h3><p>Un objectif métier mesurable avant la première ligne de code : moins de départs, moins de ruptures.</p></li>
+          <li><h3>Construire</h3><p>Le modèle ou l’assistant qui le démontre, évalué sur des données jamais vues à l’entraînement.</p></li>
+          <li><h3>Déployer</h3><p>API conteneurisée, tests, CI/CD et supervision : le modèle tourne, et on le voit tourner.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="tools" aria-labelledby="outils-titre">
+      <div class="container">
+        <div class="tools__head" data-reveal>
+          <h2 id="outils-titre">La boîte à outils.</h2>
+          <p class="lead">Ce que j’utilise d’un projet à l’autre, de la donnée brute au serveur.</p>
+        </div>
+        <dl class="toolgrid" data-reveal>
+          <div><dt><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>IA et LLM</dt><dd>RAG, Amazon Bedrock, API OpenAI, recherche sémantique, LangSmith</dd></div>
+          <div><dt><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>Machine learning</dt><dd>Classification, prévision, XGBoost, LightGBM, SHAP, backtesting</dd></div>
+          <div><dt><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>Cloud</dt><dd>AWS Lambda, S3, ECR, IAM, GCP Cloud Run, Azure Container Apps</dd></div>
+          <div><dt><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 2.004 0L20.7 7"/></svg>Production</dt><dd>Docker, Traefik, GitHub Actions, FastAPI, Prometheus, Grafana</dd></div>
+          <div><dt><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>Données</dt><dd>PostgreSQL, TimescaleDB, séries temporelles, MLflow</dd></div>
+          <div><dt><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg>IoT</dt><dd>LoRaWAN, ChirpStack, MQTT</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="path" id="parcours" aria-labelledby="parcours-titre">
+      <div class="container split">
+        <h2 id="parcours-titre" data-reveal>Du génie logiciel à l’IA.</h2>
+        <ol class="trail" data-reveal>
+          <li>
+            <span class="trail__when num">2026</span>
+            <div><h3>CDD, data engineer et AI engineer, IBMH Conseils</h3><p>Nantes. Pipelines ETL, assistant vocal pour entretiens de terrain, synthèses par LLM.</p></div>
+          </li>
+          <li>
+            <span class="trail__when num">2026</span>
+            <div><h3>Stage, IBMH Conseils</h3><p>Nantes. Plateformes IoT FireProtect et Celsius, du réseau LoRaWAN au serveur de production.</p></div>
+          </li>
+          <li>
+            <span class="trail__when num">2024</span>
+            <div><h3>Master Data Science, Saint Jean Ingénieur</h3><p>M1 puis M2 à Nantes, diplômé en 2026.</p></div>
+          </li>
+          <li>
+            <span class="trail__when num">2022</span>
+            <div><h3>Licence génie logiciel et BTS informatique</h3><p>Instituts des Sciences, Arts et Métiers.</p></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-titre">
+      <div class="container">
+        <h2 id="contact-titre" data-reveal>Parlons de vos données.</h2>
+        <div class="split contact__grid">
+          <p class="lead" data-reveal>Alternance, CDI ou mission : décrivez la décision à prendre et les données dont vous disposez.</p>
+          <dl class="lines lines--contact" data-reveal>
+            <div><dt><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/luc-obama">linkedin.com/in/luc-obama</a></dd></div>
+            <div><dt><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>GitHub</dt><dd><a href="https://github.com/Loscope29">github.com/Loscope29</a></dd></div>
+            <div><dt><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>Hugging Face</dt><dd><a href="https://huggingface.co/Loscope29">huggingface.co/Loscope29</a></dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <div class="container">
+      <p>Luc Obama, Nantes. Chiffres tirés des rapports de chaque projet. Mis à jour en novembre 2026.</p>
+    </div>
+  </footer>
+
+  <script src="scripts/site.js" defer></script>
+</body>
+</html>

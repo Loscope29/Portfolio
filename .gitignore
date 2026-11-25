@@ -1,0 +1,7 @@
+node_modules/
+.vercel/
+dist/
+.hallmark/
+.claude/settings.local.json
+.env
+.env.*
