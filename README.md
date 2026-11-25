@@ -105,6 +105,36 @@ fraude: {
 
 Tous ces champs sont facultatifs : une section vide n’apparaît pas.
 
+### Les captures d'écran de l'application
+
+Déposer les captures dans un dossier `captures/`, nommées d'après l'`id` du projet :
+`captures/churn.png`, puis `churn-2.png` et `churn-3.png` (png, jpg ou webp). Elles s'affichent en grand
+sur la page du projet, dans une section « L'application ». Largeur conseillée : 1600 px.
+
+### L'image d'aperçu (LinkedIn, X, messageries)
+
+Après avoir ajouté un projet ou changé son chiffre clé, regénérer les images (Python et Pillow) :
+
+```powershell
+python outils/og.py
+```
+
+Elles sont écrites dans `og/` (une pour l'accueil, une par projet) et ne s'affichent sur LinkedIn que si
+`SITE_URL` est défini, car les réseaux exigent une adresse absolue. Un projet sans image utilise celle de l'accueil.
+
+## Modifier le parcours ou la boîte à outils
+
+Tout est dans `content/parcours.mjs` : les postes et formations (missions, outils) et les catégories
+d'outils, avec le logo Simple Icons de chacun quand il existe.
+
+## Brancher le formulaire de contact
+
+1. Créer un compte gratuit sur formspree.io et un formulaire : il fournit une adresse du type
+   `https://formspree.io/f/abcdwxyz`, et transmet chaque message à ta boîte mail.
+2. La mettre dans la variable `FORM_ENDPOINT` (sur Vercel : *Settings > Environment Variables*), puis redéployer.
+
+Sans cette variable, le formulaire n'envoie rien et le dit au visiteur.
+
 ## Ajouter un secteur
 
 Ajouter son nom dans la liste `secteurs` en haut de `content/projets.mjs`. L'ordre de la liste est l'ordre
@@ -119,7 +149,8 @@ d'affichage. Un secteur sans projet n'apparaît pas.
 2. Sur vercel.com : *Add New Project*, importer le dépôt, preset *Other*. Ne rien changer aux réglages de build.
 3. *Settings > Environment Variables*, pour *Production* et *Preview* :
    - `CONTACT_EMAIL` : ton adresse e-mail ;
-   - `SITE_URL` : `https://ton-domaine.fr`, une fois le domaine choisi (ajoute le lien canonique et `sitemap.xml`).
+   - `SITE_URL` : `https://ton-domaine.fr`, une fois le domaine choisi (lien canonique, `sitemap.xml`, images d'aperçu) ;
+   - `FORM_ENDPOINT` : l'adresse Formspree du formulaire de contact.
 4. *Settings > Domains* : ajouter le domaine et créer chez ton registraire les enregistrements DNS que Vercel
    affiche, puis relancer un déploiement (*Deployments > Redeploy*) pour prendre en compte les variables.
 
@@ -141,9 +172,12 @@ vercel --prod
 |---|---|
 | `content/projets.mjs` | les projets et les secteurs |
 | `content/details.mjs` | le contenu des pages de détail |
+| `content/parcours.mjs` | le parcours et la boîte à outils |
+| `captures/` | les captures d'écran des applications (facultatif) |
 | `projets/` | pages de détail générées, ne pas modifier à la main |
 | `build.mjs` | génère `index.html`, `404.html` et `dist/` (textes du hero, compétences, parcours, contact : à modifier ici) |
 | `vercel.json` | réglages de déploiement |
+| `outils/og.py` | génère les images d'aperçu dans `og/` |
 | `dist/` | généré, ne pas modifier à la main |
 | `styles/tokens.css` | couleurs, polices, espacements |
 | `styles/site.css` | mise en page et animations |

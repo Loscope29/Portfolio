@@ -3,6 +3,7 @@
 //
 //   contexte    un ou deux paragraphes : la situation et l'enjeu
 //   donnees     d'où viennent les données et ce qu'elles contiennent
+//   source      [nom du jeu de données, lien] : affiché sous les données
 //   etapes      la démarche, dans l'ordre
 //   resultats   [valeur, ce qu'elle mesure] : uniquement des chiffres réels
 //   limites     ce que le projet ne prouve pas encore, ou ses hypothèses
@@ -45,19 +46,11 @@ export const details = {
     ],
   },
 
-  diabete: {
-    donnees: 'Les indicateurs de santé de l’enquête BRFSS 2015.',
-    etapes: [
-      'Préparation des indicateurs de santé.',
-      'Entraînement d’un réseau de neurones avec Keras.',
-      'Estimation d’un risque de diabète par personne.',
-    ],
-  },
-
   reco: {
     contexte: [
       'Le bloc « Vous aimerez aussi » : pendant qu’un visiteur navigue, quels dix produits lui montrer pour qu’il trouve, et mette au panier, un produit qu’il n’aurait pas trouvé seul ?',
     ],
+    source: ['RetailRocket e-commerce dataset, Kaggle', 'https://www.kaggle.com/datasets/retailrocket/ecommerce-dataset'],
     donnees: 'Le jeu de données e-commerce RetailRocket : consultations, mises au panier et achats. 71 % des visiteurs n’ont qu’un seul événement, d’où une recommandation par session plutôt que par profil.',
     etapes: [
       'Qualité des données et nettoyage, dont le retrait de 129 comptes à très fort volume.',
@@ -83,6 +76,7 @@ export const details = {
     contexte: [
       'Optimiser un prix suppose de connaître l’élasticité-prix de la demande. Sur des données de ventes, elle est biaisée : un vendeur monte son prix quand il attend une forte demande, et solde quand elle faiblit.',
     ],
+    source: ['Brazilian E-Commerce Public Dataset by Olist, Kaggle', 'https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce'],
     donnees: 'Les ventes de la marketplace brésilienne Olist, regroupées en panel produit par mois. 1 % seulement de la variance du prix vient d’un même produit dont le prix change.',
     etapes: [
       'Exploration : ces données permettent-elles de faire du pricing ?',
@@ -108,6 +102,7 @@ export const details = {
     contexte: [
       'Mesurer l’effet causal d’une campagne e-mail, puis décider qui doit la recevoir. La question n’est pas « qui va visiter le site ? », mais « pour qui l’e-mail change-t-il quelque chose ? ».',
     ],
+    source: ['MineThatData E-Mail Analytics Challenge, Kevin Hillstrom', 'http://www.minethatdata.com/'],
     donnees: 'Un essai randomisé de 64 000 clients, le jeu MineThatData de Kevin Hillstrom (2008).',
     etapes: [
       'Nettoyage et contrôle de la randomisation.',
@@ -153,21 +148,6 @@ export const details = {
     ],
   },
 
-  bourse: {
-    contexte: [
-      'Rendre lisibles des prévisions de cours : l’utilisateur choisit une entreprise et un modèle, pose sa question, et un LLM répond à partir des prévisions.',
-    ],
-    donnees: 'Les cours de quatre actions cotées, récupérés avec yfinance.',
-    etapes: [
-      'Prévision des cours avec un LSTM entraîné en local, ou avec Chronos via Hugging Face.',
-      'Rédaction de la réponse par Gemini, à partir des prévisions.',
-      'Interface Streamlit.',
-    ],
-    limites: [
-      'Au-delà de 64 jours, les prévisions de Chronos perdent en qualité.',
-    ],
-  },
-
   demande: {
     contexte: [
       'Trois ans de demande journalière, avec des creux récurrents que personne n’expliquait. Mal anticiper la demande coûte deux fois : en ruptures de stock et en surstock.',
@@ -192,14 +172,6 @@ export const details = {
     ],
   },
 
-  logement: {
-    etapes: [
-      'Préparation des caractéristiques du bien.',
-      'Entraînement d’un réseau de neurones avec Keras.',
-      'Estimation d’un prix de vente.',
-    ],
-  },
-
   rag: {
     contexte: [
       'Un assistant qui répond aux recruteurs sur mon parcours, à toute heure, à partir de mon CV et d’autres documents.',
@@ -218,15 +190,27 @@ export const details = {
     ],
   },
 
-  atelier: {
+  studio: {
     contexte: [
-      'Une application qui réunit quatre outils de traitement de la voix et des documents.',
+      'Plusieurs projets Python autour du traitement du langage, de la génération multimodale et de la prédiction, réunis dans une seule application Streamlit.',
+      'Chaque page appelle son propre modèle : on passe de la transcription d’un audio à une question sur un PDF, puis à un commentaire de prévision boursière.',
     ],
+    donnees: 'Les fichiers audio et PDF fournis par l’utilisateur, les cours de quatre actions cotées récupérés avec yfinance.',
     etapes: [
       'Transcription d’un fichier audio avec Whisper.',
       'Questions sur un PDF, avec une recherche de passages dans ChromaDB.',
       'Synthèse vocale avec un modèle Hugging Face.',
+      'Chatbot boursier : prévision par un LSTM entraîné en local ou par Chronos, réponse rédigée par Gemini.',
+      'Estimation du prix d’un logement avec un réseau de neurones Keras.',
       'Application Streamlit en plusieurs pages, suivi des appels dans LangSmith.',
     ],
+    resultats: [
+      ['4', 'pages dans l’application : audio, PDF, voix, bourse'],
+      ['2', 'modèles de prévision au choix : LSTM local ou Chronos'],
+    ],
+    limites: [
+      'Au-delà de 64 jours, les prévisions de Chronos perdent en qualité.',
+    ],
   },
+
 };

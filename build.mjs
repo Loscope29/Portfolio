@@ -4,13 +4,27 @@
 // Variables d'environnement :
 //   CONTACT_EMAIL  ton adresse e-mail, affichée dans Contact (jamais écrite dans le code)
 //   SITE_URL       https://ton-domaine.fr (lien canonique, partage, sitemap), facultatif
-import { writeFileSync, mkdirSync, rmSync, cpSync } from 'node:fs';
+import { writeFileSync, mkdirSync, rmSync, cpSync, existsSync } from 'node:fs';
 import { secteurs, projets } from './content/projets.mjs';
 import { details } from './content/details.mjs';
+import { parcours, outils } from './content/parcours.mjs';
 
 const SITE_URL = (process.env.SITE_URL || '').replace(/\/+$/, '');
 const EMAIL = (process.env.CONTACT_EMAIL || '').trim();
 const MAIL_HREF = EMAIL ? `mailto:${EMAIL}` : '#contact';
+// Formulaire de contact : adresse Formspree (https://formspree.io/f/xxxx). Vide : le formulaire n'envoie rien.
+const FORM_ENDPOINT = (process.env.FORM_ENDPOINT || '').trim();
+
+// Image d'aperçu (LinkedIn, X…) : og/<nom>.png, générée par outils/og.py. Les réseaux exigent une adresse absolue.
+const imageApercu = (nom, alt) => {
+  const fichier = existsSync(new URL(`./og/${nom}.png`, import.meta.url)) ? nom : 'accueil';
+  if (!SITE_URL || !existsSync(new URL(`./og/${fichier}.png`, import.meta.url))) return '';
+  return `
+  <meta property="og:image" content="${SITE_URL}/og/${fichier}.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="${alt}">`;
+};
 
 const esc = (s = '') => String(s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
@@ -41,6 +55,12 @@ const ICONES = {
   nuage: '<path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>',
   base: '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/>',
   ondes: '<path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/>',
+  certificat: '<path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/>',
+  langues: '<path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/>',
+  mallette: '<path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/>',
+  diplome: '<path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>',
+  envoyer: '<path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/>',
+  haut: '<path d="m5 12 7-7 7 7"/><path d="M12 19V5"/>',
   defaut: '<circle cx="12" cy="12" r="10"/>',
 };
 const icone = (nom, taille = 18) => `<svg class="icon" width="${taille}" height="${taille}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONES[nom] || ICONES.defaut}</svg>`;
@@ -113,7 +133,7 @@ const panneaux = ordre.map((p, i) => {
           <div class="panel__bar">
             <span class="panel__count num">${numero.get(p.id)} / ${pad(ordre.length)}</span>
             <span class="chip">${icone(p.secteur, 14)}${esc(p.secteur)}</span>
-            <span class="chip chip--cool">${esc(p.discipline)}</span>
+            ${p.discipline !== p.secteur ? `<span class="chip chip--cool">${esc(p.discipline)}</span>` : ''}
             <span class="panel__nav">
               <a class="panel__step" href="#p-${prev.id}" data-go="${prev.id}" aria-label="Projet précédent : ${esc(prev.nom)}">${icone('gauche', 18)}</a>
               <a class="panel__step" href="#p-${next.id}" data-go="${next.id}" aria-label="Projet suivant : ${esc(next.nom)}">${icone('droite', 18)}</a>
@@ -151,12 +171,25 @@ const nuage = JSON.stringify({
 });
 
 // Preuves chiffrées : uniquement des résultats déjà présents dans les projets
+// [valeur, unité, ce qu'elle mesure, id du projet, nom affiché si différent du projet]
 const preuves = [
-  ['71 %', 'des départs clients détectés, en banque'],
-  ['+4,3 pts', 'de hit@10 face à la meilleure référence, en e-commerce'],
-  ['2', 'plateformes IoT en production, en santé'],
-  ['3', 'clouds pour un même assistant RAG : AWS, GCP, Azure'],
+  ['71', '%', 'des départs clients détectés', 'churn'],
+  ['+4,3', 'pts', 'de hit@10 face à la meilleure référence', 'reco'],
+  ['2', '', 'plateformes IoT en production', 'fireprotect', 'FireProtect et Celsius'],
+  ['3', '', 'clouds pour un même assistant RAG', 'rag'],
 ];
+const projetDe = new Map(projets.map((p) => [p.id, p]));
+const bandeau = preuves.map(([v, u, l, id, nom], i) => {
+  const p = projetDe.get(id);
+  return `
+          <li${i === 0 ? ' class="is-lead"' : ''}>
+            <a class="proof" href="projets/${id}.html">
+              <span class="proof__val num">${esc(v)}${u ? `<span class="proof__unit">${esc(u)}</span>` : ''}</span>
+              <span class="proof__label">${esc(l)}</span>
+              <span class="proof__project">${icone(p.secteur, 16)}<span>${esc(nom || p.nom)}</span>${icone('droite', 16)}</span>
+            </a>
+          </li>`;
+}).join('');
 
 const ligneEmail = EMAIL
   ? `
@@ -174,9 +207,9 @@ const html = `<!doctype html>
   <meta property="og:description" content="Je transforme une question métier en modèle mesuré, puis en service en production.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
-  <meta name="twitter:card" content="summary">${SITE_URL ? `
+  <meta name="twitter:card" content="summary_large_image">${SITE_URL ? `
   <link rel="canonical" href="${SITE_URL}/">
-  <meta property="og:url" content="${SITE_URL}/">` : ''}
+  <meta property="og:url" content="${SITE_URL}/">` : ''}${imageApercu('accueil', 'Luc Obama, data scientist et AI engineer : une question métier, un modèle, un chiffre.')}
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -206,7 +239,7 @@ const html = `<!doctype html>
 
       <div class="container hero__inner">
         <div class="hero__text">
-          <h1 id="hero-titre" data-reveal style="--i:0">Une question métier, un modèle, un chiffre.</h1>
+          <h1 id="hero-titre" data-reveal style="--i:0">Une question métier,<br><span class="rotator" data-rotator><span class="rotator__word is-on">un modèle,</span><span class="rotator__word" aria-hidden="true">un assistant,</span><span class="rotator__word" aria-hidden="true">une API,</span></span><br>un chiffre.</h1>
           <p class="hero__lead" data-reveal style="--i:1">C’est ainsi que j’ai mené ${ordre.length} projets de data science et d’IA, de l’analyse jusqu’à la mise en production.</p>
           <div class="actions" data-reveal style="--i:2">
             <a class="btn btn--primary" href="#travaux">Voir les ${ordre.length} projets${icone('bas')}</a>
@@ -226,8 +259,7 @@ const html = `<!doctype html>
 
     <section class="proofs" aria-label="Résultats clés">
       <div class="container">
-        <ul class="proofs__list" data-reveal>${preuves.map(([v, l], i) => `
-          <li${i === 0 ? ' class="is-lead"' : ''}><span class="proofs__val num">${esc(v)}</span><span class="proofs__label">${esc(l)}</span></li>`).join('')}
+        <ul class="proofs__list proofs__list--links" data-reveal>${bandeau}
         </ul>
       </div>
     </section>
@@ -264,51 +296,81 @@ const html = `<!doctype html>
           <h2 id="outils-titre">La boîte à outils.</h2>
           <p class="lead">Ce que j’utilise d’un projet à l’autre, de la donnée brute au serveur.</p>
         </div>
-        <dl class="toolgrid" data-reveal>
-          <div><dt>${icone('IA générative', 22)}IA et LLM</dt><dd>RAG, Amazon Bedrock, API OpenAI, recherche sémantique, LangSmith</dd></div>
-          <div><dt>${icone('graphique', 22)}Machine learning</dt><dd>Classification, prévision, XGBoost, LightGBM, SHAP, backtesting</dd></div>
-          <div><dt>${icone('nuage', 22)}Cloud</dt><dd>AWS Lambda, S3, ECR, IAM, GCP Cloud Run, Azure Container Apps</dd></div>
-          <div><dt>${icone('Grande distribution', 22)}Production</dt><dd>Docker, Traefik, GitHub Actions, FastAPI, Prometheus, Grafana</dd></div>
-          <div><dt>${icone('base', 22)}Données</dt><dd>PostgreSQL, TimescaleDB, séries temporelles, MLflow</dd></div>
-          <div><dt>${icone('ondes', 22)}IoT</dt><dd>LoRaWAN, ChirpStack, MQTT</dd></div>
+        <dl class="toolgrid" data-reveal>${outils.map(([cat, ico, liste]) => `
+          <div><dt>${icone(ico, 22)}${esc(cat)}</dt><dd><ul class="logos">${liste.map(([nom, logo]) => `<li>${logo
+            ? `<img src="https://cdn.simpleicons.org/${logo}/c9cfd6" width="18" height="18" alt="" loading="lazy" decoding="async">`
+            : ''}${esc(nom)}</li>`).join('')}</ul></dd></div>`).join('')}
         </dl>
       </div>
     </section>
 
     <section class="path" id="parcours" aria-labelledby="parcours-titre">
-      <div class="container split">
-        <h2 id="parcours-titre" data-reveal>Du génie logiciel à l’IA.</h2>
-        <ol class="trail" data-reveal>
-          <li>
-            <span class="trail__when num">2026</span>
-            <div><h3>CDD, data engineer et AI engineer, IBMH Conseils</h3><p>Nantes. Pipelines ETL, assistant vocal pour entretiens de terrain, synthèses par LLM.</p></div>
-          </li>
-          <li>
-            <span class="trail__when num">2026</span>
-            <div><h3>Stage, IBMH Conseils</h3><p>Nantes. Plateformes IoT FireProtect et Celsius, du réseau LoRaWAN au serveur de production.</p></div>
-          </li>
-          <li>
-            <span class="trail__when num">2024</span>
-            <div><h3>Master Data Science, Saint Jean Ingénieur</h3><p>M1 puis M2 à Nantes, diplômé en 2026.</p></div>
-          </li>
-          <li>
-            <span class="trail__when num">2022</span>
-            <div><h3>Licence génie logiciel et BTS informatique</h3><p>Instituts des Sciences, Arts et Métiers.</p></div>
-          </li>
+      <div class="container">
+        <div class="tools__head" data-reveal>
+          <h2 id="parcours-titre">Du génie logiciel à l’IA.</h2>
+          <p class="lead">Deux postes chez IBMH Conseils, après un master en data science.</p>
+        </div>
+        <ol class="timeline">${parcours.map((e, i) => `
+          <li class="timeline__item${i === 0 ? ' is-current' : ''}" data-reveal style="--i:${i}">
+            <div class="timeline__meta">
+              <span class="timeline__when num">${esc(e.quand)}</span>
+              <span class="chip${e.type === 'Formation' ? '' : ' chip--cool'}">${icone(e.type === 'Formation' ? 'diplome' : 'mallette', 14)}${esc(e.type)}</span>
+            </div>
+            <div class="timeline__card">
+              <h3>${esc(e.titre)}</h3>
+              <p class="timeline__place">${icone('lieu', 16)}${esc(e.lieu)}</p>${e.missions ? `
+              <ul class="timeline__missions">${e.missions.map((m) => `<li>${esc(m)}</li>`).join('')}</ul>` : ''}${e.tags ? `
+              <ul class="panel__tools">${e.tags.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
+            </div>
+          </li>`).join('')}
         </ol>
+        <dl class="extras" data-reveal>
+          <div><dt>${icone('certificat', 20)}Certifications</dt><dd>Simulation Data Analytics, Deloitte Australia<br>Simulation Data Science, British Airways</dd></div>
+          <div><dt>${icone('langues', 20)}Langues</dt><dd>Français natif<br>Anglais professionnel<br>Allemand élémentaire</dd></div>
+        </dl>
       </div>
     </section>
 
     <section class="contact" id="contact" aria-labelledby="contact-titre">
       <div class="container">
         <h2 id="contact-titre" data-reveal>Parlons de vos données.</h2>
-        <div class="split contact__grid">
-          <p class="lead" data-reveal>Alternance, CDI ou mission : décrivez la décision à prendre et les données dont vous disposez.</p>
-          <dl class="lines lines--contact" data-reveal>${ligneEmail}
-            <div><dt>${icone('linkedin')}LinkedIn</dt><dd><a href="https://www.linkedin.com/in/luc-obama">linkedin.com/in/luc-obama</a></dd></div>
-            <div><dt>${icone('github')}GitHub</dt><dd><a href="https://github.com/Loscope29">github.com/Loscope29</a></dd></div>
-            <div><dt>${icone('hf')}Hugging Face</dt><dd><a href="https://huggingface.co/Loscope29">huggingface.co/Loscope29</a></dd></div>
-          </dl>
+        <div class="contact__grid">
+          <div class="contact__side" data-reveal>
+            <p class="lead">Alternance, CDI ou mission : décrivez la décision à prendre et les données dont vous disposez.</p>
+            <dl class="lines lines--contact">${ligneEmail}
+              <div><dt>${icone('linkedin')}LinkedIn</dt><dd><a href="https://www.linkedin.com/in/luc-obama">linkedin.com/in/luc-obama</a></dd></div>
+              <div><dt>${icone('github')}GitHub</dt><dd><a href="https://github.com/Loscope29">github.com/Loscope29</a></dd></div>
+              <div><dt>${icone('hf')}Hugging Face</dt><dd><a href="https://huggingface.co/Loscope29">huggingface.co/Loscope29</a></dd></div>
+            </dl>
+          </div>
+          <form class="form" data-endpoint="${esc(FORM_ENDPOINT)}" novalidate data-reveal style="--i:1">
+            <div class="field">
+              <label for="f-nom">Votre nom</label>
+              <input id="f-nom" name="nom" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="f-email">Votre e-mail</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+            </div>
+            <div class="field">
+              <label for="f-objet">Objet</label>
+              <select id="f-objet" name="objet">
+                <option>Alternance</option>
+                <option>CDI</option>
+                <option>Mission</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-message">Votre message</label>
+              <textarea id="f-message" name="message" rows="5" required></textarea>
+            </div>
+            <input class="form__trap" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="form__foot">
+              <button class="btn btn--primary" type="submit">${icone('envoyer')}Envoyer le message</button>
+              <p class="form__status" role="status" aria-live="polite"></p>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -320,14 +382,22 @@ const html = `<!doctype html>
     </div>
   </footer>
 
+  <a class="totop" href="#main" aria-label="Revenir en haut de la page" data-totop>${icone('haut', 20)}</a>
+
   <script src="scripts/site.js" defer></script>
 </body>
 </html>
 `;
 
 // ---------- Pages de détail, une par projet (projets/<id>.html) ----------
+// Captures d'écran : captures/<id>.png, puis <id>-2, <id>-3 (png, jpg ou webp)
+const capturesDe = (id) => [id, `${id}-2`, `${id}-3`]
+  .map((nom) => ['png', 'jpg', 'jpeg', 'webp'].map((ext) => `captures/${nom}.${ext}`).find((f) => existsSync(new URL(`./${f}`, import.meta.url))))
+  .filter(Boolean);
+
 const pageProjet = (p, i) => {
   const d = details[p.id] || {};
+  const captures = capturesDe(p.id);
   const prev = ordre[(i - 1 + ordre.length) % ordre.length];
   const next = ordre[(i + 1) % ordre.length];
   const ecrire = EMAIL ? MAIL_HREF : '../#contact';
@@ -351,9 +421,10 @@ const pageProjet = (p, i) => {
   <meta property="og:title" content="${esc(p.nom)}, projet de Luc Obama">
   <meta property="og:description" content="${esc(p.question)}">
   <meta property="og:type" content="article">
-  <meta property="og:locale" content="fr_FR">${SITE_URL ? `
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">${SITE_URL ? `
   <link rel="canonical" href="${SITE_URL}/projets/${p.id}">
-  <meta property="og:url" content="${SITE_URL}/projets/${p.id}">` : ''}
+  <meta property="og:url" content="${SITE_URL}/projets/${p.id}">` : ''}${imageApercu(p.id, `${esc(p.nom)}, projet de Luc Obama`)}
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -387,7 +458,7 @@ const pageProjet = (p, i) => {
           <div class="detail__title" data-reveal>
             <div class="panel__bar">
               <span class="chip">${icone(p.secteur, 14)}${esc(p.secteur)}</span>
-              <span class="chip chip--cool">${esc(p.discipline)}</span>
+              ${p.discipline !== p.secteur ? `<span class="chip chip--cool">${esc(p.discipline)}</span>` : ''}
             </div>
             <h1>${esc(p.nom)}</h1>
             <p class="lead">${esc(p.question)}</p>
@@ -416,7 +487,18 @@ const pageProjet = (p, i) => {
         </figure>
       </div>
     </section>
-${section('contexte', 'Le contexte', contexte + (d.donnees ? `<h3 class="detail__sub">Les données</h3><p>${esc(d.donnees)}</p>` : ''))}
+${captures.length ? `
+    <section class="detail__section detail__shots" aria-labelledby="captures">
+      <div class="container">
+        <h2 id="captures" data-reveal>L’application.</h2>
+        <div class="shots${captures.length > 1 ? ' shots--multi' : ''}">${captures.map((f, k) => `
+          <figure class="shot" data-reveal style="--i:${k}"><img src="../${f}" alt="Capture d’écran de ${esc(p.nom)}${captures.length > 1 ? `, vue ${k + 1}` : ''}" loading="lazy" decoding="async"></figure>`).join('')}
+        </div>
+      </div>
+    </section>` : ''}
+${section('contexte', 'Le contexte', contexte
+  + (d.donnees ? `<h3 class="detail__sub">Les données</h3><p>${esc(d.donnees)}</p>` : '')
+  + (d.source ? `<p class="detail__source"><a href="${d.source[1]}">${icone('externe', 16)}Source : ${esc(d.source[0])}</a></p>` : ''))}
 ${section('demarche', 'La démarche', d.etapes ? `<ol class="detail__steps">${d.etapes.map((e) => `<li>${esc(e)}</li>`).join('')}</ol>` : '')}
 ${d.resultats ? `
     <section class="detail__section detail__results" aria-labelledby="resultats">
@@ -516,8 +598,9 @@ writeFileSync(new URL('robots.txt', dist), robots);
 if (sitemap) writeFileSync(new URL('sitemap.xml', dist), sitemap);
 mkdirSync(new URL('projets/', dist), { recursive: true });
 for (const [id, page] of pages) writeFileSync(new URL(`projets/${id}.html`, dist), page);
-for (const f of ['favicon.svg', 'styles', 'scripts']) cpSync(racine(f), new URL(f, dist), { recursive: true });
+for (const f of ['favicon.svg', 'styles', 'scripts', 'og', 'captures']) if (existsSync(racine(f))) cpSync(racine(f), new URL(f, dist), { recursive: true });
 
 console.log(`index.html : ${ordre.length} projets, ${secteursUtilises.length} secteurs, ${pages.length} pages de détail.`);
 if (!EMAIL) console.log('CONTACT_EMAIL non défini : la ligne e-mail est masquée et « M’écrire » mène à la section Contact.');
+if (!FORM_ENDPOINT) console.log('FORM_ENDPOINT non défini : le formulaire de contact n’envoie rien et le signale.');
 console.log(`dist/ prêt${SITE_URL ? ` pour ${SITE_URL}` : ' (SITE_URL non défini : pas de lien canonique ni de sitemap)'}.`);

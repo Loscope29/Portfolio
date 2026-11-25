@@ -21,7 +21,6 @@ export const secteurs = [
   'E-commerce',
   'Banque et finance',
   'Grande distribution',
-  'Immobilier',
   'IA générative',
 ];
 
@@ -100,28 +99,6 @@ export const projets = [
         ['Modèle de risque', 'machine learning'],
         ['API Flask', 'score renvoyé'],
         ['Décision', 'reste au soignant'],
-      ],
-    },
-  },
-  {
-    id: 'diabete',
-    secteur: 'Santé',
-    discipline: 'Data science',
-    nom: 'Risque de diabète',
-    question: 'Estimer un risque de diabète depuis des indicateurs de santé.',
-    probleme: 'Repérer les personnes à risque de diabète.',
-    approche: 'Un réseau de neurones Keras entraîné sur l’enquête de santé BRFSS 2015.',
-    resultat: 'Un score de risque par personne.',
-    pile: 'Keras, enquête BRFSS 2015',
-    depot: `${GH}/SN_NLP`,
-    demo: null, // TODO : URL de la démo en ligne
-    visuel: {
-      type: 'chaine',
-      titre: 'Modèle de risque de diabète',
-      etapes: [
-        ['Indicateurs', 'enquête BRFSS 2015'],
-        ['Réseau de neurones', 'Keras'],
-        ['Risque estimé', 'par personne'],
       ],
     },
   },
@@ -232,29 +209,6 @@ export const projets = [
       ],
     },
   },
-  {
-    id: 'bourse',
-    secteur: 'Banque et finance',
-    discipline: 'IA générative',
-    nom: 'Chatbot boursier',
-    question: 'Commenter des prévisions de cours en langage naturel.',
-    probleme: 'Rendre lisibles des prévisions de cours.',
-    approche: 'Prévisions LSTM ou Chronos, commentées par Gemini, dans une interface Streamlit.',
-    resultat: 'Un chatbot qui répond sur quatre actions cotées.',
-    pile: 'LSTM, Chronos, Gemini, Streamlit',
-    depot: `${GH}/SN_NLP`,
-    demo: null, // TODO : URL de la démo en ligne
-    visuel: {
-      type: 'chaine',
-      titre: 'Chaîne du chatbot boursier',
-      etapes: [
-        ['Cours', 'quatre actions, via yfinance'],
-        ['Prévision', 'LSTM local ou Chronos'],
-        ['Rédaction', 'Gemini'],
-        ['Interface', 'Streamlit'],
-      ],
-    },
-  },
 
   // ---------- Grande distribution ----------
   {
@@ -284,29 +238,6 @@ export const projets = [
     },
   },
 
-  // ---------- Immobilier ----------
-  {
-    id: 'logement',
-    secteur: 'Immobilier',
-    discipline: 'Data science',
-    nom: 'Prix des logements',
-    question: 'Estimer un prix de vente à partir du bien.',
-    probleme: 'Estimer le prix de vente d’un bien.',
-    approche: 'Un réseau de neurones Keras sur les caractéristiques du bien.',
-    resultat: 'Un prix estimé par bien.',
-    pile: 'Keras',
-    depot: `${GH}/SN_NLP`,
-    demo: null, // TODO : URL de la démo en ligne
-    visuel: {
-      type: 'chaine',
-      titre: 'Modèle de prix immobilier',
-      etapes: [
-        ['Caractéristiques', 'du bien'],
-        ['Réseau de neurones', 'Keras'],
-        ['Prix estimé', ''],
-      ],
-    },
-  },
 
   // ---------- IA générative ----------
   {
@@ -335,25 +266,28 @@ export const projets = [
     },
   },
   {
-    id: 'atelier',
+    id: 'studio',
     secteur: 'IA générative',
     discipline: 'IA générative',
-    nom: 'Atelier voix et documents',
-    question: 'Transcrire, interroger un PDF, synthétiser la voix.',
-    probleme: 'Réunir transcription, questions sur PDF et synthèse vocale.',
-    approche: 'Whisper, RAG avec ChromaDB, un modèle Hugging Face, suivi dans LangSmith.',
-    resultat: 'Une application Streamlit en quatre pages.',
-    pile: 'Whisper, RAG, TTS, LangSmith',
+    nom: 'Studio IA multimodal',
+    question: 'Réunir la voix, les documents et la prévision dans une seule application.',
+    probleme: 'Tester plusieurs usages de l’IA au même endroit : transcrire, interroger un document, parler, prévoir.',
+    approche: 'Whisper, RAG avec ChromaDB, synthèse vocale, LSTM et Chronos commentés par Gemini, réseau de neurones Keras.',
+    resultat: 'Une application Streamlit en quatre pages, suivie dans LangSmith, et des modèles de prédiction en notebooks.',
+    mesure: { valeur: '4', unite: 'outils dans une même application' },
+    pile: 'Streamlit, Whisper, ChromaDB, Keras, Gemini, LangSmith',
     depot: `${GH}/SN_NLP`,
     demo: null, // TODO : URL de la démo en ligne
     visuel: {
       type: 'chaine',
-      titre: 'Les quatre outils de l’atelier',
+      titre: 'Les briques du studio',
       etapes: [
         ['Audio vers texte', 'Whisper'],
         ['Questions sur un PDF', 'RAG, ChromaDB'],
         ['Texte vers voix', 'modèle Hugging Face'],
-        ['Suivi', 'LangSmith'],
+        ['Chatbot boursier', 'LSTM ou Chronos, Gemini'],
+        ['Prix des logements', 'réseau de neurones Keras'],
+        ['Interface et suivi', 'Streamlit, LangSmith'],
       ],
     },
   },

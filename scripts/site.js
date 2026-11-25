@@ -217,8 +217,20 @@
       draw();
       raf = requestAnimationFrame(tick);
     };
+    // Le mot qui change dans le titre suit le même interrupteur que le nuage
+    const mots = [...hero.querySelectorAll('.rotator__word')];
+    let motActif = 0, minuteur = 0;
+    const tourner = () => {
+      mots[motActif].classList.remove('is-on');
+      mots[motActif].setAttribute('aria-hidden', 'true');
+      motActif = (motActif + 1) % mots.length;
+      mots[motActif].classList.add('is-on');
+      mots[motActif].removeAttribute('aria-hidden');
+    };
     const sync = () => {
       const run = s.seen && !s.focus && !s.held && !drag;
+      if (mots.length > 1 && run && !minuteur) minuteur = setInterval(tourner, 2800);
+      if ((!run || s.held) && minuteur) { clearInterval(minuteur); minuteur = 0; }
       hero.classList.toggle('is-running', run);
       if (run && !raf) { last = 0; raf = requestAnimationFrame(tick); }
       if (!run && raf) { cancelAnimationFrame(raf); raf = 0; if (grow < 1) { grow = 1; draw(); } }
@@ -277,6 +289,89 @@
     cloud = { setActive: (id) => { active = id; draw(); } };
     sync();
   }
+
+  /* ---------- Navigation : le lien de la section en cours est souligné ---------- */
+  const liensNav = [...document.querySelectorAll('.bar__nav a[href^="#"]')];
+  const sections = liensNav.map((a) => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  if (sections.length) {
+    const marquer = (id) => liensNav.forEach((a) => (a.getAttribute('href') === `#${id}`
+      ? a.setAttribute('aria-current', 'location') : a.removeAttribute('aria-current')));
+    const visibles = new Map();
+    const espion = new IntersectionObserver((entries) => {
+      entries.forEach((e) => visibles.set(e.target.id, e.isIntersecting));
+      const actif = sections.find((s) => visibles.get(s.id));
+      marquer(actif ? actif.id : null);
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach((s) => espion.observe(s));
+  }
+
+  /* ---------- Timeline : la ligne se dessine au fil du défilement ---------- */
+  const timeline = document.querySelector('.timeline');
+  /* ---------- Bouton « retour en haut » ---------- */
+  const totop = document.querySelector('[data-totop]');
+  let attente = false;
+  const auDefilement = () => {
+    attente = false;
+    if (timeline) {
+      const r = timeline.getBoundingClientRect();
+      const p = reduce ? 1 : Math.min(1, Math.max(0, (innerHeight * 0.6 - r.top) / r.height));
+      timeline.style.setProperty('--progress', p.toFixed(3));
+    }
+    if (totop) {
+      const visible = scrollY > innerHeight * 1.2;
+      totop.classList.toggle('is-visible', visible);
+      totop.tabIndex = visible ? 0 : -1;
+      totop.setAttribute('aria-hidden', String(!visible));
+    }
+  };
+  addEventListener('scroll', () => { if (!attente) { attente = true; requestAnimationFrame(auDefilement); } }, { passive: true });
+  addEventListener('resize', auDefilement);
+  auDefilement();
+  if (totop) totop.addEventListener('click', (e) => {
+    e.preventDefault();
+    scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    document.querySelector('.wordmark')?.focus({ preventScroll: true });
+  });
+
+  /* ---------- Formulaire de contact (Formspree) ---------- */
+  document.querySelectorAll('form[data-endpoint]').forEach((form) => {
+    const statut = form.querySelector('.form__status');
+    const bouton = form.querySelector('button[type="submit"]');
+    const dire = (texte, etat) => { statut.textContent = texte; statut.dataset.state = etat || ''; };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const invalide = [...form.querySelectorAll('[required]')].find((c) => !c.checkValidity());
+      form.querySelectorAll('[required]').forEach((c) => c.toggleAttribute('aria-invalid', !c.checkValidity()));
+      if (invalide) {
+        const champ = form.querySelector(`label[for="${invalide.id}"]`).textContent.toLowerCase();
+        dire(invalide.type === 'email' && invalide.value
+          ? 'Cette adresse e-mail semble incomplète. Écrivez-la sous la forme nom@exemple.com.'
+          : `Il manque ${champ}.`, 'erreur');
+        invalide.focus();
+        return;
+      }
+      if (!form.dataset.endpoint) {
+        dire('Rien n’a été envoyé : ce formulaire n’est pas encore relié à une boîte de réception.', 'erreur');
+        return;
+      }
+      bouton.setAttribute('aria-busy', 'true');
+      bouton.disabled = true;
+      dire('Envoi en cours…');
+      try {
+        const r = await fetch(form.dataset.endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+        if (!r.ok) throw new Error(String(r.status));
+        form.reset();
+        dire('Merci, votre message est bien parti. Je vous réponds dès que possible.', 'ok');
+      } catch {
+        dire('L’envoi n’a pas abouti. Réessayez dans un instant, ou écrivez-moi via LinkedIn.', 'erreur');
+      } finally {
+        bouton.removeAttribute('aria-busy');
+        bouton.disabled = false;
+      }
+    });
+    form.querySelectorAll('[required]').forEach((c) => c.addEventListener('input', () => c.removeAttribute('aria-invalid')));
+  });
 
   /* ---------- Première fiche affichée ---------- */
   if (rows.length) activate(rows[0].dataset.id);
