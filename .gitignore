@@ -7,3 +7,5 @@ dist/
 .env.*
 references/
 .playwright-cli/
+
+.vercel

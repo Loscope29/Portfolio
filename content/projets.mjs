@@ -93,7 +93,7 @@ export const projets = [
     mesure: { valeur: '30,6 %', unite: 'hit@10 sur le test' },
     pile: 'LightGBM LambdaRank, FastAPI, Docker',
     depot: `${GH}/Recommendation-Systems`,
-    demo: null, // TODO : URL de la démo en ligne
+    demo: 'https://recommendation-systems-chzmdyviq75swcpcuxr7ez.streamlit.app/',
     visuel: {
       type: 'barres',
       titre: 'hit@10 sur le test, RetailRocket, 14 jours',
@@ -119,7 +119,7 @@ export const projets = [
     mesure: { valeur: '−0,75', unite: 'élasticité-prix retenue' },
     pile: 'Économétrie, DoubleML, MLflow',
     depot: `${GH}/Dynamic-Pricing`,
-    demo: null, // TODO : URL de la démo en ligne
+    demo: 'https://dynamic-pricing-tdmmvcuaj4msux7rkf3gxa.streamlit.app/',
     visuel: {
       type: 'points',
       titre: 'Élasticité-prix selon l’estimateur, Olist',
@@ -148,7 +148,7 @@ export const projets = [
     mesure: { valeur: '+0,55 pt', unite: 'de visites, budget de 10 %' },
     pile: 'Uplift, T-learner, X-learner, FastAPI',
     depot: `${GH}/Causal-Inference`,
-    demo: null, // TODO : URL de la démo en ligne
+    demo: 'https://causal-inference-xec72mccv2kqfcxsrbblrj.streamlit.app/',
     visuel: {
       type: 'barres',
       titre: 'Effet de l’e-mail sur le taux de visite, en points',
@@ -174,7 +174,7 @@ export const projets = [
     mesure: { valeur: '82,3 %', unite: 'des départs détectés' },
     pile: 'Random Forest, Optuna, SHAP, FastAPI, Streamlit, Docker',
     depot: `${GH}/Churn-Prediction`,
-    demo: null, // TODO : URL de la démo en ligne
+    demo: 'https://churn-prediction-7c6wdutxukuzfcfkptnwwv.streamlit.app/',
     visuel: {
       type: 'barres',
       titre: 'Départs détectés selon le seuil de décision',
