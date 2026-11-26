@@ -199,7 +199,7 @@ export const projets = [
     mesure: { valeur: '−14,6 %', unite: 'de coût total, en simulation' },
     pile: 'XGBoost, Optuna, FastAPI, Streamlit, Docker',
     depot: `${GH}/Pr-diction-Demand`,
-    demo: null, // TODO : URL de la démo en ligne
+    demo: 'https://pr-diction-demand-jm6e7ymmnauhlg4ur8pjce.streamlit.app/',
     visuel: {
       type: 'barres',
       titre: 'Taux de rupture simulé sur 360 jours de test',
