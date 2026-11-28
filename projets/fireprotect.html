@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FireProtect, projet de Luc Obama</title>
-  <meta name="description" content="Détecter un départ de feu et déclencher les sirènes. En production chez IBMH Conseils : alarmes, sirènes et notifications.">
+  <meta name="description" content="Détecter un départ de feu, sur une plateforme hébergée en local. En production chez IBMH Conseils : alarmes et sirènes déclenchées sans intervention, données gardées sur un serveur maîtrisé.">
   <meta property="og:title" content="FireProtect, projet de Luc Obama">
-  <meta property="og:description" content="Détecter un départ de feu et déclencher les sirènes.">
+  <meta property="og:description" content="Détecter un départ de feu, sur une plateforme hébergée en local.">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fr_FR">
   <meta name="twitter:card" content="summary_large_image">
@@ -37,7 +37,7 @@
       <div class="container">
         <nav class="crumbs" aria-label="Fil d’Ariane">
           <a href="../#travaux"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>Tous les projets</a>
-          <span class="num">01 / 10</span>
+          <span class="num">04 / 10</span>
         </nav>
         <div class="detail__head">
           <div class="detail__title" data-reveal>
@@ -46,7 +46,7 @@
               <span class="chip chip--cool">IoT et cloud</span>
             </div>
             <h1>FireProtect</h1>
-            <p class="lead">Détecter un départ de feu et déclencher les sirènes.</p>
+            <p class="lead">Détecter un départ de feu, sur une plateforme hébergée en local.</p>
             <p class="detail__links"><span class="panel__private"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Réalisé pour IBMH Conseils, code et démo non publics</span></p>
           </div>
           
@@ -57,9 +57,9 @@
     <section class="detail__par" aria-label="En bref">
       <div class="container">
         <dl class="par par--wide" data-reveal>
-          <div><dt>Problème</dt><dd>Alerter vite, sans fausse alarme, sur des sites de plusieurs clients.</dd></div>
-          <div><dt>Approche</dt><dd>Capteurs LoRaWAN, détection confirmée par plusieurs capteurs, données isolées par client.</dd></div>
-          <div><dt>Résultat</dt><dd>En production chez IBMH Conseils : alarmes, sirènes et notifications.</dd></div>
+          <div><dt>Problème</dt><dd>Alerter vite, sans fausse alarme, sans confier les données de plusieurs clients à un service tiers.</dd></div>
+          <div><dt>Approche</dt><dd>Capteurs LoRaWAN, détection confirmée par plusieurs capteurs, serveur hébergé en local, clients isolés dans la base.</dd></div>
+          <div><dt>Résultat</dt><dd>En production chez IBMH Conseils : alarmes et sirènes déclenchées sans intervention, données gardées sur un serveur maîtrisé.</dd></div>
         </dl>
       </div>
     </section>
@@ -78,7 +78,7 @@
               <span class="chain__name">Détection</span><span class="chain__detail">Django, confirmation multi-capteurs</span>
             </li>
             <li class="chain__step" style="--i:3">
-              <span class="chain__name">Données</span><span class="chain__detail">PostgreSQL, isolation par client</span>
+              <span class="chain__name">Données</span><span class="chain__detail">hébergées en local, isolées par client</span>
             </li>
             <li class="chain__step" style="--i:4">
               <span class="chain__name">Action</span><span class="chain__detail">sirènes, relais, notifications</span>
@@ -93,7 +93,7 @@
     <section class="detail__section" aria-labelledby="contexte">
       <div class="container split">
         <h2 id="contexte" data-reveal>Le contexte</h2>
-        <div data-reveal><p>Une plateforme de supervision incendie pour plusieurs clients : détection d’un départ de feu et alertes techniques (batterie, communication) à partir de capteurs LoRaWAN.</p><p>Quand un incendie est confirmé, la plateforme déclenche les actionneurs (sirènes, relais) et prévient les équipes concernées.</p><h3 class="detail__sub">Les données</h3><p>Les trames radio des capteurs : fumée, déclencheur manuel, niveau de batterie et qualité du signal, stockées en séries temporelles.</p></div>
+        <div data-reveal><p>Une plateforme de supervision incendie pour plusieurs clients : détection d’un départ de feu et alertes techniques (batterie, communication) à partir de capteurs LoRaWAN.</p><p>Quand un incendie est confirmé, la plateforme déclenche les actionneurs (sirènes, relais) et prévient les équipes concernées, sans intervention humaine.</p><p>La plateforme est hébergée en local, sur un serveur maîtrisé : les données des clients ne passent par aucun service tiers, et chaque client ne voit que les siennes.</p><h3 class="detail__sub">Les données</h3><p>Les trames radio des capteurs : fumée, déclencheur manuel, niveau de batterie et qualité du signal, stockées en séries temporelles.</p></div>
       </div>
     </section>
 
@@ -110,6 +110,7 @@
         <ul class="proofs__list detail__figures" data-reveal>
           <li class="is-lead"><span class="proofs__val num">3</span><span class="proofs__label">niveaux d’interface : plateforme, client, site</span></li>
           <li><span class="proofs__val num">RLS</span><span class="proofs__label">isolation des clients dans la base, pas seulement dans le code</span></li>
+          <li><span class="proofs__val num">Local</span><span class="proofs__label">hébergement sur un serveur maîtrisé, HTTPS par Traefik</span></li>
         </ul>
       </div>
     </section>

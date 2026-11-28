@@ -12,7 +12,8 @@ export const details = {
   fireprotect: {
     contexte: [
       'Une plateforme de supervision incendie pour plusieurs clients : détection d’un départ de feu et alertes techniques (batterie, communication) à partir de capteurs LoRaWAN.',
-      'Quand un incendie est confirmé, la plateforme déclenche les actionneurs (sirènes, relais) et prévient les équipes concernées.',
+      'Quand un incendie est confirmé, la plateforme déclenche les actionneurs (sirènes, relais) et prévient les équipes concernées, sans intervention humaine.',
+      'La plateforme est hébergée en local, sur un serveur maîtrisé : les données des clients ne passent par aucun service tiers, et chaque client ne voit que les siennes.',
     ],
     donnees: 'Les trames radio des capteurs : fumée, déclencheur manuel, niveau de batterie et qualité du signal, stockées en séries temporelles.',
     etapes: [
@@ -26,6 +27,7 @@ export const details = {
     resultats: [
       ['3', 'niveaux d’interface : plateforme, client, site'],
       ['RLS', 'isolation des clients dans la base, pas seulement dans le code'],
+      ['Local', 'hébergement sur un serveur maîtrisé, HTTPS par Traefik'],
     ],
   },
 
@@ -33,6 +35,7 @@ export const details = {
     contexte: [
       'La surveillance de la chaîne du froid (réfrigérateurs, congélateurs, chambres froides) par capteurs LoRaWAN, pour des clients qui ont chacun plusieurs sites, par exemple un groupe hospitalier.',
       'Tous les clients partagent une instance et une base, et leurs données restent séparées.',
+      'La plateforme est déployée en local : les relevés restent sur un serveur maîtrisé, et les alertes de seuil remplacent les contrôles faits à la main.',
     ],
     donnees: 'Les relevés de température des capteurs, rangés par client, site, bâtiment, étage et local.',
     etapes: [
@@ -43,6 +46,7 @@ export const details = {
     ],
     resultats: [
       ['5', 'niveaux d’organisation : client, site, bâtiment, étage, local'],
+      ['Local', 'déploiement en local, clients isolés dans une même base'],
     ],
   },
 
@@ -156,7 +160,8 @@ export const details = {
   demande: {
     contexte: [
       'Mal anticiper la demande coûte deux fois : une rupture fait perdre une vente, un surstock immobilise du capital. Et les deux erreurs n’ont pas le même coût.',
-      'Le projet produit une prévision journalière par catégorie et par région, puis une règle de commande qui arbitre entre ces deux coûts.',
+      'Le projet produit une prévision journalière par catégorie et par région, puis une règle de commande qui arbitre entre ces deux coûts : une décision répétitive, prise chaque jour, devient automatique.',
+      'Le gain est mesuré face à la règle en place, sur des jours jamais vus à l’entraînement.',
     ],
     donnees: 'La demande quotidienne par magasin, catégorie et région, avec le prix, les promotions, la météo, la saisonnalité et les périodes d’épidémie.',
     etapes: [
@@ -180,7 +185,8 @@ export const details = {
 
   rag: {
     contexte: [
-      'Un assistant qui répond aux recruteurs sur mon parcours, à toute heure, à partir de mon CV et d’autres documents.',
+      'Un assistant en ligne qui répond à toute heure à partir d’une base de documents : ici mon CV et des documents sur mon parcours, interrogés par des recruteurs.',
+      'C’est le schéma d’une base de connaissance interne : collecter les documents, les indexer, retrouver les bons passages, puis répondre en citant ce qui a été trouvé.',
     ],
     donnees: 'Mon CV et des documents collectés par scraping.',
     etapes: [
@@ -193,13 +199,17 @@ export const details = {
     ],
     resultats: [
       ['3', 'clouds : AWS, GCP et Azure'],
+      ['24 h/24', 'en ligne, sans intervention'],
+    ],
+    limites: [
+      'Le modèle de génération est appelé sur le cloud : pour des documents internes confidentiels, la même chaîne se monte en local, avec un modèle ouvert et des embeddings calculés sur place, comme dans SemanticSearchAPI.',
     ],
   },
 
   polymind: {
     contexte: [
       'Polymind réunit quatre outils d’IA appliquée derrière une seule interface Streamlit : la voix, les documents et la finance.',
-      'Chaque appel aux LLM est tracé dans LangSmith : latence, jetons, enchaînement des étapes.',
+      'Chaque appel aux LLM est tracé dans LangSmith : latence, jetons, enchaînement des étapes. C’est ce suivi qui permet de mesurer le coût et la vitesse d’un usage de l’IA, puis de le comparer.',
     ],
     donnees: 'Les fichiers audio et PDF fournis par l’utilisateur, et dix ans de cours de quatre actions cotées, récupérés avec yfinance.',
     etapes: [
@@ -224,6 +234,7 @@ export const details = {
   semantic: {
     contexte: [
       'Un projet de master : une API de recherche sémantique qui indexe des documents PDF et répond selon le sens de la question, plutôt que sur des mots-clés.',
+      'Tout tourne sur la machine : le modèle d’embeddings MiniLM, la base PostgreSQL et l’API. Aucun document n’est envoyé à un service tiers, ce qui en fait une base possible pour un RAG hébergé en local.',
     ],
     donnees: 'Les documents PDF téléversés par l’utilisateur.',
     etapes: [
@@ -237,6 +248,7 @@ export const details = {
     resultats: [
       ['4', 'routes : téléversement, recherche, documents similaires, historique'],
       ['ivfflat', 'index vectoriel pgvector pour accélérer la recherche'],
+      ['0', 'appel à un service externe : modèle et base en local'],
     ],
     limites: [
       'Les PDF scannés ne sont pas encore lus : il faudrait un OCR.',

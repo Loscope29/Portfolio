@@ -20,7 +20,7 @@ export const parcours = [
     lieu: 'IBMH Conseils, Nantes',
     missions: [
       'Conception et déploiement de pipelines ETL pour l’ingestion et la transformation de données métier.',
-      'Intégration de modèles d’IA et de machine learning pour l’automatisation et l’aide à la décision.',
+      'Intégration de modèles d’IA et de machine learning pour automatiser des tâches répétitives et aider à la décision.',
       'Assistant vocal pour conduire des entretiens de terrain : transcription, analyse et structuration des réponses.',
       'Intégration d’un LLM qui résume les échanges pour faciliter la décision.',
     ],
@@ -32,10 +32,11 @@ export const parcours = [
     titre: 'Plateformes IoT FireProtect et Celsius',
     lieu: 'IBMH Conseils, Nantes',
     missions: [
-      'Conception, développement et déploiement en autonomie de deux plateformes IoT en production.',
+      'Conception, développement et déploiement en autonomie de deux plateformes IoT en production, hébergées en local.',
       'Réseau LoRaWAN avec ChirpStack, intégration des capteurs et actionneurs, transmission par MQTT.',
       'API REST Django, interface Next.js, séries temporelles dans PostgreSQL et TimescaleDB.',
-      'Serveur sécurisé, conteneurs Docker, HTTPS par Traefik, CI/CD GitHub Actions, supervision Prometheus et Grafana.',
+      'Sécurité des données : serveur maîtrisé, clients isolés par Row-Level Security, HTTPS par Traefik.',
+      'Conteneurs Docker, CI/CD GitHub Actions, supervision Prometheus et Grafana.',
     ],
     tags: ['LoRaWAN', 'Django', 'Next.js', 'TimescaleDB', 'Docker', 'Grafana'],
   },
@@ -60,7 +61,8 @@ export const parcours = [
 export const outils = [
   ['IA et LLM', 'IA générative', [
     ['RAG'], ['Amazon Bedrock'], ['API OpenAI'], ['LangChain', 'langchain'], ['LangSmith'],
-    ['Hugging Face', 'huggingface'], ['Gemini', 'googlegemini'],
+    ['Hugging Face', 'huggingface'], ['Gemini', 'googlegemini'], ['Whisper'], ['Sentence-Transformers'],
+    ['ChromaDB'], ['pgvector'],
   ]],
   ['Machine learning', 'graphique', [
     ['Python', 'python'], ['pandas', 'pandas'], ['scikit-learn', 'scikitlearn'], ['XGBoost'], ['LightGBM'],

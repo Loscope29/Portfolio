@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Luc Obama, data scientist et AI engineer à Nantes</title>
-  <meta name="description" content="Luc Obama, data scientist et AI engineer à Nantes : 10 projets livrés dans 5 secteurs, du modèle mesuré au service en production.">
+  <meta name="description" content="Luc Obama, data scientist et AI engineer à Nantes : assistants RAG en ligne, automatisation, plateformes hébergées en local et gains mesurés, sur 10 projets.">
   <meta property="og:title" content="Luc Obama, data scientist et AI engineer">
   <meta property="og:description" content="Je transforme une question métier en modèle mesuré, puis en service en production.">
   <meta property="og:type" content="website">
@@ -35,12 +35,12 @@
   <main id="main">
     <section class="hero" aria-labelledby="hero-titre" data-loop>
       <canvas class="hero__cloud" role="img" aria-label="Nuage en trois dimensions : chaque point lumineux est un projet, regroupé par secteur. Cliquer un point ouvre sa fiche."></canvas>
-      <script type="application/json" id="cloud-data">{"secteurs":["Santé","E-commerce","Banque et finance","Grande distribution","IA générative"],"projets":[{"id":"fireprotect","nom":"FireProtect","secteur":"Santé"},{"id":"celsius","nom":"Celsius","secteur":"Santé"},{"id":"reco","nom":"Recommandation produit","secteur":"E-commerce"},{"id":"pricing","nom":"Prix d’une marketplace","secteur":"E-commerce"},{"id":"uplift","nom":"Ciblage d’un e-mail","secteur":"E-commerce"},{"id":"churn","nom":"Attrition bancaire","secteur":"Banque et finance"},{"id":"demande","nom":"Demande par magasin","secteur":"Grande distribution"},{"id":"rag","nom":"Assistant RAG personnel","secteur":"IA générative"},{"id":"polymind","nom":"Polymind","secteur":"IA générative"},{"id":"semantic","nom":"SemanticSearchAPI","secteur":"IA générative"}]}</script>
+      <script type="application/json" id="cloud-data">{"secteurs":["IA générative","Santé","Grande distribution","E-commerce","Banque et finance"],"projets":[{"id":"rag","nom":"Assistant RAG en ligne","secteur":"IA générative"},{"id":"polymind","nom":"Polymind","secteur":"IA générative"},{"id":"semantic","nom":"SemanticSearchAPI","secteur":"IA générative"},{"id":"fireprotect","nom":"FireProtect","secteur":"Santé"},{"id":"celsius","nom":"Celsius","secteur":"Santé"},{"id":"demande","nom":"Demande par magasin","secteur":"Grande distribution"},{"id":"reco","nom":"Recommandation produit","secteur":"E-commerce"},{"id":"pricing","nom":"Prix d’une marketplace","secteur":"E-commerce"},{"id":"uplift","nom":"Ciblage d’un e-mail","secteur":"E-commerce"},{"id":"churn","nom":"Attrition bancaire","secteur":"Banque et finance"}]}</script>
 
       <div class="container hero__inner">
         <div class="hero__text">
           <h1 id="hero-titre" data-reveal style="--i:0">Une question métier,<br><span class="rotator" data-rotator><span class="rotator__word is-on">un modèle,</span><span class="rotator__word" aria-hidden="true">un assistant,</span><span class="rotator__word" aria-hidden="true">une API,</span></span><br>un chiffre.</h1>
-          <p class="hero__lead" data-reveal style="--i:1">C’est ainsi que j’ai mené 10 projets de data science et d’IA, de l’analyse jusqu’à la mise en production.</p>
+          <p class="hero__lead" data-reveal style="--i:1">C’est ainsi que j’ai mené 10 projets de data science et d’IA : des assistants RAG en ligne, des tâches automatisées, des plateformes hébergées en local, et à chaque fois un gain mesuré.</p>
           <div class="actions" data-reveal style="--i:2">
             <a class="btn btn--primary" href="#travaux">Voir les 10 projets<svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></a>
             <a class="btn" href="#contact"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>M’écrire</a>
@@ -61,31 +61,31 @@
       <div class="container">
         <ul class="proofs__list proofs__list--links" data-reveal>
           <li class="is-lead">
-            <a class="proof" href="projets/churn.html">
-              <span class="proof__val num">82,3<span class="proof__unit">%</span></span>
-              <span class="proof__label">des départs clients détectés</span>
-              <span class="proof__project"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg><span>Attrition bancaire</span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
-            </a>
-          </li>
-          <li>
-            <a class="proof" href="projets/reco.html">
-              <span class="proof__val num">+4,3<span class="proof__unit">pts</span></span>
-              <span class="proof__label">de hit@10 face à la meilleure référence</span>
-              <span class="proof__project"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg><span>Recommandation produit</span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
-            </a>
-          </li>
-          <li>
             <a class="proof" href="projets/fireprotect.html">
               <span class="proof__val num">2</span>
-              <span class="proof__label">plateformes IoT en production</span>
+              <span class="proof__label">plateformes en production, hébergées en local</span>
               <span class="proof__project"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg><span>FireProtect et Celsius</span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
             </a>
           </li>
           <li>
             <a class="proof" href="projets/rag.html">
               <span class="proof__val num">3</span>
-              <span class="proof__label">clouds pour un même assistant RAG</span>
-              <span class="proof__project"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg><span>Assistant RAG personnel</span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
+              <span class="proof__label">clouds pour un même assistant RAG en ligne</span>
+              <span class="proof__project"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg><span>Assistant RAG en ligne</span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
+            </a>
+          </li>
+          <li>
+            <a class="proof" href="projets/demande.html">
+              <span class="proof__val num">−14,6<span class="proof__unit">%</span></span>
+              <span class="proof__label">de coût, gain mesuré face à la règle en place</span>
+              <span class="proof__project"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 2.004 0L20.7 7"/></svg><span>Demande par magasin</span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
+            </a>
+          </li>
+          <li>
+            <a class="proof" href="projets/churn.html">
+              <span class="proof__val num">82,3<span class="proof__unit">%</span></span>
+              <span class="proof__label">des départs clients détectés</span>
+              <span class="proof__project"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg><span>Attrition bancaire</span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
             </a>
           </li>
         </ul>
@@ -101,45 +101,198 @@
         <div class="work__grid">
           <ol class="index" data-reveal>
           <li class="group">
+            <h3 class="group__name"><span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>IA générative</span><span class="num">03</span></h3>
+            <ul class="group__rows">
+              <li><a class="row" href="#p-rag" data-id="rag" aria-controls="p-rag"><span class="row__num num">01</span><span class="row__name">Assistant RAG en ligne</span></a></li>
+              <li><a class="row" href="#p-polymind" data-id="polymind" aria-controls="p-polymind"><span class="row__num num">02</span><span class="row__name">Polymind</span></a></li>
+              <li><a class="row" href="#p-semantic" data-id="semantic" aria-controls="p-semantic"><span class="row__num num">03</span><span class="row__name">SemanticSearchAPI</span></a></li>
+            </ul>
+          </li>
+          <li class="group">
             <h3 class="group__name"><span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>Santé</span><span class="num">02</span></h3>
             <ul class="group__rows">
-              <li><a class="row" href="#p-fireprotect" data-id="fireprotect" aria-controls="p-fireprotect"><span class="row__num num">01</span><span class="row__name">FireProtect</span></a></li>
-              <li><a class="row" href="#p-celsius" data-id="celsius" aria-controls="p-celsius"><span class="row__num num">02</span><span class="row__name">Celsius</span></a></li>
-            </ul>
-          </li>
-          <li class="group">
-            <h3 class="group__name"><span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>E-commerce</span><span class="num">03</span></h3>
-            <ul class="group__rows">
-              <li><a class="row" href="#p-reco" data-id="reco" aria-controls="p-reco"><span class="row__num num">03</span><span class="row__name">Recommandation produit</span></a></li>
-              <li><a class="row" href="#p-pricing" data-id="pricing" aria-controls="p-pricing"><span class="row__num num">04</span><span class="row__name">Prix d’une marketplace</span></a></li>
-              <li><a class="row" href="#p-uplift" data-id="uplift" aria-controls="p-uplift"><span class="row__num num">05</span><span class="row__name">Ciblage d’un e-mail</span></a></li>
-            </ul>
-          </li>
-          <li class="group">
-            <h3 class="group__name"><span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>Banque et finance</span><span class="num">01</span></h3>
-            <ul class="group__rows">
-              <li><a class="row" href="#p-churn" data-id="churn" aria-controls="p-churn"><span class="row__num num">06</span><span class="row__name">Attrition bancaire</span></a></li>
+              <li><a class="row" href="#p-fireprotect" data-id="fireprotect" aria-controls="p-fireprotect"><span class="row__num num">04</span><span class="row__name">FireProtect</span></a></li>
+              <li><a class="row" href="#p-celsius" data-id="celsius" aria-controls="p-celsius"><span class="row__num num">05</span><span class="row__name">Celsius</span></a></li>
             </ul>
           </li>
           <li class="group">
             <h3 class="group__name"><span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 2.004 0L20.7 7"/></svg>Grande distribution</span><span class="num">01</span></h3>
             <ul class="group__rows">
-              <li><a class="row" href="#p-demande" data-id="demande" aria-controls="p-demande"><span class="row__num num">07</span><span class="row__name">Demande par magasin</span></a></li>
+              <li><a class="row" href="#p-demande" data-id="demande" aria-controls="p-demande"><span class="row__num num">06</span><span class="row__name">Demande par magasin</span></a></li>
             </ul>
           </li>
           <li class="group">
-            <h3 class="group__name"><span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>IA générative</span><span class="num">03</span></h3>
+            <h3 class="group__name"><span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>E-commerce</span><span class="num">03</span></h3>
             <ul class="group__rows">
-              <li><a class="row" href="#p-rag" data-id="rag" aria-controls="p-rag"><span class="row__num num">08</span><span class="row__name">Assistant RAG personnel</span></a></li>
-              <li><a class="row" href="#p-polymind" data-id="polymind" aria-controls="p-polymind"><span class="row__num num">09</span><span class="row__name">Polymind</span></a></li>
-              <li><a class="row" href="#p-semantic" data-id="semantic" aria-controls="p-semantic"><span class="row__num num">10</span><span class="row__name">SemanticSearchAPI</span></a></li>
+              <li><a class="row" href="#p-reco" data-id="reco" aria-controls="p-reco"><span class="row__num num">07</span><span class="row__name">Recommandation produit</span></a></li>
+              <li><a class="row" href="#p-pricing" data-id="pricing" aria-controls="p-pricing"><span class="row__num num">08</span><span class="row__name">Prix d’une marketplace</span></a></li>
+              <li><a class="row" href="#p-uplift" data-id="uplift" aria-controls="p-uplift"><span class="row__num num">09</span><span class="row__name">Ciblage d’un e-mail</span></a></li>
+            </ul>
+          </li>
+          <li class="group">
+            <h3 class="group__name"><span><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>Banque et finance</span><span class="num">01</span></h3>
+            <ul class="group__rows">
+              <li><a class="row" href="#p-churn" data-id="churn" aria-controls="p-churn"><span class="row__num num">10</span><span class="row__name">Attrition bancaire</span></a></li>
             </ul>
           </li>
           </ol>
           <div class="stage" aria-live="polite">
-        <article class="panel" id="p-fireprotect" data-id="fireprotect" data-draw aria-labelledby="t-fireprotect">
+        <article class="panel" id="p-rag" data-id="rag" data-draw aria-labelledby="t-rag">
           <div class="panel__bar">
             <span class="panel__count num">01 / 10</span>
+            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>IA générative</span>
+            
+            <span class="panel__nav">
+              <a class="panel__step" href="#p-churn" data-go="churn" aria-label="Projet précédent : Attrition bancaire"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+              <a class="panel__step" href="#p-polymind" data-go="polymind" aria-label="Projet suivant : Polymind"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+            </span>
+          </div>
+          <div class="panel__head">
+            <div class="panel__heading">
+              <h3 class="panel__title" id="t-rag">Assistant RAG en ligne</h3>
+              <p class="panel__q">Répondre à partir d’une base de documents, à toute heure.</p>
+            </div>
+            <p class="reading"><span class="reading__val num">3</span><span class="reading__unit">clouds : AWS, GCP, Azure</span></p>
+          </div>
+          <div class="panel__body">
+            <dl class="par">
+              <div><dt>Problème</dt><dd>Rendre une base de documents interrogeable en langage naturel, sans relire chaque fichier.</dd></div>
+              <div><dt>Approche</dt><dd>Collecte et indexation des documents, recherche des passages utiles, réponse générée par Amazon Nova 2 Lite via Bedrock.</dd></div>
+              <div><dt>Résultat</dt><dd>En ligne sur AWS Lambda, accès gérés avec IAM et coûts sous alerte, puis porté sur GCP et Azure.</dd></div>
+            </dl>
+            <figure class="viz">
+            <ol class="chain" aria-label="Architecture de l’assistant RAG">
+            <li class="chain__step" style="--i:0">
+              <span class="chain__name">Sources</span><span class="chain__detail">documents collectés et indexés</span>
+            </li>
+            <li class="chain__step" style="--i:1">
+              <span class="chain__name">Génération</span><span class="chain__detail">Amazon Nova 2 Lite via Bedrock</span>
+            </li>
+            <li class="chain__step" style="--i:2">
+              <span class="chain__name">Service</span><span class="chain__detail">Docker sur ECR, AWS Lambda</span>
+            </li>
+            <li class="chain__step" style="--i:3">
+              <span class="chain__name">Mémoire</span><span class="chain__detail">conversations stockées sur S3</span>
+            </li>
+            <li class="chain__step" style="--i:4">
+              <span class="chain__name">Portage</span><span class="chain__detail">Cloud Run, Container Apps</span>
+            </li>
+          </ol>
+              <figcaption>Architecture de l’assistant RAG</figcaption>
+            </figure>
+          </div>
+          <div class="panel__foot">
+            <ul class="panel__tools" aria-label="Outils"><li>Bedrock</li><li>Lambda</li><li>S3</li><li>Docker</li><li>IAM</li></ul>
+            <p class="panel__links"><a class="panel__link panel__link--page" href="projets/rag.html">Voir le projet<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a><a class="panel__link" href="https://github.com/Loscope29/digital-twin"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Voir le dépôt</a></p>
+          </div>
+        </article>
+        <article class="panel" id="p-polymind" data-id="polymind" data-draw aria-labelledby="t-polymind">
+          <div class="panel__bar">
+            <span class="panel__count num">02 / 10</span>
+            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>IA générative</span>
+            
+            <span class="panel__nav">
+              <a class="panel__step" href="#p-rag" data-go="rag" aria-label="Projet précédent : Assistant RAG en ligne"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+              <a class="panel__step" href="#p-semantic" data-go="semantic" aria-label="Projet suivant : SemanticSearchAPI"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+            </span>
+          </div>
+          <div class="panel__head">
+            <div class="panel__heading">
+              <h3 class="panel__title" id="t-polymind">Polymind</h3>
+              <p class="panel__q">Transcrire, interroger un PDF, résumer : des tâches répétitives dans une seule application.</p>
+            </div>
+            <p class="reading"><span class="reading__val num">4</span><span class="reading__unit">outils dans une même application</span></p>
+          </div>
+          <div class="panel__body">
+            <dl class="par">
+              <div><dt>Problème</dt><dd>Rassembler au même endroit des tâches répétitives : transcrire un audio, interroger un PDF, commenter une prévision.</dd></div>
+              <div><dt>Approche</dt><dd>Transcription Whisper, RAG avec LangChain, ChromaDB et Gemini, et chaque appel au LLM tracé dans LangSmith.</dd></div>
+              <div><dt>Résultat</dt><dd>Une application Streamlit en quatre outils, suivie dans LangSmith (latence, jetons) et livrée en image Docker.</dd></div>
+            </dl>
+            <figure class="viz">
+            <ol class="chain" aria-label="Les briques de Polymind">
+            <li class="chain__step" style="--i:0">
+              <span class="chain__name">Audio vers texte</span><span class="chain__detail">Whisper</span>
+            </li>
+            <li class="chain__step" style="--i:1">
+              <span class="chain__name">Texte vers voix</span><span class="chain__detail">MMS-TTS, Hugging Face</span>
+            </li>
+            <li class="chain__step" style="--i:2">
+              <span class="chain__name">Questions sur un PDF</span><span class="chain__detail">LangChain, ChromaDB, Gemini</span>
+            </li>
+            <li class="chain__step" style="--i:3">
+              <span class="chain__name">Chatbot boursier</span><span class="chain__detail">Chronos ou LSTM, Gemini</span>
+            </li>
+            <li class="chain__step" style="--i:4">
+              <span class="chain__name">Prix des logements</span><span class="chain__detail">réseau de neurones Keras</span>
+            </li>
+            <li class="chain__step" style="--i:5">
+              <span class="chain__name">Suivi et livraison</span><span class="chain__detail">LangSmith, Docker</span>
+            </li>
+          </ol>
+              <figcaption>Les briques de Polymind</figcaption>
+            </figure>
+          </div>
+          <div class="panel__foot">
+            <ul class="panel__tools" aria-label="Outils"><li>Streamlit</li><li>Whisper</li><li>LangChain</li><li>ChromaDB</li><li>Gemini</li><li>Chronos</li><li>Keras</li><li>LangSmith</li><li>Docker</li></ul>
+            <p class="panel__links"><a class="panel__link panel__link--page" href="projets/polymind.html">Voir le projet<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a><a class="panel__link" href="https://github.com/Loscope29/polymind"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Voir le dépôt</a></p>
+          </div>
+        </article>
+        <article class="panel" id="p-semantic" data-id="semantic" data-draw aria-labelledby="t-semantic">
+          <div class="panel__bar">
+            <span class="panel__count num">03 / 10</span>
+            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>IA générative</span>
+            
+            <span class="panel__nav">
+              <a class="panel__step" href="#p-polymind" data-go="polymind" aria-label="Projet précédent : Polymind"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+              <a class="panel__step" href="#p-fireprotect" data-go="fireprotect" aria-label="Projet suivant : FireProtect"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+            </span>
+          </div>
+          <div class="panel__head">
+            <div class="panel__heading">
+              <h3 class="panel__title" id="t-semantic">SemanticSearchAPI</h3>
+              <p class="panel__q">Une base de documents interrogeable par le sens, qui tourne en local.</p>
+            </div>
+            <p class="reading"><span class="reading__val num">4</span><span class="reading__unit">routes d’API documentées</span></p>
+          </div>
+          <div class="panel__body">
+            <dl class="par">
+              <div><dt>Problème</dt><dd>Retrouver un passage dans une pile de PDF sans connaître les mots exacts, ni envoyer les documents à un service tiers.</dd></div>
+              <div><dt>Approche</dt><dd>Extraction, découpage et indexation des PDF ; embeddings Sentence-Transformers calculés sur la machine, stockés dans PostgreSQL et pgvector.</dd></div>
+              <div><dt>Résultat</dt><dd>Une API Django REST sans appel à un service externe : elle indexe des PDF, cherche par similarité et propose des documents proches.</dd></div>
+            </dl>
+            <figure class="viz">
+            <ol class="chain" aria-label="Du PDF à la recherche sémantique">
+            <li class="chain__step" style="--i:0">
+              <span class="chain__name">PDF</span><span class="chain__detail">téléversé par l’API</span>
+            </li>
+            <li class="chain__step" style="--i:1">
+              <span class="chain__name">Extraction du texte</span><span class="chain__detail">PyMuPDF</span>
+            </li>
+            <li class="chain__step" style="--i:2">
+              <span class="chain__name">Découpage</span><span class="chain__detail">en segments</span>
+            </li>
+            <li class="chain__step" style="--i:3">
+              <span class="chain__name">Embeddings</span><span class="chain__detail">Sentence-Transformers, MiniLM</span>
+            </li>
+            <li class="chain__step" style="--i:4">
+              <span class="chain__name">Stockage</span><span class="chain__detail">PostgreSQL et pgvector</span>
+            </li>
+            <li class="chain__step" style="--i:5">
+              <span class="chain__name">Recherche</span><span class="chain__detail">similarité cosinus</span>
+            </li>
+          </ol>
+              <figcaption>Du PDF à la recherche sémantique</figcaption>
+            </figure>
+          </div>
+          <div class="panel__foot">
+            <ul class="panel__tools" aria-label="Outils"><li>Django REST Framework</li><li>Sentence-Transformers</li><li>pgvector</li><li>PostgreSQL</li><li>PyMuPDF</li></ul>
+            <p class="panel__links"><a class="panel__link panel__link--page" href="projets/semantic.html">Voir le projet<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a><a class="panel__link" href="https://github.com/Loscope29/SemanticSearchAPI"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Voir le dépôt</a></p>
+          </div>
+        </article>
+        <article class="panel" id="p-fireprotect" data-id="fireprotect" data-draw aria-labelledby="t-fireprotect">
+          <div class="panel__bar">
+            <span class="panel__count num">04 / 10</span>
             <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>Santé</span>
             <span class="chip chip--cool">IoT et cloud</span>
             <span class="panel__nav">
@@ -150,15 +303,15 @@
           <div class="panel__head">
             <div class="panel__heading">
               <h3 class="panel__title" id="t-fireprotect">FireProtect</h3>
-              <p class="panel__q">Détecter un départ de feu et déclencher les sirènes.</p>
+              <p class="panel__q">Détecter un départ de feu, sur une plateforme hébergée en local.</p>
             </div>
             
           </div>
           <div class="panel__body">
             <dl class="par">
-              <div><dt>Problème</dt><dd>Alerter vite, sans fausse alarme, sur des sites de plusieurs clients.</dd></div>
-              <div><dt>Approche</dt><dd>Capteurs LoRaWAN, détection confirmée par plusieurs capteurs, données isolées par client.</dd></div>
-              <div><dt>Résultat</dt><dd>En production chez IBMH Conseils : alarmes, sirènes et notifications.</dd></div>
+              <div><dt>Problème</dt><dd>Alerter vite, sans fausse alarme, sans confier les données de plusieurs clients à un service tiers.</dd></div>
+              <div><dt>Approche</dt><dd>Capteurs LoRaWAN, détection confirmée par plusieurs capteurs, serveur hébergé en local, clients isolés dans la base.</dd></div>
+              <div><dt>Résultat</dt><dd>En production chez IBMH Conseils : alarmes et sirènes déclenchées sans intervention, données gardées sur un serveur maîtrisé.</dd></div>
             </dl>
             <figure class="viz">
             <ol class="chain" aria-label="Chaîne de détection FireProtect">
@@ -172,7 +325,7 @@
               <span class="chain__name">Détection</span><span class="chain__detail">Django, confirmation multi-capteurs</span>
             </li>
             <li class="chain__step" style="--i:3">
-              <span class="chain__name">Données</span><span class="chain__detail">PostgreSQL, isolation par client</span>
+              <span class="chain__name">Données</span><span class="chain__detail">hébergées en local, isolées par client</span>
             </li>
             <li class="chain__step" style="--i:4">
               <span class="chain__name">Action</span><span class="chain__detail">sirènes, relais, notifications</span>
@@ -188,26 +341,26 @@
         </article>
         <article class="panel" id="p-celsius" data-id="celsius" data-draw aria-labelledby="t-celsius">
           <div class="panel__bar">
-            <span class="panel__count num">02 / 10</span>
+            <span class="panel__count num">05 / 10</span>
             <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>Santé</span>
             <span class="chip chip--cool">IoT et cloud</span>
             <span class="panel__nav">
               <a class="panel__step" href="#p-fireprotect" data-go="fireprotect" aria-label="Projet précédent : FireProtect"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
-              <a class="panel__step" href="#p-reco" data-go="reco" aria-label="Projet suivant : Recommandation produit"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+              <a class="panel__step" href="#p-demande" data-go="demande" aria-label="Projet suivant : Demande par magasin"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
             </span>
           </div>
           <div class="panel__head">
             <div class="panel__heading">
               <h3 class="panel__title" id="t-celsius">Celsius</h3>
-              <p class="panel__q">Surveiller la chaîne du froid, jusqu’aux groupes hospitaliers.</p>
+              <p class="panel__q">Surveiller la chaîne du froid en continu, données hébergées en local.</p>
             </div>
             
           </div>
           <div class="panel__body">
             <dl class="par">
-              <div><dt>Problème</dt><dd>Prouver que la chaîne du froid tient, du frigo à la chambre froide.</dd></div>
-              <div><dt>Approche</dt><dd>Capteurs de température LoRaWAN, organisation client, site, bâtiment, local, alertes de seuil.</dd></div>
-              <div><dt>Résultat</dt><dd>En production chez IBMH Conseils, pour des clients répartis sur plusieurs sites.</dd></div>
+              <div><dt>Problème</dt><dd>Remplacer les relevés de température à la main par une surveillance continue, sans sortir les données des clients.</dd></div>
+              <div><dt>Approche</dt><dd>Capteurs LoRaWAN, organisation client, site, bâtiment, local, alertes de seuil automatiques, déploiement en local.</dd></div>
+              <div><dt>Résultat</dt><dd>En production chez IBMH Conseils, pour des clients répartis sur plusieurs sites, chacun isolé des autres.</dd></div>
             </dl>
             <figure class="viz">
             <ol class="chain chain--tree" aria-label="Organisation d’un client Celsius">
@@ -235,13 +388,55 @@
             <p class="panel__links"><a class="panel__link panel__link--page" href="projets/celsius.html">Voir le projet<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a><span class="panel__private"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Réalisé pour IBMH Conseils, code et démo non publics</span></p>
           </div>
         </article>
-        <article class="panel" id="p-reco" data-id="reco" data-draw aria-labelledby="t-reco">
+        <article class="panel" id="p-demande" data-id="demande" data-draw aria-labelledby="t-demande">
           <div class="panel__bar">
-            <span class="panel__count num">03 / 10</span>
-            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>E-commerce</span>
+            <span class="panel__count num">06 / 10</span>
+            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 2.004 0L20.7 7"/></svg>Grande distribution</span>
             <span class="chip chip--cool">Data science</span>
             <span class="panel__nav">
               <a class="panel__step" href="#p-celsius" data-go="celsius" aria-label="Projet précédent : Celsius"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+              <a class="panel__step" href="#p-reco" data-go="reco" aria-label="Projet suivant : Recommandation produit"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+            </span>
+          </div>
+          <div class="panel__head">
+            <div class="panel__heading">
+              <h3 class="panel__title" id="t-demande">Demande par magasin</h3>
+              <p class="panel__q">Combien commander, catégorie par région ?</p>
+            </div>
+            <p class="reading"><span class="reading__val num">−14,6 %</span><span class="reading__unit">de coût total, en simulation</span></p>
+          </div>
+          <div class="panel__body">
+            <dl class="par">
+              <div><dt>Problème</dt><dd>Automatiser la commande : une rupture coûte une vente, un surplus immobilise du stock.</dd></div>
+              <div><dt>Approche</dt><dd>XGBoost validé sur 4 périodes, puis une règle de commande qui arbitre entre rupture et surstock.</dd></div>
+              <div><dt>Résultat</dt><dd>Gain mesuré face à la règle actuelle : −14,6 % de coût total simulé, rupture ramenée de 25,9 % à 11,9 %.</dd></div>
+            </dl>
+            <figure class="viz">
+            <ol class="bars" aria-label="Taux de rupture simulé sur 360 jours de test">
+            <li class="bars__row" style="--i:0; --v:0.8633">
+              <span class="bars__label">Règle actuelle, prévision × 1,20</span>
+              <span class="bars__track"><span class="bars__bar"></span><span class="bars__val num">25,9 %</span></span>
+            </li>
+            <li class="bars__row is-lead" style="--i:1; --v:0.3967">
+              <span class="bars__label">Règle recommandée, prévision × 1,39</span>
+              <span class="bars__track"><span class="bars__bar"></span><span class="bars__val num">11,9 %</span></span>
+            </li>
+          </ol>
+              <figcaption>Taux de rupture simulé sur 360 jours de test</figcaption>
+            </figure>
+          </div>
+          <div class="panel__foot">
+            <ul class="panel__tools" aria-label="Outils"><li>XGBoost</li><li>Optuna</li><li>FastAPI</li><li>Streamlit</li><li>Docker</li></ul>
+            <p class="panel__links"><a class="panel__link panel__link--page" href="projets/demande.html">Voir le projet<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a><a class="panel__link panel__link--demo" href="https://pr-diction-demand-jm6e7ymmnauhlg4ur8pjce.streamlit.app/"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>Voir la démo</a><a class="panel__link" href="https://github.com/Loscope29/Pr-diction-Demand"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Voir le dépôt</a></p>
+          </div>
+        </article>
+        <article class="panel" id="p-reco" data-id="reco" data-draw aria-labelledby="t-reco">
+          <div class="panel__bar">
+            <span class="panel__count num">07 / 10</span>
+            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>E-commerce</span>
+            <span class="chip chip--cool">Data science</span>
+            <span class="panel__nav">
+              <a class="panel__step" href="#p-demande" data-go="demande" aria-label="Projet précédent : Demande par magasin"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
               <a class="panel__step" href="#p-pricing" data-go="pricing" aria-label="Projet suivant : Prix d’une marketplace"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
             </span>
           </div>
@@ -256,7 +451,7 @@
             <dl class="par">
               <div><dt>Problème</dt><dd>Montrer, pendant la visite, des produits que le client n’aurait pas trouvés seul.</dd></div>
               <div><dt>Approche</dt><dd>Candidats par co-visitation, reclassés par un ranker LightGBM à deux étages.</dd></div>
-              <div><dt>Résultat</dt><dd>30,6 % de hit@10 sur le test, +4,3 pts face à la co-visitation.</dd></div>
+              <div><dt>Résultat</dt><dd>30,6 % de hit@10 sur le test : +4,3 pts mesurés face à la meilleure référence.</dd></div>
             </dl>
             <figure class="viz">
             <ol class="bars" aria-label="hit@10 sur le test, RetailRocket, 14 jours">
@@ -291,7 +486,7 @@
         </article>
         <article class="panel" id="p-pricing" data-id="pricing" data-draw aria-labelledby="t-pricing">
           <div class="panel__bar">
-            <span class="panel__count num">04 / 10</span>
+            <span class="panel__count num">08 / 10</span>
             <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>E-commerce</span>
             <span class="chip chip--cool">Data science</span>
             <span class="panel__nav">
@@ -350,7 +545,7 @@
         </article>
         <article class="panel" id="p-uplift" data-id="uplift" data-draw aria-labelledby="t-uplift">
           <div class="panel__bar">
-            <span class="panel__count num">05 / 10</span>
+            <span class="panel__count num">09 / 10</span>
             <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>E-commerce</span>
             <span class="chip chip--cool">Data science</span>
             <span class="panel__nav">
@@ -396,12 +591,12 @@
         </article>
         <article class="panel" id="p-churn" data-id="churn" data-draw aria-labelledby="t-churn">
           <div class="panel__bar">
-            <span class="panel__count num">06 / 10</span>
+            <span class="panel__count num">10 / 10</span>
             <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>Banque et finance</span>
             <span class="chip chip--cool">Data science</span>
             <span class="panel__nav">
               <a class="panel__step" href="#p-uplift" data-go="uplift" aria-label="Projet précédent : Ciblage d’un e-mail"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
-              <a class="panel__step" href="#p-demande" data-go="demande" aria-label="Projet suivant : Demande par magasin"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+              <a class="panel__step" href="#p-rag" data-go="rag" aria-label="Projet suivant : Assistant RAG en ligne"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
             </span>
           </div>
           <div class="panel__head">
@@ -415,7 +610,7 @@
             <dl class="par">
               <div><dt>Problème</dt><dd>Repérer les clients sur le départ assez tôt pour les retenir.</dd></div>
               <div><dt>Approche</dt><dd>Random Forest optimisé avec Optuna, seuil fixé par le coût des erreurs, causes lues avec SHAP.</dd></div>
-              <div><dt>Résultat</dt><dd>82,3 % des départs détectés, ROC-AUC de 0,860 et un impact net estimé à +82 900 €.</dd></div>
+              <div><dt>Résultat</dt><dd>82,3 % des départs détectés, ROC-AUC de 0,860, et un gain chiffré : +82 900 € d’impact net estimé.</dd></div>
             </dl>
             <figure class="viz">
             <ol class="bars" aria-label="Départs détectés selon le seuil de décision">
@@ -436,201 +631,6 @@
             <p class="panel__links"><a class="panel__link panel__link--page" href="projets/churn.html">Voir le projet<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a><a class="panel__link panel__link--demo" href="https://churn-prediction-7c6wdutxukuzfcfkptnwwv.streamlit.app/"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>Voir la démo</a><a class="panel__link" href="https://github.com/Loscope29/Churn-Prediction"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Voir le dépôt</a></p>
           </div>
         </article>
-        <article class="panel" id="p-demande" data-id="demande" data-draw aria-labelledby="t-demande">
-          <div class="panel__bar">
-            <span class="panel__count num">07 / 10</span>
-            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 2.004 0L20.7 7"/></svg>Grande distribution</span>
-            <span class="chip chip--cool">Data science</span>
-            <span class="panel__nav">
-              <a class="panel__step" href="#p-churn" data-go="churn" aria-label="Projet précédent : Attrition bancaire"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
-              <a class="panel__step" href="#p-rag" data-go="rag" aria-label="Projet suivant : Assistant RAG personnel"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
-            </span>
-          </div>
-          <div class="panel__head">
-            <div class="panel__heading">
-              <h3 class="panel__title" id="t-demande">Demande par magasin</h3>
-              <p class="panel__q">Combien commander, catégorie par région ?</p>
-            </div>
-            <p class="reading"><span class="reading__val num">−14,6 %</span><span class="reading__unit">de coût total, en simulation</span></p>
-          </div>
-          <div class="panel__body">
-            <dl class="par">
-              <div><dt>Problème</dt><dd>Commander juste : une rupture coûte une vente, un surplus immobilise du stock.</dd></div>
-              <div><dt>Approche</dt><dd>XGBoost validé sur 4 périodes, puis une règle de commande qui arbitre entre rupture et surstock.</dd></div>
-              <div><dt>Résultat</dt><dd>−14,6 % de coût total simulé, et un taux de rupture ramené de 25,9 % à 11,9 %.</dd></div>
-            </dl>
-            <figure class="viz">
-            <ol class="bars" aria-label="Taux de rupture simulé sur 360 jours de test">
-            <li class="bars__row" style="--i:0; --v:0.8633">
-              <span class="bars__label">Règle actuelle, prévision × 1,20</span>
-              <span class="bars__track"><span class="bars__bar"></span><span class="bars__val num">25,9 %</span></span>
-            </li>
-            <li class="bars__row is-lead" style="--i:1; --v:0.3967">
-              <span class="bars__label">Règle recommandée, prévision × 1,39</span>
-              <span class="bars__track"><span class="bars__bar"></span><span class="bars__val num">11,9 %</span></span>
-            </li>
-          </ol>
-              <figcaption>Taux de rupture simulé sur 360 jours de test</figcaption>
-            </figure>
-          </div>
-          <div class="panel__foot">
-            <ul class="panel__tools" aria-label="Outils"><li>XGBoost</li><li>Optuna</li><li>FastAPI</li><li>Streamlit</li><li>Docker</li></ul>
-            <p class="panel__links"><a class="panel__link panel__link--page" href="projets/demande.html">Voir le projet<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a><a class="panel__link panel__link--demo" href="https://pr-diction-demand-jm6e7ymmnauhlg4ur8pjce.streamlit.app/"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>Voir la démo</a><a class="panel__link" href="https://github.com/Loscope29/Pr-diction-Demand"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Voir le dépôt</a></p>
-          </div>
-        </article>
-        <article class="panel" id="p-rag" data-id="rag" data-draw aria-labelledby="t-rag">
-          <div class="panel__bar">
-            <span class="panel__count num">08 / 10</span>
-            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>IA générative</span>
-            
-            <span class="panel__nav">
-              <a class="panel__step" href="#p-demande" data-go="demande" aria-label="Projet précédent : Demande par magasin"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
-              <a class="panel__step" href="#p-polymind" data-go="polymind" aria-label="Projet suivant : Polymind"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
-            </span>
-          </div>
-          <div class="panel__head">
-            <div class="panel__heading">
-              <h3 class="panel__title" id="t-rag">Assistant RAG personnel</h3>
-              <p class="panel__q">Répondre sur mon parcours, à partir de mes documents.</p>
-            </div>
-            <p class="reading"><span class="reading__val num">3</span><span class="reading__unit">clouds : AWS, GCP, Azure</span></p>
-          </div>
-          <div class="panel__body">
-            <dl class="par">
-              <div><dt>Problème</dt><dd>Répondre aux recruteurs sur mon parcours, à toute heure.</dd></div>
-              <div><dt>Approche</dt><dd>RAG sur mon CV et mes documents, Amazon Nova 2 Lite via Bedrock, mémoire sur S3.</dd></div>
-              <div><dt>Résultat</dt><dd>Déployé sur AWS Lambda, puis porté sur GCP et Azure.</dd></div>
-            </dl>
-            <figure class="viz">
-            <ol class="chain" aria-label="Architecture de l’assistant RAG">
-            <li class="chain__step" style="--i:0">
-              <span class="chain__name">Sources</span><span class="chain__detail">CV et documents collectés</span>
-            </li>
-            <li class="chain__step" style="--i:1">
-              <span class="chain__name">Génération</span><span class="chain__detail">Amazon Nova 2 Lite via Bedrock</span>
-            </li>
-            <li class="chain__step" style="--i:2">
-              <span class="chain__name">Service</span><span class="chain__detail">Docker sur ECR, AWS Lambda</span>
-            </li>
-            <li class="chain__step" style="--i:3">
-              <span class="chain__name">Mémoire</span><span class="chain__detail">conversations stockées sur S3</span>
-            </li>
-            <li class="chain__step" style="--i:4">
-              <span class="chain__name">Portage</span><span class="chain__detail">Cloud Run, Container Apps</span>
-            </li>
-          </ol>
-              <figcaption>Architecture de l’assistant RAG</figcaption>
-            </figure>
-          </div>
-          <div class="panel__foot">
-            <ul class="panel__tools" aria-label="Outils"><li>Bedrock</li><li>Lambda</li><li>S3</li><li>Docker</li><li>IAM</li></ul>
-            <p class="panel__links"><a class="panel__link panel__link--page" href="projets/rag.html">Voir le projet<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a><a class="panel__link" href="https://github.com/Loscope29/digital-twin"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Voir le dépôt</a></p>
-          </div>
-        </article>
-        <article class="panel" id="p-polymind" data-id="polymind" data-draw aria-labelledby="t-polymind">
-          <div class="panel__bar">
-            <span class="panel__count num">09 / 10</span>
-            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>IA générative</span>
-            
-            <span class="panel__nav">
-              <a class="panel__step" href="#p-rag" data-go="rag" aria-label="Projet précédent : Assistant RAG personnel"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
-              <a class="panel__step" href="#p-semantic" data-go="semantic" aria-label="Projet suivant : SemanticSearchAPI"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
-            </span>
-          </div>
-          <div class="panel__head">
-            <div class="panel__heading">
-              <h3 class="panel__title" id="t-polymind">Polymind</h3>
-              <p class="panel__q">Réunir la voix, les documents et la finance dans une seule application.</p>
-            </div>
-            <p class="reading"><span class="reading__val num">4</span><span class="reading__unit">outils dans une même application</span></p>
-          </div>
-          <div class="panel__body">
-            <dl class="par">
-              <div><dt>Problème</dt><dd>Rassembler plusieurs usages de l’IA au même endroit : transcrire, parler, interroger un PDF, prévoir un cours.</dd></div>
-              <div><dt>Approche</dt><dd>Whisper, synthèse vocale MMS-TTS, RAG avec LangChain, ChromaDB et Gemini, prévisions Chronos ou LSTM.</dd></div>
-              <div><dt>Résultat</dt><dd>Une application Streamlit en quatre outils, tracée dans LangSmith et livrée en image Docker.</dd></div>
-            </dl>
-            <figure class="viz">
-            <ol class="chain" aria-label="Les briques de Polymind">
-            <li class="chain__step" style="--i:0">
-              <span class="chain__name">Audio vers texte</span><span class="chain__detail">Whisper</span>
-            </li>
-            <li class="chain__step" style="--i:1">
-              <span class="chain__name">Texte vers voix</span><span class="chain__detail">MMS-TTS, Hugging Face</span>
-            </li>
-            <li class="chain__step" style="--i:2">
-              <span class="chain__name">Questions sur un PDF</span><span class="chain__detail">LangChain, ChromaDB, Gemini</span>
-            </li>
-            <li class="chain__step" style="--i:3">
-              <span class="chain__name">Chatbot boursier</span><span class="chain__detail">Chronos ou LSTM, Gemini</span>
-            </li>
-            <li class="chain__step" style="--i:4">
-              <span class="chain__name">Prix des logements</span><span class="chain__detail">réseau de neurones Keras</span>
-            </li>
-            <li class="chain__step" style="--i:5">
-              <span class="chain__name">Suivi et livraison</span><span class="chain__detail">LangSmith, Docker</span>
-            </li>
-          </ol>
-              <figcaption>Les briques de Polymind</figcaption>
-            </figure>
-          </div>
-          <div class="panel__foot">
-            <ul class="panel__tools" aria-label="Outils"><li>Streamlit</li><li>Whisper</li><li>LangChain</li><li>ChromaDB</li><li>Gemini</li><li>Chronos</li><li>Keras</li><li>LangSmith</li><li>Docker</li></ul>
-            <p class="panel__links"><a class="panel__link panel__link--page" href="projets/polymind.html">Voir le projet<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a><a class="panel__link" href="https://github.com/Loscope29/polymind"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Voir le dépôt</a></p>
-          </div>
-        </article>
-        <article class="panel" id="p-semantic" data-id="semantic" data-draw aria-labelledby="t-semantic">
-          <div class="panel__bar">
-            <span class="panel__count num">10 / 10</span>
-            <span class="chip"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>IA générative</span>
-            
-            <span class="panel__nav">
-              <a class="panel__step" href="#p-polymind" data-go="polymind" aria-label="Projet précédent : Polymind"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
-              <a class="panel__step" href="#p-fireprotect" data-go="fireprotect" aria-label="Projet suivant : FireProtect"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
-            </span>
-          </div>
-          <div class="panel__head">
-            <div class="panel__heading">
-              <h3 class="panel__title" id="t-semantic">SemanticSearchAPI</h3>
-              <p class="panel__q">Chercher dans des PDF par le sens, pas par les mots.</p>
-            </div>
-            <p class="reading"><span class="reading__val num">4</span><span class="reading__unit">routes d’API documentées</span></p>
-          </div>
-          <div class="panel__body">
-            <dl class="par">
-              <div><dt>Problème</dt><dd>Retrouver un passage dans une pile de PDF sans connaître les mots exacts.</dd></div>
-              <div><dt>Approche</dt><dd>Découpage des PDF en segments, embeddings Sentence-Transformers stockés dans PostgreSQL avec pgvector.</dd></div>
-              <div><dt>Résultat</dt><dd>Une API Django REST qui indexe des PDF, cherche par similarité cosinus et propose des documents proches.</dd></div>
-            </dl>
-            <figure class="viz">
-            <ol class="chain" aria-label="Du PDF à la recherche sémantique">
-            <li class="chain__step" style="--i:0">
-              <span class="chain__name">PDF</span><span class="chain__detail">téléversé par l’API</span>
-            </li>
-            <li class="chain__step" style="--i:1">
-              <span class="chain__name">Extraction du texte</span><span class="chain__detail">PyMuPDF</span>
-            </li>
-            <li class="chain__step" style="--i:2">
-              <span class="chain__name">Découpage</span><span class="chain__detail">en segments</span>
-            </li>
-            <li class="chain__step" style="--i:3">
-              <span class="chain__name">Embeddings</span><span class="chain__detail">Sentence-Transformers, MiniLM</span>
-            </li>
-            <li class="chain__step" style="--i:4">
-              <span class="chain__name">Stockage</span><span class="chain__detail">PostgreSQL et pgvector</span>
-            </li>
-            <li class="chain__step" style="--i:5">
-              <span class="chain__name">Recherche</span><span class="chain__detail">similarité cosinus</span>
-            </li>
-          </ol>
-              <figcaption>Du PDF à la recherche sémantique</figcaption>
-            </figure>
-          </div>
-          <div class="panel__foot">
-            <ul class="panel__tools" aria-label="Outils"><li>Django REST Framework</li><li>Sentence-Transformers</li><li>pgvector</li><li>PostgreSQL</li><li>PyMuPDF</li></ul>
-            <p class="panel__links"><a class="panel__link panel__link--page" href="projets/semantic.html">Voir le projet<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a><a class="panel__link" href="https://github.com/Loscope29/SemanticSearchAPI"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Voir le dépôt</a></p>
-          </div>
-        </article>
           </div>
         </div>
       </div>
@@ -638,11 +638,11 @@
 
     <section class="method" id="methode" aria-labelledby="methode-titre">
       <div class="container">
-        <h2 id="methode-titre" data-reveal>Trois étapes, sur chaque projet.</h2>
+        <h2 id="methode-titre" data-reveal>Faire l’état des lieux, déployer, mesurer.</h2>
         <ol class="steps" data-reveal>
-          <li class="is-lead"><h3>Cadrer</h3><p>Un objectif métier mesurable avant la première ligne de code : moins de départs, moins de ruptures.</p></li>
-          <li><h3>Construire</h3><p>Le modèle ou l’assistant qui le démontre, évalué sur des données jamais vues à l’entraînement.</p></li>
-          <li><h3>Déployer</h3><p>API conteneurisée, tests, CI/CD et supervision : le modèle tourne, et on le voit tourner.</p></li>
+          <li class="is-lead"><h3>État des lieux</h3><p>Partir de la tâche et de la référence actuelle : ce qu’elle coûte, ce qu’elle prend comme temps, quelles données elle touche. Chaque projet est comparé à la règle déjà en place.</p></li>
+          <li><h3>Déployer, sans exposer les données</h3><p>RAG, automatisation ou plateforme : hébergement maîtrisé quand les données l’exigent, accès cloisonnés, conteneurs, tests et CI/CD.</p></li>
+          <li><h3>Mesurer les gains</h3><p>Des métriques fixées à l’avance, lues sur des données jamais vues, avec leurs limites écrites. Puis un suivi en production : Grafana, LangSmith.</p></li>
         </ol>
       </div>
     </section>
@@ -654,7 +654,7 @@
           <p class="lead">Ce que j’utilise d’un projet à l’autre, de la donnée brute au serveur.</p>
         </div>
         <dl class="toolgrid" data-reveal>
-          <div><dt><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>IA et LLM</dt><dd><ul class="logos"><li>RAG</li><li>Amazon Bedrock</li><li>API OpenAI</li><li><img src="https://cdn.simpleicons.org/langchain/c9cfd6" width="18" height="18" alt="" loading="lazy" decoding="async">LangChain</li><li>LangSmith</li><li><img src="https://cdn.simpleicons.org/huggingface/c9cfd6" width="18" height="18" alt="" loading="lazy" decoding="async">Hugging Face</li><li><img src="https://cdn.simpleicons.org/googlegemini/c9cfd6" width="18" height="18" alt="" loading="lazy" decoding="async">Gemini</li></ul></dd></div>
+          <div><dt><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>IA et LLM</dt><dd><ul class="logos"><li>RAG</li><li>Amazon Bedrock</li><li>API OpenAI</li><li><img src="https://cdn.simpleicons.org/langchain/c9cfd6" width="18" height="18" alt="" loading="lazy" decoding="async">LangChain</li><li>LangSmith</li><li><img src="https://cdn.simpleicons.org/huggingface/c9cfd6" width="18" height="18" alt="" loading="lazy" decoding="async">Hugging Face</li><li><img src="https://cdn.simpleicons.org/googlegemini/c9cfd6" width="18" height="18" alt="" loading="lazy" decoding="async">Gemini</li><li>Whisper</li><li>Sentence-Transformers</li><li>ChromaDB</li><li>pgvector</li></ul></dd></div>
           <div><dt><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>Machine learning</dt><dd><ul class="logos"><li><img src="https://cdn.simpleicons.org/python/c9cfd6" width="18" height="18" alt="" loading="lazy" decoding="async">Python</li><li><img src="https://cdn.simpleicons.org/pandas/c9cfd6" width="18" height="18" alt="" loading="lazy" decoding="async">pandas</li><li><img src="https://cdn.simpleicons.org/scikitlearn/c9cfd6" width="18" height="18" alt="" loading="lazy" decoding="async">scikit-learn</li><li>XGBoost</li><li>LightGBM</li><li><img src="https://cdn.simpleicons.org/keras/c9cfd6" width="18" height="18" alt="" loading="lazy" decoding="async">Keras</li><li><img src="https://cdn.simpleicons.org/optuna/c9cfd6" width="18" height="18" alt="" loading="lazy" decoding="async">Optuna</li><li>SHAP</li></ul></dd></div>
           <div><dt><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>Cloud</dt><dd><ul class="logos"><li>AWS Lambda, S3, ECR, IAM</li><li><img src="https://cdn.simpleicons.org/googlecloud/c9cfd6" width="18" height="18" alt="" loading="lazy" decoding="async">Google Cloud Run</li><li>Azure Container Apps</li></ul></dd></div>
           <div><dt><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 2.004 0L20.7 7"/></svg>Production</dt><dd><ul class="logos"><li><img src="https://cdn.simpleicons.org/docker/c9cfd6" width="18" height="18" alt="" loading="lazy" decoding="async">Docker</li><li><img src="https://cdn.simpleicons.org/fastapi/c9cfd6" width="18" height="18" alt="" loading="lazy" decoding="async">FastAPI</li><li><img src="https://cdn.simpleicons.org/traefikproxy/c9cfd6" width="18" height="18" alt="" loading="lazy" decoding="async">Traefik</li><li><img src="https://cdn.simpleicons.org/githubactions/c9cfd6" width="18" height="18" alt="" loading="lazy" decoding="async">GitHub Actions</li><li><img src="https://cdn.simpleicons.org/prometheus/c9cfd6" width="18" height="18" alt="" loading="lazy" decoding="async">Prometheus</li><li><img src="https://cdn.simpleicons.org/grafana/c9cfd6" width="18" height="18" alt="" loading="lazy" decoding="async">Grafana</li><li><img src="https://cdn.simpleicons.org/linux/c9cfd6" width="18" height="18" alt="" loading="lazy" decoding="async">Linux</li></ul></dd></div>
@@ -679,7 +679,7 @@
             <div class="timeline__card">
               <h3>Data engineer et AI engineer</h3>
               <p class="timeline__place"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>IBMH Conseils, Nantes</p>
-              <ul class="timeline__missions"><li>Conception et déploiement de pipelines ETL pour l’ingestion et la transformation de données métier.</li><li>Intégration de modèles d’IA et de machine learning pour l’automatisation et l’aide à la décision.</li><li>Assistant vocal pour conduire des entretiens de terrain : transcription, analyse et structuration des réponses.</li><li>Intégration d’un LLM qui résume les échanges pour faciliter la décision.</li></ul>
+              <ul class="timeline__missions"><li>Conception et déploiement de pipelines ETL pour l’ingestion et la transformation de données métier.</li><li>Intégration de modèles d’IA et de machine learning pour automatiser des tâches répétitives et aider à la décision.</li><li>Assistant vocal pour conduire des entretiens de terrain : transcription, analyse et structuration des réponses.</li><li>Intégration d’un LLM qui résume les échanges pour faciliter la décision.</li></ul>
               <ul class="panel__tools"><li>ETL</li><li>NLP</li><li>LLM</li><li>Python</li></ul>
             </div>
           </li>
@@ -691,7 +691,7 @@
             <div class="timeline__card">
               <h3>Plateformes IoT FireProtect et Celsius</h3>
               <p class="timeline__place"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>IBMH Conseils, Nantes</p>
-              <ul class="timeline__missions"><li>Conception, développement et déploiement en autonomie de deux plateformes IoT en production.</li><li>Réseau LoRaWAN avec ChirpStack, intégration des capteurs et actionneurs, transmission par MQTT.</li><li>API REST Django, interface Next.js, séries temporelles dans PostgreSQL et TimescaleDB.</li><li>Serveur sécurisé, conteneurs Docker, HTTPS par Traefik, CI/CD GitHub Actions, supervision Prometheus et Grafana.</li></ul>
+              <ul class="timeline__missions"><li>Conception, développement et déploiement en autonomie de deux plateformes IoT en production, hébergées en local.</li><li>Réseau LoRaWAN avec ChirpStack, intégration des capteurs et actionneurs, transmission par MQTT.</li><li>API REST Django, interface Next.js, séries temporelles dans PostgreSQL et TimescaleDB.</li><li>Sécurité des données : serveur maîtrisé, clients isolés par Row-Level Security, HTTPS par Traefik.</li><li>Conteneurs Docker, CI/CD GitHub Actions, supervision Prometheus et Grafana.</li></ul>
               <ul class="panel__tools"><li>LoRaWAN</li><li>Django</li><li>Next.js</li><li>TimescaleDB</li><li>Docker</li><li>Grafana</li></ul>
             </div>
           </li>

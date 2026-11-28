@@ -173,10 +173,10 @@ const nuage = JSON.stringify({
 // Preuves chiffrées : uniquement des résultats déjà présents dans les projets
 // [valeur, unité, ce qu'elle mesure, id du projet, nom affiché si différent du projet]
 const preuves = [
+  ['2', '', 'plateformes en production, hébergées en local', 'fireprotect', 'FireProtect et Celsius'],
+  ['3', '', 'clouds pour un même assistant RAG en ligne', 'rag'],
+  ['−14,6', '%', 'de coût, gain mesuré face à la règle en place', 'demande'],
   ['82,3', '%', 'des départs clients détectés', 'churn'],
-  ['+4,3', 'pts', 'de hit@10 face à la meilleure référence', 'reco'],
-  ['2', '', 'plateformes IoT en production', 'fireprotect', 'FireProtect et Celsius'],
-  ['3', '', 'clouds pour un même assistant RAG', 'rag'],
 ];
 const projetDe = new Map(projets.map((p) => [p.id, p]));
 const bandeau = preuves.map(([v, u, l, id, nom], i) => {
@@ -202,7 +202,7 @@ const html = `<!doctype html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Luc Obama, data scientist et AI engineer à Nantes</title>
-  <meta name="description" content="Luc Obama, data scientist et AI engineer à Nantes : ${ordre.length} projets livrés dans ${secteursUtilises.length} secteurs, du modèle mesuré au service en production.">
+  <meta name="description" content="Luc Obama, data scientist et AI engineer à Nantes : assistants RAG en ligne, automatisation, plateformes hébergées en local et gains mesurés, sur ${ordre.length} projets.">
   <meta property="og:title" content="Luc Obama, data scientist et AI engineer">
   <meta property="og:description" content="Je transforme une question métier en modèle mesuré, puis en service en production.">
   <meta property="og:type" content="website">
@@ -240,7 +240,7 @@ const html = `<!doctype html>
       <div class="container hero__inner">
         <div class="hero__text">
           <h1 id="hero-titre" data-reveal style="--i:0">Une question métier,<br><span class="rotator" data-rotator><span class="rotator__word is-on">un modèle,</span><span class="rotator__word" aria-hidden="true">un assistant,</span><span class="rotator__word" aria-hidden="true">une API,</span></span><br>un chiffre.</h1>
-          <p class="hero__lead" data-reveal style="--i:1">C’est ainsi que j’ai mené ${ordre.length} projets de data science et d’IA, de l’analyse jusqu’à la mise en production.</p>
+          <p class="hero__lead" data-reveal style="--i:1">C’est ainsi que j’ai mené ${ordre.length} projets de data science et d’IA : des assistants RAG en ligne, des tâches automatisées, des plateformes hébergées en local, et à chaque fois un gain mesuré.</p>
           <div class="actions" data-reveal style="--i:2">
             <a class="btn btn--primary" href="#travaux">Voir les ${ordre.length} projets${icone('bas')}</a>
             <a class="btn" href="${MAIL_HREF}">${icone('mail')}M’écrire</a>
@@ -281,11 +281,11 @@ const html = `<!doctype html>
 
     <section class="method" id="methode" aria-labelledby="methode-titre">
       <div class="container">
-        <h2 id="methode-titre" data-reveal>Trois étapes, sur chaque projet.</h2>
+        <h2 id="methode-titre" data-reveal>Faire l’état des lieux, déployer, mesurer.</h2>
         <ol class="steps" data-reveal>
-          <li class="is-lead"><h3>Cadrer</h3><p>Un objectif métier mesurable avant la première ligne de code : moins de départs, moins de ruptures.</p></li>
-          <li><h3>Construire</h3><p>Le modèle ou l’assistant qui le démontre, évalué sur des données jamais vues à l’entraînement.</p></li>
-          <li><h3>Déployer</h3><p>API conteneurisée, tests, CI/CD et supervision : le modèle tourne, et on le voit tourner.</p></li>
+          <li class="is-lead"><h3>État des lieux</h3><p>Partir de la tâche et de la référence actuelle : ce qu’elle coûte, ce qu’elle prend comme temps, quelles données elle touche. Chaque projet est comparé à la règle déjà en place.</p></li>
+          <li><h3>Déployer, sans exposer les données</h3><p>RAG, automatisation ou plateforme : hébergement maîtrisé quand les données l’exigent, accès cloisonnés, conteneurs, tests et CI/CD.</p></li>
+          <li><h3>Mesurer les gains</h3><p>Des métriques fixées à l’avance, lues sur des données jamais vues, avec leurs limites écrites. Puis un suivi en production : Grafana, LangSmith.</p></li>
         </ol>
       </div>
     </section>
